@@ -6,12 +6,12 @@ package com.DEC.entity;
  *
  */
 public class User {
-	private int uid;
-	private String uname;
-	private String upwd;
-	private String umail;
-	private String utel;
-	private String ubirth;
+	private int uid;			//用户编号
+	private String uname;		//用户名
+	private String upwd;		//密码
+	private String umail;		//邮箱
+	private String utel;		//电话
+	private String ubirth;		//生日
 	
 	public User() {
 		super();
@@ -19,6 +19,14 @@ public class User {
 	public User(int uid, String uname, String upwd, String umail, String utel, String ubirth) {
 		super();
 		this.uid = uid;
+		this.uname = uname;
+		this.upwd = upwd;
+		this.umail = umail;
+		this.utel = utel;
+		this.ubirth = ubirth;
+	}
+	public User(String uname, String upwd, String umail, String utel, String ubirth) {
+		super();
 		this.uname = uname;
 		this.upwd = upwd;
 		this.umail = umail;

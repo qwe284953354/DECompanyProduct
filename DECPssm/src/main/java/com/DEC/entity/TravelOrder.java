@@ -10,24 +10,26 @@ public class TravelOrder {
 	private int tid;		//旅游项目编号
 	private int uid;		//用户编号
 	private String todate; 	//订单时间
+	private int toprice;	//价格
 	
 	public TravelOrder() {
 		super();
 	}
-	public TravelOrder(int toid, int tid, int uid, String todate) {
+	public TravelOrder(int toid, int tid, int uid, String todate, int toprice) {
 		super();
 		this.toid = toid;
 		this.tid = tid;
 		this.uid = uid;
 		this.todate = todate;
+		this.toprice = toprice;
 	}
-	public TravelOrder(int tid, int uid, String todate) {
+	public TravelOrder(int tid, int uid, String todate, int toprice) {
 		super();
 		this.tid = tid;
 		this.uid = uid;
 		this.todate = todate;
+		this.toprice = toprice;
 	}
-	
 	public int getToid() {
 		return toid;
 	}
@@ -52,4 +54,11 @@ public class TravelOrder {
 	public void setTodate(String todate) {
 		this.todate = todate;
 	}
+	public int getToprice() {
+		return toprice;
+	}
+	public void setToprice(int toprice) {
+		this.toprice = toprice;
+	}
+	
 }

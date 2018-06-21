@@ -13,7 +13,7 @@ import com.DEC.dao.IHotelDao;
 import com.DEC.entity.Hotel;
 
 /**
- * <p>Description: </p>
+ * <p>Description: HotelDao实现类</p>
  * @author UY
  * @date   2018年6月20日 
  *
@@ -28,8 +28,8 @@ public class IHotelDaoImpl extends SqlSessionDaoSupport implements IHotelDao {
 	private SqlSession sqlSession = null;
 	/** 
 	 * <p>Title: findAllHotel</p>  
-	 * <p>Description: </p>
-	 * @return 
+	 * <p>Description: 查找全部</p>
+	 * @return List<Hotel>
 	 * @see com.DEC.dao.IHotelDao#findAllHotel()
 	 */
 	public List<Hotel> findAllHotel() {
@@ -40,14 +40,15 @@ public class IHotelDaoImpl extends SqlSessionDaoSupport implements IHotelDao {
 
 	/** 
 	 * <p>Title: findHotelByName</p>  
-	 * <p>Description: </p>
-	 * @param name
-	 * @return 
+	 * <p>Description: 根据名称查找(模糊查询)</p>
+	 * @param name 酒店名称
+	 * @return List<Hotel>
 	 * @see com.DEC.dao.IHotelDao#findHotelByName(java.lang.String)
 	 */
 	public List<Hotel> findHotelByName(String name) {
-
-		return null;
+		sqlSession = this.getSqlSession();
+		List<Hotel> hlist = sqlSession.selectList("findHotelByName");
+		return hlist;
 	}
 
 	/** 

@@ -26,6 +26,7 @@ public class IHotelDaoImpl extends SqlSessionDaoSupport implements IHotelDao {
 		super.setSqlSessionFactory(sqlSessionFactory);
 	}
 	private SqlSession sqlSession = null;
+	
 	/** 
 	 * <p>Title: findAllHotel</p>  
 	 * <p>Description: 查找全部</p>
@@ -47,92 +48,99 @@ public class IHotelDaoImpl extends SqlSessionDaoSupport implements IHotelDao {
 	 */
 	public List<Hotel> findHotelByName(String name) {
 		sqlSession = this.getSqlSession();
-		List<Hotel> hlist = sqlSession.selectList("findHotelByName");
+		List<Hotel> hlist = sqlSession.selectList("findHotelByName", name);
 		return hlist;
 	}
 
 	/** 
 	 * <p>Title: findHotelByCid</p>  
-	 * <p>Description: </p>
-	 * @param cid
-	 * @return 
+	 * <p>Description: 根据城市查找</p>
+	 * @param cid 城市编号
+	 * @return List<Hotel>
 	 * @see com.DEC.dao.IHotelDao#findHotelByCid(int)
 	 */
 	public List<Hotel> findHotelByCid(int cid) {
-
-		return null;
+		sqlSession = this.getSqlSession();
+		List<Hotel> hlist = sqlSession.selectList("findHotelByCid", cid);
+		return hlist;
 	}
 
 	/** 
 	 * <p>Title: findHotelByStar</p>  
-	 * <p>Description: </p>
-	 * @param star
-	 * @return 
+	 * <p>Description: 根据星级查找</p>
+	 * @param star 酒店星级
+	 * @return List<Hotel>
 	 * @see com.DEC.dao.IHotelDao#findHotelByStar(java.lang.String)
 	 */
 	public List<Hotel> findHotelByStar(String star) {
-
-		return null;
+		sqlSession = this.getSqlSession();
+		List<Hotel> hlist = sqlSession.selectList("findHotelByStar", star);
+		return hlist;
 	}
 
 	/** 
 	 * <p>Title: findHotelByType</p>  
-	 * <p>Description: </p>
-	 * @param type
-	 * @return 
+	 * <p>Description: 根据类型查找</p>
+	 * @param type 酒店类型
+	 * @return List<Hotel>
 	 * @see com.DEC.dao.IHotelDao#findHotelByType(java.lang.String)
 	 */
 	public List<Hotel> findHotelByType(String type) {
-
-		return null;
+		sqlSession = this.getSqlSession();
+		List<Hotel> hlist = sqlSession.selectList("findHotelByType", type);
+		return hlist;
 	}
 
 	/** 
 	 * <p>Title: findHotelByHid</p>  
-	 * <p>Description: </p>
-	 * @param hid
-	 * @return 
+	 * <p>Description: 根据编号查找</p>
+	 * @param hid 酒店编号
+	 * @return Hotel
 	 * @see com.DEC.dao.IHotelDao#findHotelByHid(int)
 	 */
 	public Hotel findHotelByHid(int hid) {
-
-		return null;
+		sqlSession = this.getSqlSession();
+		Hotel hotel = sqlSession.selectOne("findHotelByHid", hid);
+		return hotel;
 	}
 
 	/** 
 	 * <p>Title: addHotel</p>  
 	 * <p>Description: </p>
-	 * @param h
-	 * @return 
+	 * @param h Hotel对象
+	 * @return row 受到添加操作的行数
 	 * @see com.DEC.dao.IHotelDao#addHotel(com.DEC.entity.Hotel)
 	 */
 	public int addHotel(Hotel h) {
-
-		return 0;
+		SqlSession sqlSession = this.getSqlSession();
+		int row = sqlSession.insert("addHotel", h);
+		return row;
 	}
 
 	/** 
 	 * <p>Title: editHotel</p>  
 	 * <p>Description: </p>
-	 * @param h
-	 * @return 
+	 * @param h Hotel对象
+	 * @return row 受到修改操作的行数
 	 * @see com.DEC.dao.IHotelDao#editHotel(com.DEC.entity.Hotel)
 	 */
 	public int editHotel(Hotel h) {
-
-		return 0;
+		SqlSession sqlSession = this.getSqlSession();
+		int row = sqlSession.update("editHotel", h);
+		return row;
 	}
 
 	/** 
 	 * <p>Title: delHotel</p>  
 	 * <p>Description: </p>
-	 * @param hid
-	 * @return 
+	 * @param hid 酒店编号
+	 * @return row 受到删除操作的行数
 	 * @see com.DEC.dao.IHotelDao#delHotel(int)
 	 */
 	public int delHotel(int hid) {
-
-		return 0;
+		SqlSession sqlSession = this.getSqlSession();
+		int row = sqlSession.delete("delHotel", hid);
+		return row;
 	}
 
 }

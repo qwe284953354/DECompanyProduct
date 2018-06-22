@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.DEC.dao.IHotelOrderDao">
+	<select id="findAllHotelOrder" resultType="HotelOrder">
+		select * from horder
+	</select>
+	<select id="findHotelOrderByUid" parameterType="int" resultType="HotelOrder">
+		select * from horder where uid=#{uid} 
+	</select>
+	<select id="findHotelOrderByHoid" parameterType="int" resultType="HotelOrder">
+		select * from horder where hoid=#{hoid} 
+	</select>
+	<select id="findHotelOrderByHid" parameterType="int" resultType="HotelOrder">
+		select * from horder where hid=#{hid} 
+	</select>
+	<insert id="addHotelOrder" useGeneratedKeys="true" keyProperty="uid"
+		parameterType="com.DEC.entity.HotelOrder">
+		insert into horder (hoid,hid,hoprice,uid,honame,hodate,hotel,hobooktime)
+		values(hoid,#{hid},#{hoprice},#{uid},#{honame},#{hodate},#{hotel},#{hobooktime})
+	</insert>
+	<update id="editHotelOrder" parameterType="com.DEC.entity.HotelOrder">
+		update horder set
+		hid=#{hid},hoprice=#{hoprice},uid=#{uid},honame=#{honame},hodate=#{hodate},hotel=#{hotel},hobooktime=#{hobooktime} where hoid=#{hoid}
+	</update>
+	<update id="delHotelOrder" parameterType="int">
+		delete from horder where hoid=#{hoid}
+	</update>
+</mapper>

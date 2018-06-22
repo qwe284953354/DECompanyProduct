@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.DEC.dao.IHotelInfoDao">
+	<select id="findAllHotelInfo" resultType="HotelInfo">
+		select * from hinfo
+	</select>
+	<select id="findHotelInfoByHid" parameterType="int" resultType="HotelInfo">
+		select * from hinfo where hid=#{hid} 
+	</select>
+	<insert id="addHotelInfo" useGeneratedKeys="true" keyProperty="hiid"
+		parameterType="com.DEC.entity.Hotel">
+		insert into hinfo (hiid,hid,htel,htime,hbrief,bpolicy)
+		values(hiid,#{hid},#{htel},#{htime},#{hbrief},#{bpolicy})
+	</insert>
+	<update id="editHotelInfo" parameterType="HotelInfo">
+		update hinfo set
+		hid=#{hid},htel=#{htel},htime=#{htime},hbrief=#{hbrief},bpolicy=#{bpolicy} where hiid=#{hiid}
+	</update>
+	<update id="delHotelInfo" parameterType="int">
+		delete from hinfo where hiid=#{hiid}
+	</update>
+</mapper>

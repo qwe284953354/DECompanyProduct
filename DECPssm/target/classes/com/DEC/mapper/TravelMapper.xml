@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.DEC.dao.ITravelDao">
+	<select id="findAllTravel" resultType="Travel">
+		select * from travel
+	</select>
+	<select id="findTravelByCid" parameterType="int" resultType="Travel">
+		select * from travel where cid=#{cid}
+	</select>
+	<select id="findTravelByType" parameterType="int" resultType="Travel">
+		select * from travel where ttid=#{ttid}
+	</select>
+	<select id="findTravelByScenic" parameterType="int" resultType="Travel">
+		select * from travel where tsid=#{tsid}
+	</select>
+	<select id="findTravelByTid" parameterType="int" resultType="Travel">
+		select * from travel where tid=#{tid}
+	</select>
+	<insert id="addTravel" useGeneratedKeys="true" keyProperty="hid"
+		parameterType="com.DEC.entity.Travel">
+		insert into travel (tid,cid,tprice,ttid,tsid,tname,tdate,tdetail)
+		values(tid,#{cid},#{tprice},#{ttid},#{tsid},#{tname},#{tdate},#{tdetail})
+	</insert>
+	<update id="editTravel" parameterType="com.DEC.entity.Travel">
+		update travel set
+		cid=#{cid},tprice=#{tprice},ttid=#{ttid},tsid=#{tsid},tname=#{tname},tdate=#{tdate},tdetail=#{tdetail} where tid=#{tid}
+	</update>
+	<update id="delTravel" parameterType="int">
+		delete from travel where tid=#{tid}
+	</update>
+</mapper>

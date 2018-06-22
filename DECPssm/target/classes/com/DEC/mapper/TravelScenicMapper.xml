@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.DEC.dao.ITravelScenicDao">
+	<select id="findAllScenic" resultType="TravelScenic">
+		select * from tscenic
+	</select>
+	<select id="findScenicByTsid" parameterType="int" resultType="TravelScenic">
+		select * from tscenic where tsid=#{tsid}
+	</select>
+	<select id="findScenicByCid" parameterType="int" resultType="TravelScenic">
+		select * from tscenic where cid=#{cid}
+	</select>
+	<select id="findScenicByName" parameterType="Sting" resultType="TravelScenic">
+		select * from tscenic where tsname like %#{toid}%
+	</select>
+	<insert id="addTravelScenic" useGeneratedKeys="true" keyProperty="hid"
+		parameterType="com.DEC.entity.TravelScenic">
+		insert into tscenic (tsid,cid,tsname,tsaddress,tsimg,tsdetail)
+		values(tsid,#{cid},#{tsname},#{tsaddress},#{tsimg},#{tsdetail})
+	</insert>
+	<update id="editTravelScenic" parameterType="com.DEC.entity.TravelScenic">
+		update tscenic set
+		cid=#{cid},tsname=#{tsname},tsaddress=#{tsaddress},tsimg=#{tsimg},tsdetail=#{tsdetail} where tsid=#{tsid}
+	</update>
+	<update id="delTravelScenic" parameterType="int">
+		delete from tscenic where tsid=#{tsid}
+	</update>
+</mapper>

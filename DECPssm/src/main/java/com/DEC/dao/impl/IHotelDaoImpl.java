@@ -26,7 +26,6 @@ public class IHotelDaoImpl extends SqlSessionDaoSupport implements IHotelDao {
 		super.setSqlSessionFactory(sqlSessionFactory);
 	}
 	private SqlSession sqlSession = null;
-	
 	/** 
 	 * <p>Title: findAllHotel</p>  
 	 * <p>Description: 查找全部</p>

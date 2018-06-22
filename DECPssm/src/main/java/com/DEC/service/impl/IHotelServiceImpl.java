@@ -16,7 +16,6 @@ import com.DEC.service.IHotelService;
  * @date   2018年6月21日 
  *
  */
-
 @Service("hotelService")
 public class IHotelServiceImpl implements IHotelService {
 	@Resource

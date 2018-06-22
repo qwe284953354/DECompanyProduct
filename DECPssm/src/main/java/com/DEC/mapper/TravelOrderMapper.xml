@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.DEC.dao.ITravelOrderDao">
+	<select id="findAllTravelOrder" resultType="TravelOrder">
+		select * from torder
+	</select>
+	<select id="findTravelOrderByUid" parameterType="int" resultType="TravelOrder">
+		select * from torder where uid=#{uid}
+	</select>
+	<select id="findTravelOrderByTid" parameterType="int" resultType="TravelOrder">
+		select * from torder where tid=#{tid}
+	</select>
+	<select id="findTravelOrderByToid" parameterType="int" resultType="TravelOrder">
+		select * from torder where toid=#{toid}
+	</select>
+	<insert id="addTravelOrder" useGeneratedKeys="true" keyProperty="hid"
+		parameterType="com.DEC.entity.TravelOrder">
+		insert into torder (toid,tid,uid,todate,toprice)
+		values(toid,#{tid},#{uid},#{todate},#{toprice})
+	</insert>
+	<update id="editTravelOrder" parameterType="com.DEC.entity.TravelOrder">
+		update torder set
+		tid=#{tid},uid=#{uid},todate=#{todate},toprice=#{toprice} where toid=#{toid}
+	</update>
+	<update id="delTravelOrder" parameterType="int">
+		delete from torder where toid=#{toid}
+	</update>
+</mapper>

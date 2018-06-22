@@ -12,11 +12,12 @@ public class User {
 	private String umail;		//邮箱
 	private String utel;		//电话
 	private String ubirth;		//生日
+	private int utype;			//用户类型(0管理员/1普通用户)
 	
 	public User() {
 		super();
 	}
-	public User(int uid, String uname, String upwd, String umail, String utel, String ubirth) {
+	public User(int uid, String uname, String upwd, String umail, String utel, String ubirth, int utype) {
 		super();
 		this.uid = uid;
 		this.uname = uname;
@@ -25,7 +26,7 @@ public class User {
 		this.utel = utel;
 		this.ubirth = ubirth;
 	}
-	public User(String uname, String upwd, String umail, String utel, String ubirth) {
+	public User(String uname, String upwd, String umail, String utel, String ubirth, int utype) {
 		super();
 		this.uname = uname;
 		this.upwd = upwd;
@@ -69,5 +70,11 @@ public class User {
 	}
 	public void setUbirth(String ubirth) {
 		this.ubirth = ubirth;
+	}
+	public int getUtype() {
+		return utype;
+	}
+	public void setUtype(int utype) {
+		this.utype = utype;
 	}
 }

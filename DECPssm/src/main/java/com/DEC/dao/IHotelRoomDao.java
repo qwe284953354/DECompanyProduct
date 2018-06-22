@@ -10,8 +10,8 @@ import com.DEC.entity.HotelRoom;
  * @date   2018年6月21日 
  *
  */
-public interface IHotelRoom {
+public interface IHotelRoomDao {
 	
-	public List<HotelRoom> findHotelRoomByhid();
+	public List<HotelRoom> findHotelRoomByhid(int hid);
 	
 }

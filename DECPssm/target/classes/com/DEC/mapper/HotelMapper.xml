@@ -24,7 +24,7 @@
 		insert into hotel (hid,hname,hstar,htype,himg,haddress,hmark,cid)
 		values(hid,#{hname},#{hstar},#{htype},#{himg},#{haddress},#{hmark},#{cid})
 	</insert>
-	<update id="editHotel" parameterType="Hotel">
+	<update id="editHotel" parameterType="com.DEC.entity.Hotel">
 		update hotel set
 		hname=#{hname},hstar=#{hstar},htype=#{htype},himg=#{himg},haddress=#{haddress},hmark=#{hmark},cid=#{cid} where hid=#{hid}
 	</update>

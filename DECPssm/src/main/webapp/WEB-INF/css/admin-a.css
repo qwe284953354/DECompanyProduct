@@ -1,0 +1,38 @@
+.admin-a-btn:link{
+	text-decoration: none;
+	font-size: 12px;
+	padding: 2px 8px;
+	border-radius: 15px;
+	background-color: lightblue;
+	border-color:lightblue; ;
+	color: white;
+	font-family: "微软雅黑";
+}
+.admin-a-btn:hover{
+	background-color: rgba(135,206,250,1);
+}
+
+.btn-newbtn{
+	font-size: 12px;
+	padding: 2px 8px;
+	border-radius: 15px;
+	background-color:lightblue;
+	border:hidden;
+	color: white;
+	font-family: "微软雅黑";
+}
+.btn-newbtn:hover{
+	background-color:rgba(135,206,250,1);
+}
+
+.btn-add{
+	border: hidden;
+	font-size: 20px;
+	padding: 2px 8px;
+	background-color:lightblue;
+	color: white;
+}
+.btn-add:hover{
+	background-color: white;
+	color: black;
+}

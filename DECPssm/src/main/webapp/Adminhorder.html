@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+	<title>DataTables example - Bootstrap 3</title>
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css">
+	<style type="text/css" class="init">
+	
+	</style>
+	<link rel="stylesheet" type="text/css" href="css/admin-a.css">
+	<script type="text/javascript" language="javascript" src="js/jquery.js">
+	</script>
+	<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js">
+	</script>
+	<script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.js">
+	</script>
+	<script type="text/javascript" language="javascript" class="init">
+	
+	$(document).ready(function() {
+		$('#example').DataTable();
+	} );
+</script>
+	</head>
+	<body>
+		<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>真实姓名</th>
+					<th>预订入驻时间</th>
+					<th>酒店名称</th>
+					<th>价格</th>
+					<th>订单时间</th>
+					<th>用户</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th>编号</th>
+					<th>真实姓名</th>
+					<th>预订入驻时间</th>
+					<th>酒店名称</th>
+					<th>价格</th>
+					<th>订单时间</th>
+					<th>用户</th>
+					<th>操作</th>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>张三</td>
+					<td>2018-06-22</td>
+					<td>如家</td>
+					<td>188</td>
+					<td>2018-06-20</td>
+					<td>zs1991</td>
+					<td>
+						<button type="button" class="btn-newbtn" id="del-horder" onclick="#">删除</button>
+					</td>	
+				</tr>
+			</tbody>
+		</table>		
+	</body>
+</html>
+
+

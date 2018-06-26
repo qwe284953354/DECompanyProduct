@@ -19,7 +19,7 @@ import com.DEC.service.IHotelInfoService;
 @Service("hotelInfoService")
 public class IHotelInfoServiceImpl implements IHotelInfoService {
 	@Resource
-	private IHotelInfoDao hoteInfoDao;
+	private IHotelInfoDao hotelInfoDao;
 	/** 
 	 * <p>Title: findAllHotelInfo</p>  
 	 * <p>Description: </p>
@@ -27,7 +27,7 @@ public class IHotelInfoServiceImpl implements IHotelInfoService {
 	 * @see com.DEC.service.IHotelInfoService#findAllHotelInfo()
 	 */
 	public List<HotelInfo> findAllHotelInfo() {
-		return hoteInfoDao.findAllHotelInfo();
+		return hotelInfoDao.findAllHotelInfo();
 	}
 
 	/** 
@@ -38,7 +38,7 @@ public class IHotelInfoServiceImpl implements IHotelInfoService {
 	 * @see com.DEC.service.IHotelInfoService#findHotelInfoByHid(int)
 	 */
 	public HotelInfo findHotelInfoByHid(int hid) {
-		return hoteInfoDao.findHotelInfoByHid(hid);
+		return hotelInfoDao.findHotelInfoByHid(hid);
 	}
 
 	/** 
@@ -49,7 +49,7 @@ public class IHotelInfoServiceImpl implements IHotelInfoService {
 	 * @see com.DEC.service.IHotelInfoService#addHotelInfo(com.DEC.entity.HotelInfo)
 	 */
 	public boolean addHotelInfo(HotelInfo hotelInfo) {
-		return (hoteInfoDao.addHotelInfo(hotelInfo) > 0) ? true : false;
+		return (hotelInfoDao.addHotelInfo(hotelInfo) > 0) ? true : false;
 	}
 
 	/** 
@@ -60,7 +60,7 @@ public class IHotelInfoServiceImpl implements IHotelInfoService {
 	 * @see com.DEC.service.IHotelInfoService#editHotelInfo(com.DEC.entity.HotelInfo)
 	 */
 	public boolean editHotelInfo(HotelInfo hotelInfo) {
-		return (hoteInfoDao.editHotelInfo(hotelInfo) > 0) ? true : false;
+		return (hotelInfoDao.editHotelInfo(hotelInfo) > 0) ? true : false;
 	}
 
 	/** 
@@ -71,7 +71,7 @@ public class IHotelInfoServiceImpl implements IHotelInfoService {
 	 * @see com.DEC.service.IHotelInfoService#delHotelInfo(int)
 	 */
 	public boolean delHotelInfo(int hiid) {
-		return (hoteInfoDao.delHotelInfo(hiid) > 0) ? true : false;
+		return (hotelInfoDao.delHotelInfo(hiid) > 0) ? true : false;
 	}
 
 }

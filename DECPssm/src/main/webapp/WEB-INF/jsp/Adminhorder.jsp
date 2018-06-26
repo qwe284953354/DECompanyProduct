@@ -1,6 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>	
 <!DOCTYPE html>
 <html>
 	<head>
+	<base href="<%=basePath%>">
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
 	<title>DataTables example - Bootstrap 3</title>
@@ -28,36 +37,43 @@
 			<thead>
 				<tr>
 					<th>编号</th>
-					<th>日期</th>
-					<th>用户名</th>
-					<th>旅行项目名称</th>
-					<td>价格</td>
+					<th>真实姓名</th>
+					<th>预订入驻时间</th>
+					<th>酒店名称</th>
+					<th>价格</th>
+					<th>订单时间</th>
+					<th>用户</th>
 					<th>操作</th>
 				</tr>
 			</thead>
 			<tfoot>
 				<tr>
 					<th>编号</th>
-					<th>日期</th>
-					<th>用户名</th>
-					<th>旅行项目名称</th>
-					<td>价格</td>
+					<th>真实姓名</th>
+					<th>预订入驻时间</th>
+					<th>酒店名称</th>
+					<th>价格</th>
+					<th>订单时间</th>
+					<th>用户</th>
 					<th>操作</th>
 				</tr>
 			</tfoot>
 			<tbody>
 				<tr>
 					<td>1</td>
+					<td>张三</td>
 					<td>2018-06-22</td>
-					<td>test</td>
-					<td>testtravel</td>
-					<td>688</td>
+					<td>如家</td>
+					<td>188</td>
+					<td>2018-06-20</td>
+					<td>zs1991</td>
 					<td>
-						<button type="button" class="btn-newbtn" id="del-torder" onclick="#">删除</button>
+						<button type="button" class="btn-newbtn" id="del-horder" onclick="#">删除</button>
 					</td>	
 				</tr>
 			</tbody>
 		</table>		
 	</body>
 </html>
+
 

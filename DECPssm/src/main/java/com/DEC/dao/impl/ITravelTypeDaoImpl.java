@@ -17,7 +17,7 @@ import com.DEC.entity.TravelType;
  * @date   2018年6月22日 
  *
  */
-@Repository("travleTypeDao")
+@Repository("travelTypeDao")
 public class ITravelTypeDaoImpl extends SqlSessionDaoSupport implements ITravelTypeDao {
 	@Autowired
 	@Qualifier("sqlSessionFactory")

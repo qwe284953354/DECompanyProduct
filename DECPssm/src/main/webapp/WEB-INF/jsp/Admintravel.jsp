@@ -1,6 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>	
 <!DOCTYPE html>
 <html>
 	<head>
+		<base href="<%=basePath%>">
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
 	<title>DataTables example - Bootstrap 3</title>
@@ -25,81 +34,78 @@
 	</script>
 	</head>
 	<body>
-		<!--添加按钮-->
-		<div><button type="button" class="btn-add" data-toggle="modal" data-target="#add-scenic">+</button></div>
-		<!--表格主体-datatables插件-->
+		<div><button type="button" class="btn-add" data-toggle="modal" data-target="#add-travel">+</button></div>
 		<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 			<thead>
 				<tr>
 					<th>编号</th>
-					<th>景点名称</th>
-					<th>景点地址</th>
-					<th>图片</th>
+					<th>旅行项目名称</th>
+					<th>出发日期</th>
 					<th>简介</th>
+					<th>价格/元</th>
 					<th>操作</th>
 				</tr>
 			</thead>
 			<tfoot>
 				<tr>
 					<th>编号</th>
-					<th>景点名称</th>
-					<th>景点地址</th>
-					<th>图片</th>
+					<th>旅行项目名称</th>
+					<th>出发日期</th>
 					<th>简介</th>
+					<th>价格/元</th>
 					<th>操作</th>
 				</tr>
 			</tfoot>
 			<tbody>
 				<tr>
 					<td>1</td>
-					<td>西湖</td>
-					<td>杭州西湖</td>
+					<td>testtravel</td>
+					<td>1999-10-10</td>
+					<td>很好很强大</td>
+					<td>888</td>
 					<td>
-						<img src="images/西湖.jpg"/ wwidth="75px" height="50px">
-					</td>
-					<td>西湖，位于浙江省杭州市西面，是中国大陆首批国家重点风景名胜区和中国十大风景名胜之一。它是中国大陆主要的观赏性淡水湖泊之一，也是现今《世界遗产名录》中少数几个和中国唯一一个湖泊类文化遗产。</td>
-					<td>
-						<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-scenic">修改</button>
-						<button type="button" class="btn-newbtn" id="del-scenic" onclick="#">删除</button>
+						<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-travel">修改</button>
+						<button type="button" class="btn-newbtn" id="del-travel" onclick="#">删除</button>
 					</td>	
 				</tr>
 			</tbody>
 		</table>	
+		
 		<!--模态框-->
-		<!--add-scenic-->
-		<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="add-scenic">
+		<!--add-travel-->
+		<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="add-travel">
  			<div class="modal-dialog modal-lg" role="document">
    				<div class="modal-content">
      		 		<div class="modal-header">
-     		 			<h4 class="modal-title" id="myModalLabel">景点添加</h4>
+     		 			<h4 class="modal-title" id="myModalLabel">旅行项目添加</h4>
      		 		</div>
      		 		<div class="modal-body">
               			<div class="input-group">
               				<!--标签样式-->
-  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-tree-conifer"></span></span>
+  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-th-list"></span></span>
   					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Scenic" aria-describedby="basic-addon1" id="tsname">
+ 							<input type="text" class="form-control" placeholder="Travel" aria-describedby="basic-addon1" id="tname">
+						</div>
+						<br />
+						<div class="input-group">
+							<!--标签样式-->
+  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar"></span></span>
+  					  	 	<!--输入框text-->
+ 							<input type="text" class="form-control" placeholder="Traveldate" aria-describedby="basic-addon1" id="tdate">	
 						</div>
 						<br />
 						<div class="input-group">
 							<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-file"></span></span>
   					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Scenicaddress" aria-describedby="basic-addon1" id="tsaddress">	
+ 							<input type="text" class="form-control" placeholder="Traveldetail" aria-describedby="basic-addon1" id="tdetail">	
 						</div>
 						<br />
 						<div class="input-group">
 							<!--标签样式-->
-  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-picture"></span></span>
+  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-yen"></span></span>
   					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Scenicimg" aria-describedby="basic-addon1" id="tsimg">	
-						</div>
-						<br />
-						<div class="input-group">
-							<!--标签样式-->
-  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-th-list"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Scenicdetail" aria-describedby="basic-addon1" id="tsdetail">	
+ 							<input type="text" class="form-control" placeholder="Travelprice" aria-describedby="basic-addon1" id="tprice">	
 						</div>				
       				</div>
      		 		<div class="modal-footer">
@@ -109,40 +115,40 @@
    				</div>
   			</div>
 		</div>
-		<!--edit-scenic-->
-		<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="edit-scenic">
+		<!--edit-travel-->
+		<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="edit-travel">
  			<div class="modal-dialog modal-lg" role="document">
    				<div class="modal-content">
      		 		<div class="modal-header">
-     		 			<h4 class="modal-title" id="myModalLabel">景点修改</h4>
+     		 			<h4 class="modal-title" id="myModalLabel">旅行项目修改</h4>
      		 		</div>
      		 		<div class="modal-body">
               			<div class="input-group">
               				<!--标签样式-->
-  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-tree-conifer"></span></span>
+  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-th-list"></span></span>
   					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Scenic" aria-describedby="basic-addon1" id="tsname">
+ 							<input type="text" class="form-control" placeholder="Travel" aria-describedby="basic-addon1" id="tname">
+						</div>
+						<br />
+						<div class="input-group">
+							<!--标签样式-->
+  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar"></span></span>
+  					  	 	<!--输入框text-->
+ 							<input type="text" class="form-control" placeholder="Traveldate" aria-describedby="basic-addon1" id="tdate">	
 						</div>
 						<br />
 						<div class="input-group">
 							<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-file"></span></span>
   					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Scenicaddress" aria-describedby="basic-addon1" id="tsaddress">	
+ 							<input type="text" class="form-control" placeholder="Traveldetail" aria-describedby="basic-addon1" id="tdetail">	
 						</div>
 						<br />
 						<div class="input-group">
 							<!--标签样式-->
-  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-picture"></span></span>
+  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-yen"></span></span>
   					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Scenicimg" aria-describedby="basic-addon1" id="tsimg">	
-						</div>
-						<br />
-						<div class="input-group">
-							<!--标签样式-->
-  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-th-list"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Scenicdetail" aria-describedby="basic-addon1" id="tsdetail">	
+ 							<input type="text" class="form-control" placeholder="Travelprice" aria-describedby="basic-addon1" id="tprice">	
 						</div>				
       				</div>
      		 		<div class="modal-footer">
@@ -156,3 +162,4 @@
 		
 	</body>
 </html>
+

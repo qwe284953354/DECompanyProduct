@@ -10,7 +10,7 @@
 	<select id="findScenicByCid" parameterType="int" resultType="TravelScenic">
 		select * from tscenic where cid=#{cid}
 	</select>
-	<select id="findScenicByName" parameterType="Sting" resultType="TravelScenic">
+	<select id="findScenicByName" parameterType="String" resultType="TravelScenic">
 		select * from tscenic where tsname like %#{toid}%
 	</select>
 	<insert id="addTravelScenic" useGeneratedKeys="true" keyProperty="hid"

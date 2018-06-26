@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
-	<context:component-scan base-package="com.DEC.controller" />
+	<context:component-scan base-package="com.DEC.Controller" />
 	<!--设置配置方案 -->
 	<!-- 会自动注册RequestMappingHandlerMapping与RequestMappingHandlerAdapter两个Bean, 
 		这是Spring MVC为@Controller分发请求所必需的，并且提供了数据绑定支持 -->
@@ -35,8 +35,18 @@
 		</mvc:message-converters>
 	</mvc:annotation-driven>
 	<!-- 静态资源处理 css js imgs -->
-	<mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
-	<mvc:resources location="/resources/**" mapping="/resources" />
+	<mvc:resources mapping="/fonts/**" location="/WEB-INF/fonts/" />
+	<mvc:resources mapping="/font/**" location="/WEB-INF/font/" />
+	<mvc:resources mapping="/js/**" location="/WEB-INF/js/" />
+	<mvc:resources mapping="/css/**" location="/WEB-INF/css/" />
+	<mvc:resources mapping="/img/**" location="/WEB-INF/img/" />
+	<mvc:resources mapping="/images/**" location="/WEB-INF/images/" />
+	<mvc:resources mapping="/layui/**" location="/WEB-INF/layui/" />
+	<mvc:resources mapping="/layui/css/**" location="/WEB-INF/layui/css/" />
+	<mvc:resources mapping="/layui/font/**" location="/WEB-INF/layui/font/" />
+	<mvc:resources mapping="/layui/images/**" location="/WEB-INF/layui/images/" />
+	<mvc:resources mapping="/layui/lay/**" location="/WEB-INF/layui/lay/" />
+	<mvc:resources mapping="/resources/**" location="/resources/" />
 	<!-- 定义跳转的文件的前后缀 ，视图模式配置 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

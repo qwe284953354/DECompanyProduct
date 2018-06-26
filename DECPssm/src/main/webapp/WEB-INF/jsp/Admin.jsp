@@ -1,6 +1,15 @@
-	<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" isELIgnored="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>	
+<!DOCTYPE html>
 <html>
 	<head>
+		<base href="<%=basePath%>">
 		<meta charset="UTF-8">
 		<meta name="renderer" content="webkit">
   		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -18,21 +27,21 @@
 				</div>
 				<ul class="layui-nav layui-nav-tree" lay-filter="leftNav">
 				  <li class="layui-nav-item">
-				    <a href="javascript:;" data-url="Adminuser.html" data-id='1' data-text="用户管理"><i class="iconfont">&#xe606;</i>用户管理</a>
+				    <a href="javascript:;" data-url="Adminuser.jsp" data-id='1' data-text="用户管理"><i class="iconfont">&#xe606;</i>用户管理</a>
 				  </li>
 				  <li class="layui-nav-item">
 				    <a href="javascript:;"><i class="iconfont">&#xe607;</i>内容管理</a>
 				    <dl class="layui-nav-child">
-				      <dd><a href="javascript:;" data-url="Admintravel.html" data-id='2' data-text="旅行管理"><span class="l-line"></span>旅行管理</a></dd>
-				      <dd><a href="javascript:;" data-url="Adminscenic.html" data-id='3' data-text="景点管理"><span class="l-line"></span>景点管理</a></dd>
-				      <dd><a href="javascript:;" data-url="Adminhotel.html" data-id='4' data-text="酒店管理"><span class="l-line"></span>酒店管理</a></dd>
+				      <dd><a href="javascript:;" data-url="Admintravel.jsp" data-id='2' data-text="旅行管理"><span class="l-line"></span>旅行管理</a></dd>
+				      <dd><a href="javascript:;" data-url="Adminscenic.jsp" data-id='3' data-text="景点管理"><span class="l-line"></span>景点管理</a></dd>
+				      <dd><a href="javascript:;" data-url="Adminhotel.jsp" data-id='4' data-text="酒店管理"><span class="l-line"></span>酒店管理</a></dd>
 				    </dl>
 				  </li>
 				  <li class="layui-nav-item">
 				    <a href="javascript:;"><i class="iconfont">&#xe608;</i>订单管理</a>
 				    <dl class="layui-nav-child">
-				      <dd><a href="javascript:;" data-url="Admintorder.html" data-id='5' data-text="旅行订单管理"><span class="l-line"></span>旅行订单管理</a></dd>
-				      <dd><a href="javascript:;" data-url="Adminhorder.html" data-id='6' data-text="住宿订单管理"><span class="l-line"></span>住宿订单管理</a></dd>
+				      <dd><a href="javascript:;" data-url="Admintorder.jsp" data-id='5' data-text="旅行订单管理"><span class="l-line"></span>旅行订单管理</a></dd>
+				      <dd><a href="javascript:;" data-url="Adminhorder.jsp" data-id='6' data-text="住宿订单管理"><span class="l-line"></span>住宿订单管理</a></dd>
 				    </dl>
 				  </li>
 				</ul>
@@ -63,7 +72,7 @@
 					  <div class="layui-tab-content">
 					    <div class="layui-tab-item layui-show" style="background: #f5f5f5;">
 					    	<!--1-->
-					    	<iframe src="welcome.html" width="100%" height="100%" name="iframe" scrolling="auto" class="iframe" framborder="0"></iframe>
+					    	<iframe src="welcome.jsp" width="100%" height="100%" name="iframe" scrolling="auto" class="iframe" framborder="0"></iframe>
 					    	<!--1end-->
 					    </div>
 					  </div>
@@ -77,7 +86,7 @@
 		</div>
 		<script type="text/javascript">
 			var scope={
-				link:'welcome.html'
+				link:'welcome.jsp'
 			}
 		</script>
 		<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>

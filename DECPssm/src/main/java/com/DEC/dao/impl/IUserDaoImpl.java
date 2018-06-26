@@ -37,6 +37,18 @@ public class IUserDaoImpl extends SqlSessionDaoSupport implements IUserDao {
 		List<User> ulist = sqlSession.selectList("findAllUser");
 		return ulist;
 	}
+	
+	/** 
+	 * <p>Title: findAllNormalUser</p>  
+	 * <p>Description: </p>
+	 * @return 
+	 * @see com.DEC.dao.IUserDao#findAllNormalUser()
+	 */
+	public List<User> findAllNormalUser() {
+		sqlSession = this.getSqlSession();
+		List<User> ulist = sqlSession.selectList("findAllNormalUser");
+		return ulist;
+	}
 
 	/** 
 	 * <p>Title: findUserByUid</p>  

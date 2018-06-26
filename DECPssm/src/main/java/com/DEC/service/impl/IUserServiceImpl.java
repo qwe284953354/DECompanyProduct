@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.DEC.dao.IUserDao;
 import com.DEC.entity.User;
-import com.DEC.service.IUserSevice;
+import com.DEC.service.IUserService;
 
 /**
  * <p>Description: </p>
@@ -17,17 +17,27 @@ import com.DEC.service.IUserSevice;
  *
  */
 @Service("userService")
-public class IUserSeviceImpl implements IUserSevice {
+public class IUserServiceImpl implements IUserService {
 	@Resource
 	private IUserDao userDao;
 	/** 
 	 * <p>Title: findAllUser</p>  
 	 * <p>Description: </p>
 	 * @return 
-	 * @see com.DEC.service.IUserSevice#findAllUser()
+	 * @see com.DEC.service.IUserService#findAllUser()
 	 */
 	public List<User> findAllUser() {
 		return userDao.findAllUser();
+	}
+	
+	/** 
+	 * <p>Title: findAllNormalUser</p>  
+	 * <p>Description: </p>
+	 * @return 
+	 * @see com.DEC.service.IUserService#findAllNormalUser()
+	 */
+	public List<User> findAllNormalUser() {
+		return userDao.findAllNormalUser();
 	}
 
 	/** 
@@ -35,7 +45,7 @@ public class IUserSeviceImpl implements IUserSevice {
 	 * <p>Description: </p>
 	 * @param uid
 	 * @return 
-	 * @see com.DEC.service.IUserSevice#findUserByUid(int)
+	 * @see com.DEC.service.IUserService#findUserByUid(int)
 	 */
 	public User findUserByUid(int uid) {
 		return userDao.findUserByUid(uid);
@@ -46,7 +56,7 @@ public class IUserSeviceImpl implements IUserSevice {
 	 * <p>Description: </p>
 	 * @param u
 	 * @return 
-	 * @see com.DEC.service.IUserSevice#addUser(com.DEC.entity.User)
+	 * @see com.DEC.service.IUserService#addUser(com.DEC.entity.User)
 	 */
 	public boolean addUser(User u) {
 		return (userDao.addUser(u) > 0) ? true : false;
@@ -57,7 +67,7 @@ public class IUserSeviceImpl implements IUserSevice {
 	 * <p>Description: </p>
 	 * @param u
 	 * @return 
-	 * @see com.DEC.service.IUserSevice#editUser(com.DEC.entity.User)
+	 * @see com.DEC.service.IUserService#editUser(com.DEC.entity.User)
 	 */
 	public boolean editUser(User u) {
 		return (userDao.editUser(u) > 0) ? true : false;
@@ -68,7 +78,7 @@ public class IUserSeviceImpl implements IUserSevice {
 	 * <p>Description: </p>
 	 * @param uid
 	 * @return 
-	 * @see com.DEC.service.IUserSevice#delUser(int)
+	 * @see com.DEC.service.IUserService#delUser(int)
 	 */
 	public boolean delUser(int uid) {
 		return (userDao.delUser(uid) > 0) ? true : false;

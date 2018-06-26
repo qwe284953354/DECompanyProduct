@@ -10,11 +10,13 @@ import com.DEC.entity.User;
  * @date   2018年6月22日 
  *
  */
-public interface IUserSevice {
+public interface IUserService {
 	
 	public List<User> findAllUser();
+	public List<User> findAllNormalUser();
 	public User findUserByUid(int uid);
 	public boolean addUser(User u);
 	public boolean editUser(User u);
 	public boolean delUser(int uid);
+	
 }

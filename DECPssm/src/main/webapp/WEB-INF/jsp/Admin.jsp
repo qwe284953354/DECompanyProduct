@@ -27,21 +27,21 @@
 				</div>
 				<ul class="layui-nav layui-nav-tree" lay-filter="leftNav">
 				  <li class="layui-nav-item">
-				    <a href="javascript:;" data-url="Adminuser.jsp" data-id='1' data-text="用户管理"><i class="iconfont">&#xe606;</i>用户管理</a>
+				    <a href="javascript:;" data-url="Admin/Adminuser" data-id='1' data-text="用户管理"><i class="iconfont">&#xe606;</i>用户管理</a>
 				  </li>
 				  <li class="layui-nav-item">
 				    <a href="javascript:;"><i class="iconfont">&#xe607;</i>内容管理</a>
 				    <dl class="layui-nav-child">
-				      <dd><a href="javascript:;" data-url="Admintravel.jsp" data-id='2' data-text="旅行管理"><span class="l-line"></span>旅行管理</a></dd>
-				      <dd><a href="javascript:;" data-url="Adminscenic.jsp" data-id='3' data-text="景点管理"><span class="l-line"></span>景点管理</a></dd>
-				      <dd><a href="javascript:;" data-url="Adminhotel.jsp" data-id='4' data-text="酒店管理"><span class="l-line"></span>酒店管理</a></dd>
+				      <dd><a href="javascript:;" data-url="Admin/Admintravel" data-id='2' data-text="旅行管理"><span class="l-line"></span>旅行管理</a></dd>
+				      <dd><a href="javascript:;" data-url="Admin/Adminscenic" data-id='3' data-text="景点管理"><span class="l-line"></span>景点管理</a></dd>
+				      <dd><a href="javascript:;" data-url="Admin/Adminhotel" data-id='4' data-text="酒店管理"><span class="l-line"></span>酒店管理</a></dd>
 				    </dl>
 				  </li>
 				  <li class="layui-nav-item">
 				    <a href="javascript:;"><i class="iconfont">&#xe608;</i>订单管理</a>
 				    <dl class="layui-nav-child">
-				      <dd><a href="javascript:;" data-url="Admintorder.jsp" data-id='5' data-text="旅行订单管理"><span class="l-line"></span>旅行订单管理</a></dd>
-				      <dd><a href="javascript:;" data-url="Adminhorder.jsp" data-id='6' data-text="住宿订单管理"><span class="l-line"></span>住宿订单管理</a></dd>
+				      <dd><a href="javascript:;" data-url="Admin/Admintorder" data-id='5' data-text="旅行订单管理"><span class="l-line"></span>旅行订单管理</a></dd>
+				      <dd><a href="javascript:;" data-url="Admin/Adminhorder" data-id='6' data-text="住宿订单管理"><span class="l-line"></span>住宿订单管理</a></dd>
 				    </dl>
 				  </li>
 				</ul>

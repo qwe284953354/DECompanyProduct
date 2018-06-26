@@ -62,30 +62,20 @@
 				</tr>
 			</tfoot>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>test</td>
-					<td>123456</td>
-					<td>123@123.com</td>
-					<td>0108888888</td>
-					<td>1999-10-10</td>
-					<td>
-						<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-user">修改</button>
-						<button type="button" class="btn-newbtn" id="del-user" onclick="#">删除</button>
-					</td>	
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>test11111111111111111111111111111111111111111111111111111111</td>
-					<td>1234561111111111111111111111111111111111111111111111111111111111</td>
-					<td>123@123.com11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</td>
-					<td>0108888888</td>
-					<td>1999-10-10</td>
-					<td>
-						<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-user">修改</button>
-						<button type="button" class="btn-newbtn" id="del-user" onclick="#">删除</button>
-					</td>	
-				</tr>
+				<c:forEach items="${ulist}" var="u">
+					<tr>
+						<td>${u.uid}</td>
+						<td>${u.uname}</td>
+						<td>${u.upwd}</td>
+						<td>${u.umail}</td>
+						<td>${u.utel}</td>
+						<td>${u.ubirth}</td>
+						<td>
+							<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-user">修改</button>
+							<button type="button" class="btn-newbtn" id="del-user" onclick="#">删除</button>
+						</td>
+					</tr>
+				</c:forEach>
 			</tbody>
 		</table>		
 		

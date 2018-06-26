@@ -57,17 +57,19 @@
 				</tr>
 			</tfoot>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>testtravel</td>
-					<td>1999-10-10</td>
-					<td>很好很强大</td>
-					<td>888</td>
-					<td>
-						<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-travel">修改</button>
+				<c:forEach items="${tlist}" var="t">
+					<tr>
+						<td>${t.tid}</td>
+						<td>${t.tname}</td>
+						<td>${t.tdate}</td>
+						<td>${t.tdetail}</td>
+						<td>${t.tprice}</td>
+						<td>
+							<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-travel">修改</button>
 						<button type="button" class="btn-newbtn" id="del-travel" onclick="#">删除</button>
-					</td>	
-				</tr>
+						</td>
+					</tr>
+				</c:forEach>
 			</tbody>
 		</table>	
 		

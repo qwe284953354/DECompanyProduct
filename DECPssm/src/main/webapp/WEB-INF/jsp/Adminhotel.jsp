@@ -63,7 +63,22 @@
 				</tr>
 			</tfoot>
 			<tbody>
-				<tr>
+				<c:forEach items="${hlist}" var="h">
+					<tr>
+						<td>${h.hid}</td>
+						<td>${h.hname}</td>
+						<td>${h.hstar}</td>
+						<td>${h.htype}</td>
+						<td>${h.himg}</td>
+						<td>${h.haddress}</td>
+						<td>${h.hmark}</td>
+						<td>
+							<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-hotel">修改</button>
+							<button type="button" class="btn-newbtn" id="del-hotel" onclick="#">删除</button>
+						</td>
+					</tr>
+				</c:forEach>
+				<!-- <tr>
 					<td>1</td>
 					<td>如家</td>
 					<td>4</td>
@@ -77,7 +92,7 @@
 						<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-hotel">修改</button>
 						<button type="button" class="btn-newbtn" id="del-hotel" onclick="#">删除</button>
 					</td>	
-				</tr>
+				</tr> -->
 			</tbody>
 		</table>	
 		

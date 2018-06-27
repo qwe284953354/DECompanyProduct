@@ -11,6 +11,8 @@ public class TravelOrder {
 	private int uid;		//用户编号
 	private String todate; 	//订单时间
 	private int toprice;	//价格
+	private User orderUser;
+	private Travel orderTravel;
 	
 	public TravelOrder() {
 		super();
@@ -59,6 +61,18 @@ public class TravelOrder {
 	}
 	public void setToprice(int toprice) {
 		this.toprice = toprice;
+	}
+	public User getOrderUser() {
+		return orderUser;
+	}
+	public void setOrderUser(User orderUser) {
+		this.orderUser = orderUser;
+	}
+	public Travel getOrderTravel() {
+		return orderTravel;
+	}
+	public void setOrderTravel(Travel orderTravel) {
+		this.orderTravel = orderTravel;
 	}
 	
 }

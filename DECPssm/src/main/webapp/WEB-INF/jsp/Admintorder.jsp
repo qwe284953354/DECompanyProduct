@@ -59,8 +59,8 @@
 					<tr>
 						<td>${to.toid}</td>
 						<td>${to.todate}</td>
-						<td>${to.uname}</td>
-						<td>${to.tname}</td>
+						<td>${to.orderUser.uname}</td>
+						<td>${to.orderTravel.tname}</td>
 						<td>${to.toprice}</td>
 						<td>
 							<button type="button" class="btn-newbtn" id="del-torder" onclick="#">删除</button>

@@ -66,7 +66,7 @@
 						<td>${t.tprice}</td>
 						<td>
 							<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-travel">修改</button>
-						<button type="button" class="btn-newbtn" id="del-travel" onclick="#">删除</button>
+							<button type="button" class="btn-newbtn" id="del-travel" onclick="#">删除</button>
 						</td>
 					</tr>
 				</c:forEach>

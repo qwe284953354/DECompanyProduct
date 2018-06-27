@@ -38,10 +38,11 @@
 				<tr>
 					<th>编号</th>
 					<th>真实姓名</th>
-					<th>预订入驻时间</th>
+					<th>入住日期</th>
+					<th>联系方式</th>
 					<th>酒店名称</th>
 					<th>价格</th>
-					<th>订单时间</th>
+					<th>预订到店时间</th>
 					<th>用户</th>
 					<th>操作</th>
 				</tr>
@@ -50,16 +51,32 @@
 				<tr>
 					<th>编号</th>
 					<th>真实姓名</th>
-					<th>预订入驻时间</th>
+					<th>入住日期</th>
+					<th>联系方式</th>
 					<th>酒店名称</th>
 					<th>价格</th>
-					<th>订单时间</th>
+					<th>预订到店时间</th>
 					<th>用户</th>
 					<th>操作</th>
 				</tr>
 			</tfoot>
 			<tbody>
-				<tr>
+				<c:forEach items="${holist}" var="ho">
+					<tr>
+						<td>${ho.hoid}</td>
+						<td>${ho.honame}</td>
+						<td>${ho.hodate}</td>
+						<td>${ho.hotel}</td>
+						<td>${ho.hname}</td>
+						<td>${ho.hprice}</td>
+						<td>${ho.uname}</td>
+						<td>${ho.hobooktime}</td>
+						<td>
+							<button type="button" class="btn-newbtn" id="del-horder" onclick="#">删除</button>
+						</td>
+					</tr>
+				</c:forEach>
+				<!-- <tr>
 					<td>1</td>
 					<td>张三</td>
 					<td>2018-06-22</td>
@@ -70,7 +87,7 @@
 					<td>
 						<button type="button" class="btn-newbtn" id="del-horder" onclick="#">删除</button>
 					</td>	
-				</tr>
+				</tr> -->
 			</tbody>
 		</table>		
 	</body>

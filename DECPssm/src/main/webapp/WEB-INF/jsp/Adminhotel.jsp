@@ -69,7 +69,9 @@
 						<td>${h.hname}</td>
 						<td>${h.hstar}</td>
 						<td>${h.htype}</td>
-						<td>${h.himg}</td>
+						<td>
+							<img src="${h.himg}" width="75px" height="50px">
+						</td>
 						<td>${h.haddress}</td>
 						<td>${h.hmark}</td>
 						<td>
@@ -84,7 +86,7 @@
 					<td>4</td>
 					<td>便捷式</td>
 					<td>
-						<img src="images/酒店.jpg"/ wwidth="75px" height="50px">
+						<img src="images/酒店.jpg"/ width="75px" height="50px">
 					</td>
 					<td>杭州银泰（西湖店）</td>
 					<td>8.8</td>

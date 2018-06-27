@@ -59,7 +59,22 @@
 				</tr>
 			</tfoot>
 			<tbody>
-				<tr>
+				<c:forEach items="${tslist}" var="ts">
+					<tr>
+						<td>${ts.tsid}</td>
+						<td>${ts.tsname}</td>
+						<td>${ts.tsaddress}</td>
+						<td>
+							<img src="${ts.tsimg}" width="75px" height="50px">
+						</td>
+						<td>${ts.tsdetail}</td>
+						<td>
+							<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-scenic">修改</button>
+							<button type="button" class="btn-newbtn" id="del-scenic" onclick="#">删除</button>
+						</td>
+					</tr>
+				</c:forEach>
+				<!-- <tr>
 					<td>1</td>
 					<td>西湖</td>
 					<td>杭州西湖</td>
@@ -71,7 +86,7 @@
 						<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-scenic">修改</button>
 						<button type="button" class="btn-newbtn" id="del-scenic" onclick="#">删除</button>
 					</td>	
-				</tr>
+				</tr> -->
 			</tbody>
 		</table>	
 		<!--模态框-->

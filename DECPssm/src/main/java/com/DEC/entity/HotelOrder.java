@@ -14,6 +14,8 @@ public class HotelOrder {
 	private String hodate;		//入住日期
 	private String hotel;		//电话
 	private String hobooktime;	//预定到店时间
+	private User orderUser;
+	private Hotel orderHotel;
 	
 	public HotelOrder() {
 		super();
@@ -89,4 +91,17 @@ public class HotelOrder {
 	public void setHobooktime(String hobooktime) {
 		this.hobooktime = hobooktime;
 	}
+	public User getOrderUser() {
+		return orderUser;
+	}
+	public void setOrderUser(User orderUser) {
+		this.orderUser = orderUser;
+	}
+	public Hotel getOrderHotel() {
+		return orderHotel;
+	}
+	public void setOrderHotel(Hotel orderHotel) {
+		this.orderHotel = orderHotel;
+	}
+	
 }

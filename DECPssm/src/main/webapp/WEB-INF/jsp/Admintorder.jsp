@@ -40,7 +40,7 @@
 					<th>日期</th>
 					<th>用户名</th>
 					<th>旅行项目名称</th>
-					<td>价格</td>
+					<th>价格</th>
 					<th>操作</th>
 				</tr>
 			</thead>
@@ -50,12 +50,24 @@
 					<th>日期</th>
 					<th>用户名</th>
 					<th>旅行项目名称</th>
-					<td>价格</td>
+					<th>价格</th>
 					<th>操作</th>
 				</tr>
 			</tfoot>
 			<tbody>
-				<tr>
+				<c:forEach items="${tolist}" var="to">
+					<tr>
+						<td>${to.toid}</td>
+						<td>${to.todate}</td>
+						<td>${to.orderUser.uname}</td>
+						<td>${to.orderTravel.tname}</td>
+						<td>${to.toprice}</td>
+						<td>
+							<button type="button" class="btn-newbtn" id="del-torder" onclick="#">删除</button>
+						</td>
+					</tr>
+				</c:forEach>
+				<!-- <tr>
 					<td>1</td>
 					<td>2018-06-22</td>
 					<td>test</td>
@@ -64,7 +76,7 @@
 					<td>
 						<button type="button" class="btn-newbtn" id="del-torder" onclick="#">删除</button>
 					</td>	
-				</tr>
+				</tr> -->
 			</tbody>
 		</table>		
 	</body>

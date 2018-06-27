@@ -2,7 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.DEC.dao.ITravelOrderDao">
 	<select id="findAllTravelOrder" resultType="TravelOrder">
-		select * from torder
+		select toid,todate,uname,tname,toprice
+		from torder tor,travel t,user u
+		where tor.uid=u.uid and tor.tid=t.tid
 	</select>
 	<select id="findTravelOrderByUid" parameterType="int" resultType="TravelOrder">
 		select * from torder where uid=#{uid}

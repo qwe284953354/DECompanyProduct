@@ -1,0 +1,63 @@
+*{
+	padding: 0px;
+	margin: 0px;
+}
+ul{list-style-type: none;}
+.top{ width: 100%; height:85px;border-bottom: solid  #D8D8D8 1px; z-index: 998;
+	   background-color: white;  }
+	.inner-top{ width: 1200px; height: 80px; margin: 0 auto; font-family: "微软雅黑";  position: relative}
+	.logo{height: 80px; width: 200px;  float: left; margin-left: 120px; }
+		.logo img{height: 80px; width: 200px;}
+	
+	.form-loc{ height: 0px;  position: absolute; top: 0; right: 0;}
+	.login{float: left; height: 80px; width: 110px; margin-left: 160px;  position: relative;
+			 transition: height 0.5s; border: solid red 2px; border-radius: 10px;  z-index: 999; background-color:rgba(255,255,255,0.7) ;}
+		.login img{ height: 60px; width: 60px; padding-left: 20px; padding-top: 20px;}
+		.login span{position:absolute; top: 32px; right: 15px;  }
+		.loginbtn{visibility: hidden;width:50px;height:30px;position: absolute;top: 80px;left: 30px; z-index: 999;
+					text-decoration: none;color:black;border:none;text-align:center;line-height:30px; border:solid black 2px;
+					border-bottom: none;border-top-left-radius: 10px;border-top-right-radius: 10px;}
+        .loginbtn:hover{background-color: black; border-top: none; border-left: none; border-right: none ; color: white;
+								transition: all 0.5s;text-decoration: none; border-bottom: solid red 4px;}
+	
+	.picture{width: 100%; height: 600px; border: solid 1px; position: absolute; top: 85px;}
+		.picture img{width: 100%; height: 100%;}
+	
+	.navegation{width: 100%; height: 70px;  margin-top: 530px ;}
+		.btn-loc{width: 60%; height: 60px; margin: 0 auto ; margin-top: 10px; }
+		.typebtn{width: 100px; height: 60px; position: relative; float: left; margin: 0px 60px; }
+			.typebtn a{width: 100px; height: 60px;display: block; position: absolute;   font-family: "微软雅黑"; font-weight: 800;
+						text-align: center; line-height: 60px; z-index: 100; text-decoration: none; color: rgba(255,255,255,0.7);}
+			.def-box{width: 60px;height: 40px; border: solid lightgrey 1.5px; border-radius: 7px; position: absolute; left: 20px; top: 10px;}
+			.box{width: 30px; height: 20px; position: absolute; border: solid lightgrey 1.5px;   }
+				.box1{left:20px; top: 10px;border-bottom:none ; border-right:none ; border-top-left-radius: 7px;}
+				.box2{left:20px; bottom: 10px;border-top:none ; border-right:none ; border-bottom-left-radius: 7px;}
+				.box3{right:20px; top: 10px;border-bottom:none ; border-left:none ;  border-top-right-radius: 7px;}
+				.box4{right:20px; bottom: 10px;border-top:none ; border-left:none ;  border-bottom-right-radius: 7px;}
+				
+	.bgcolor{z-index: 0; width:100%;  position: absolute; background-image: url(../img/bg.jpg);}
+		.detailmain{width: 70%; height: 800px; border: solid 2px; margin: 50px auto; background-color: #F4F4F4; position: relative; }
+			.hotelpicture{width: 270px; height: 300px; position: absolute; left: 60px; top: 80px;}
+				.hotelpicture img{width: 270px; height: 300px;}
+			.split{ width:2px;height: 700px; border-right: solid 2px; position: absolute; left: 400px; top: 60px;}
+			.hoteldetail{ position: absolute; width: 360px; top: 450px; left: 20px;border: solid;}
+				.hoteldetail tr{height: 50px; }
+				.hoteldetail th{text-align: right;width:100px;}
+				.hoteldetail td{width:260px}
+			.hotelroom{width: 640px; height: 700px;position: absolute;left:420px;top:60px;font-family: "微软雅黑";font-size: 14px;}
+				.room{width:640px;height: 140px; border: solid; float: left;position: relative;}
+					.room img{width: 128px; height: 80px;position: absolute;left: 10px; top: 30px;}
+					.rname{width:400px; height: 30px; font-size:18px;font-weight:700;position: absolute;left: 145px; top: 30px;}
+					.rdetail{width:400px; height: 30px;position: absolute;left: 145px; top: 80px;}
+					.rprice{position: absolute;right: 20px;top:20px; font-size: 36px;color: #ffb400;}
+					.btn-room{position: absolute;right: 10px;bottom: 20px;}
+						.buybtn{width: 100px; height: 30px; background-color: white; font-size:18px ; font-weight: 500 ; font-family: "微软雅黑";
+								border-top:solid  black 2px  ; 	border-left:solid  black 2px  ;	border-right:solid  black 2px ; border-bottom: none;
+								border-top-left-radius:10px ;border-top-right-radius:10px ;}
+						.buybtn:hover{border: none; background-color: black; border-bottom: solid red 3px; color: white;}	
+	.location{width: 80px; height: 60px; z-index: 111; border:  solid 2px; border-radius:15px; position: fixed; top: 600px; left: 20px;background-color: white;}
+			.location span{text-align: center; line-height: 60px; margin-left: 10px; font-family: "微软雅黑";}
+			.address{opacity: 0; width: 500px; position: absolute; top: 12px; left: 5px; }
+			.address a{display:block;width:40px ; height: 20px; border: solid 1px;}
+			
+	.footer{width:100%;height:200px; text-align: center;background-color:#262426;margin:0 auto;position: absolute;bottom: -200px; color: white;}

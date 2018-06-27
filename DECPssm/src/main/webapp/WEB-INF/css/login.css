@@ -1,0 +1,18 @@
+
+*{
+	padding: 0px;
+	margin: 0px;
+}
+.logo{margin:0 auto; width: 375px; height: 95px;  margin-top: 60px; }
+	.logo img{width: 375px; height: 94px;}
+.login-form-loc{margin: 0 auto; width: 350px; height: 350px; margin-top: 50px; }
+	.form-type{font-size: 20px; font-family: '微软雅黑';}
+		.forget{display:block; color: red;  font-size: 15px; margin-top: 10px;margin-left: 240px;}
+		.form-type a:hover{text-decoration: none; color: black;}
+		.login-btn{display: block; width: 100%;text-align: center; margin-top: 15px; background-color: rgba(); 
+						 color:black; font-weight: 800; border: none;height: 40px; border-radius: 30px;  transition: background-color 0.5s;}
+		.login-btn:hover{background-color: #E02025; color: white; transition: color 0.35s;}
+		.registered a{color: red;}
+
+.footer{width:100%;height:200px; text-align: center;background-color:#262426;margin:0 auto; font-size: 14px; color:#a0a2ae;
+		position: absolute;bottom: 0;;}

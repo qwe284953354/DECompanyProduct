@@ -1,9 +1,18 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	String path = request.getContextPath();
+	String basepath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+		+ path +"/";
+%> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
-	<head>
-		<meta charset="UTF-8">
-		<title>狗眼电影|注册</title>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="<%=basepath%>">
+<meta charset="UTF-8">
+		<title>狗眼旅行</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/registered.css" />
 		<link rel="icon" href="img/favicon.ico" />
@@ -11,10 +20,8 @@
 		<link rel="stylesheet" href="css/bootstrap-theme.css" />
 		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
-
-	</head>
-
-	<body>
+</head>
+<body>
 		<div class="logo">
 			<img src="img/logo02.png" />
 		</div>
@@ -73,5 +80,4 @@
 				<p>杭州狗眼文化传媒有限公司</p>
 			</div>
 	</body>
-
 </html>

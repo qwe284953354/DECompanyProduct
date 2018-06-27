@@ -6,7 +6,10 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.DEC.entity.Hotel;
 import com.DEC.entity.HotelOrder;
@@ -60,7 +63,7 @@ public class AdminController {
 	
 	@Resource
 	private IHotelService hotelService;
-	@RequestMapping(value = "/Adminhotel")
+	@RequestMapping(value = "/AdminhotelP")
 	public String toHotel(Model model) {
 		List<Hotel> hlist = hotelService.findAllHotel();
 		model.addAttribute("hlist", hlist);
@@ -84,4 +87,39 @@ public class AdminController {
 		model.addAttribute("holist", holist);
 		return "Adminhorder";
 	}
+	
+	@RequestMapping(value = "/AdminhorderP/add")
+	public String toAddHotel(@ModelAttribute("hotel") Hotel hotel) {
+		if(hotelService.addHotel(hotel)) {
+			return "redirect:/Admin/AdminhotelP";
+		}else {
+			return "";
+		}
+	}
+	@RequestMapping(value = "/AdminhorderP/del")
+	public String toDelHotel(@RequestParam("hid") int hid) {
+		if(hotelService.delHotel(hid)) {
+			return "redirect:/Admin/AdminhotelP";
+		}else {
+			return "";
+		}
+	}
+	@RequestMapping(value = "/AdminhorderP/find")
+	@ResponseBody
+	public Hotel toFindHotelById(int hid) {
+		Hotel hotel = hotelService.findHotelByHid(hid);
+		return hotel;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

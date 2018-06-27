@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.DEC.dao.IHotelOrderDao">
-	<select id="findAllHotelOrder" resultType="HotelOrder">
-		select hoid,honame,hodate,hotel,hname,hoprice,uname,hobooktime 
-		from horder ho,hotel h,user u
+	<resultMap type="TravelOrder" id="hotelOrderResultMap">
+		<id column="hoid" property="hoid" />
+		<result column="honame" property="honame" />
+		<result column="hodate" property="hodate" />
+		<result column="hotel" property="hotel" />
+		<result column="hoprice" property="hoprice" />
+		<result column="hobooktime" property="hobooktime" />
+		<association property="orderUser" javaType="com.DEC.entity.User">
+			<id column="uid" property="uid" />
+			<result column="uname" property="uname" />
+		</association>
+		<association property="orderHotel" javaType="com.DEC.entity.Hotel">
+			<id column="hid" property="hid" />
+			<result column="hname" property="hname" />
+		</association>
+	</resultMap>
+	<select id="findAllHotelOrder" resultMap="hotelOrderResultMap">
+		select * from horder ho,hotel h,user u
 		where ho.hid=h.hid and ho.uid=u.uid
 	</select>
 	<select id="findHotelOrderByUid" parameterType="int" resultType="HotelOrder">

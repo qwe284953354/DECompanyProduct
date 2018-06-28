@@ -13,7 +13,7 @@ import com.DEC.dao.IHotelOrderDao;
 import com.DEC.entity.HotelOrder;
 
 /**
- * <p>Description: </p>
+ * <p>Description: HotelOrderDao实现类</p>
  * @author UY
  * @date   2018年6月22日 
  *
@@ -28,8 +28,8 @@ public class IHotelOrderDaoImpl extends SqlSessionDaoSupport implements IHotelOr
 	private SqlSession sqlSession = null;
 	/** 
 	 * <p>Title: findAllHotelOrder</p>  
-	 * <p>Description: </p>
-	 * @return 
+	 * <p>Description: 查找所有</p>
+	 * @return List<HotelOrder>
 	 * @see com.DEC.dao.IHotelOrderDao#findAllHotelOrder()
 	 */
 	public List<HotelOrder> findAllHotelOrder() {
@@ -40,9 +40,9 @@ public class IHotelOrderDaoImpl extends SqlSessionDaoSupport implements IHotelOr
 
 	/** 
 	 * <p>Title: findHotelOrderByUid</p>  
-	 * <p>Description: </p>
-	 * @param uid
-	 * @return 
+	 * <p>Description: 通过用户编号查找</p>
+	 * @param uid 用户编号
+	 * @return List<HotelOrder>
 	 * @see com.DEC.dao.IHotelOrderDao#findHotelOrderByUid(int)
 	 */
 	public List<HotelOrder> findHotelOrderByUid(int uid) {
@@ -52,10 +52,10 @@ public class IHotelOrderDaoImpl extends SqlSessionDaoSupport implements IHotelOr
 	}
 
 	/** 
-	 * <p>Title: findHotelOrderByHoid</p>  
-	 * <p>Description: </p>
-	 * @param hoid
-	 * @return 
+	 * <p>Title: findHotelOrderByHid</p>  
+	 * <p>Description: 通过酒店编号查找</p>
+	 * @param hid 酒店编号
+	 * @return List<HotelOrder>
 	 * @see com.DEC.dao.IHotelOrderDao#findHotelOrderByHid(int)
 	 */
 	public List<HotelOrder> findHotelOrderByHid(int hid) {
@@ -65,10 +65,10 @@ public class IHotelOrderDaoImpl extends SqlSessionDaoSupport implements IHotelOr
 	}
 
 	/** 
-	 * <p>Title: findHotelOrderByHid</p>  
-	 * <p>Description: </p>
-	 * @param hid
-	 * @return 
+	 * <p>Title: findHotelOrderByHoid</p>  
+	 * <p>Description: 通过编号查找</p>
+	 * @param hoid 酒店订单编号
+	 * @return HotelOrder
 	 * @see com.DEC.dao.IHotelOrderDao#findHotelOrderByHoid(int)
 	 */
 	public HotelOrder findHotelOrderByHoid(int hoid) {
@@ -79,9 +79,9 @@ public class IHotelOrderDaoImpl extends SqlSessionDaoSupport implements IHotelOr
 
 	/** 
 	 * <p>Title: addHotelOrder</p>  
-	 * <p>Description: </p>
-	 * @param hotelOrder
-	 * @return 
+	 * <p>Description: 添加</p>
+	 * @param hotelOrder HotelOrder对象
+	 * @return row 受到添加操作影响的行数
 	 * @see com.DEC.dao.IHotelOrderDao#addHotelOrder(com.DEC.entity.HotelOrder)
 	 */
 	public int addHotelOrder(HotelOrder hotelOrder) {
@@ -92,9 +92,9 @@ public class IHotelOrderDaoImpl extends SqlSessionDaoSupport implements IHotelOr
 
 	/** 
 	 * <p>Title: editHotelOrder</p>  
-	 * <p>Description: </p>
-	 * @param hotelOrder
-	 * @return 
+	 * <p>Description: 修改</p>
+	 * @param hotelOrder HotelOrder对象
+	 * @return row 受到修改操作影响的行数
 	 * @see com.DEC.dao.IHotelOrderDao#editHotelOrder(com.DEC.entity.HotelOrder)
 	 */
 	public int editHotelOrder(HotelOrder hotelOrder) {
@@ -105,9 +105,9 @@ public class IHotelOrderDaoImpl extends SqlSessionDaoSupport implements IHotelOr
 
 	/** 
 	 * <p>Title: delHotelOrder</p>  
-	 * <p>Description: </p>
-	 * @param hoid
-	 * @return 
+	 * <p>Description: 删除</p>
+	 * @param hoid 酒店订单编号
+	 * @return row 受到删除操作影响的行数
 	 * @see com.DEC.dao.IHotelOrderDao#delHotelOrder(int)
 	 */
 	public int delHotelOrder(int hoid) {

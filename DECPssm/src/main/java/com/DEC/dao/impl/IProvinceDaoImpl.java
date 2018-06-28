@@ -13,7 +13,7 @@ import com.DEC.dao.IProvinceDao;
 import com.DEC.entity.Province;
 
 /**
- * <p>Description: </p>
+ * <p>Description: ProvinceDao实现类</p>
  * @author UY
  * @date   2018年6月21日 
  *
@@ -28,8 +28,8 @@ public class IProvinceDaoImpl extends SqlSessionDaoSupport implements IProvinceD
 	private SqlSession sqlSession = null;
 	/** 
 	 * <p>Title: findAllProvince</p>  
-	 * <p>Description: </p>
-	 * @return 
+	 * <p>Description: 查找所有</p>
+	 * @return List<Province>
 	 * @see com.DEC.dao.IProvinceDao#findAllProvince()
 	 */
 	public List<Province> findAllProvince() {

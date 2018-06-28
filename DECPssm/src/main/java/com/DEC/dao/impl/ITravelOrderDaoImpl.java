@@ -13,7 +13,7 @@ import com.DEC.dao.ITravelOrderDao;
 import com.DEC.entity.TravelOrder;
 
 /**
- * <p>Description: </p>
+ * <p>Description: TravelOrderDao实现类</p>
  * @author UY
  * @date   2018年6月22日 
  *
@@ -28,8 +28,8 @@ public class ITravelOrderDaoImpl extends SqlSessionDaoSupport implements ITravel
 	private SqlSession sqlSession = null;
 	/** 
 	 * <p>Title: findAllTravelOrder</p>  
-	 * <p>Description: </p>
-	 * @return 
+	 * <p>Description: 查找所有</p>
+	 * @return List<TravelOrder>
 	 * @see com.DEC.dao.ITravelOrderDao#findAllTravelOrder()
 	 */
 	public List<TravelOrder> findAllTravelOrder() {
@@ -40,9 +40,9 @@ public class ITravelOrderDaoImpl extends SqlSessionDaoSupport implements ITravel
 
 	/** 
 	 * <p>Title: findTravelOrderByUid</p>  
-	 * <p>Description: </p>
-	 * @param uid
-	 * @return 
+	 * <p>Description: 通过用户编号查找</p>
+	 * @param uid 用户编号
+	 * @return List<TravelOrder>
 	 * @see com.DEC.dao.ITravelOrderDao#findTravelOrderByUid(int)
 	 */
 	public List<TravelOrder> findTravelOrderByUid(int uid) {
@@ -53,9 +53,9 @@ public class ITravelOrderDaoImpl extends SqlSessionDaoSupport implements ITravel
 
 	/** 
 	 * <p>Title: findTravelOrderByTid</p>  
-	 * <p>Description: </p>
-	 * @param tid
-	 * @return 
+	 * <p>Description: 通过旅游项目编号查找</p>
+	 * @param tid 旅游项目编号
+	 * @return List<TravelOrder>
 	 * @see com.DEC.dao.ITravelOrderDao#findTravelOrderByTid(int)
 	 */
 	public List<TravelOrder> findTravelOrderByTid(int tid) {
@@ -66,9 +66,9 @@ public class ITravelOrderDaoImpl extends SqlSessionDaoSupport implements ITravel
 
 	/** 
 	 * <p>Title: findTravelOrderByToid</p>  
-	 * <p>Description: </p>
-	 * @param toid
-	 * @return 
+	 * <p>Description: 通过编号查找</p>
+	 * @param toid 旅游订单编号
+	 * @return TravelOrder
 	 * @see com.DEC.dao.ITravelOrderDao#findTravelOrderByToid(int)
 	 */
 	public TravelOrder findTravelOrderByToid(int toid) {
@@ -79,9 +79,9 @@ public class ITravelOrderDaoImpl extends SqlSessionDaoSupport implements ITravel
 
 	/** 
 	 * <p>Title: addTravelOrder</p>  
-	 * <p>Description: </p>
-	 * @param travelOrder
-	 * @return 
+	 * <p>Description: 添加</p>
+	 * @param travelOrder TravelOrder对象
+	 * @return row 受到添加操作影响的行数
 	 * @see com.DEC.dao.ITravelOrderDao#addTravelOrder(com.DEC.entity.TravelOrder)
 	 */
 	public int addTravelOrder(TravelOrder travelOrder) {
@@ -92,9 +92,9 @@ public class ITravelOrderDaoImpl extends SqlSessionDaoSupport implements ITravel
 
 	/** 
 	 * <p>Title: editTravelOrder</p>  
-	 * <p>Description: </p>
-	 * @param travelOrder
-	 * @return 
+	 * <p>Description: 修改</p>
+	 * @param travelOrder TravelOrder对象
+	 * @return row 受到修改操作影响的行数
 	 * @see com.DEC.dao.ITravelOrderDao#editTravelOrder(com.DEC.entity.TravelOrder)
 	 */
 	public int editTravelOrder(TravelOrder travelOrder) {
@@ -105,9 +105,9 @@ public class ITravelOrderDaoImpl extends SqlSessionDaoSupport implements ITravel
 
 	/** 
 	 * <p>Title: delTravelOrder</p>  
-	 * <p>Description: </p>
-	 * @param toid
-	 * @return 
+	 * <p>Description: 删除</p>
+	 * @param toid 旅游订单编号
+	 * @return row 受到删除操作影响的行数
 	 * @see com.DEC.dao.ITravelOrderDao#delTravelOrder(int)
 	 */
 	public int delTravelOrder(int toid) {

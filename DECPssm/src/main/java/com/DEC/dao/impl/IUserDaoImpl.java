@@ -13,7 +13,7 @@ import com.DEC.dao.IUserDao;
 import com.DEC.entity.User;
 
 /**
- * <p>Description: </p>
+ * <p>Description: UserDao</p>
  * @author UY
  * @date   2018年6月22日 
  *
@@ -28,8 +28,8 @@ public class IUserDaoImpl extends SqlSessionDaoSupport implements IUserDao {
 	private SqlSession sqlSession = null;
 	/** 
 	 * <p>Title: findAllUser</p>  
-	 * <p>Description: </p>
-	 * @return 
+	 * <p>Description: 查找所有</p>
+	 * @return List<User>
 	 * @see com.DEC.dao.IUserDao#findAllUser()
 	 */
 	public List<User> findAllUser() {
@@ -40,8 +40,8 @@ public class IUserDaoImpl extends SqlSessionDaoSupport implements IUserDao {
 	
 	/** 
 	 * <p>Title: findAllNormalUser</p>  
-	 * <p>Description: </p>
-	 * @return 
+	 * <p>Description: 查找所有普通用户(utype=0)</p>
+	 * @return List<User>
 	 * @see com.DEC.dao.IUserDao#findAllNormalUser()
 	 */
 	public List<User> findAllNormalUser() {
@@ -52,9 +52,9 @@ public class IUserDaoImpl extends SqlSessionDaoSupport implements IUserDao {
 
 	/** 
 	 * <p>Title: findUserByUid</p>  
-	 * <p>Description: </p>
-	 * @param uid
-	 * @return 
+	 * <p>Description: 通过编号查找</p>
+	 * @param uid 用户编号
+	 * @return User
 	 * @see com.DEC.dao.IUserDao#findUserByUid(int)
 	 */
 	public User findUserByUid(int uid) {
@@ -65,9 +65,9 @@ public class IUserDaoImpl extends SqlSessionDaoSupport implements IUserDao {
 
 	/** 
 	 * <p>Title: addUser</p>  
-	 * <p>Description: </p>
-	 * @param u
-	 * @return 
+	 * <p>Description: 添加</p>
+	 * @param u User对象
+	 * @return row 受到添加操作影响的行数
 	 * @see com.DEC.dao.IUserDao#addUser(com.DEC.entity.User)
 	 */
 	public int addUser(User u) {
@@ -78,9 +78,9 @@ public class IUserDaoImpl extends SqlSessionDaoSupport implements IUserDao {
 
 	/** 
 	 * <p>Title: editUser</p>  
-	 * <p>Description: </p>
-	 * @param u
-	 * @return 
+	 * <p>Description: 修改</p>
+	 * @param u User对象
+	 * @return row 受到修改操作影响的行数
 	 * @see com.DEC.dao.IUserDao#editUser(com.DEC.entity.User)
 	 */
 	public int editUser(User u) {
@@ -91,9 +91,9 @@ public class IUserDaoImpl extends SqlSessionDaoSupport implements IUserDao {
 
 	/** 
 	 * <p>Title: delUser</p>  
-	 * <p>Description: </p>
-	 * @param uid
-	 * @return 
+	 * <p>Description: 删除</p>
+	 * @param uid 用户编号
+	 * @return row 受到删除操作影响的行数
 	 * @see com.DEC.dao.IUserDao#delUser(int)
 	 */
 	public int delUser(int uid) {

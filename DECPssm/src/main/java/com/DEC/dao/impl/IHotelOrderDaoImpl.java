@@ -56,11 +56,11 @@ public class IHotelOrderDaoImpl extends SqlSessionDaoSupport implements IHotelOr
 	 * <p>Description: </p>
 	 * @param hoid
 	 * @return 
-	 * @see com.DEC.dao.IHotelOrderDao#findHotelOrderByHoid(int)
+	 * @see com.DEC.dao.IHotelOrderDao#findHotelOrderByHid(int)
 	 */
-	public List<HotelOrder> findHotelOrderByHoid(int hoid) {
+	public List<HotelOrder> findHotelOrderByHid(int hid) {
 		sqlSession = this.getSqlSession();
-		List<HotelOrder> holist = sqlSession.selectList("findHotelOrderByHoid", hoid);
+		List<HotelOrder> holist = sqlSession.selectList("findHotelOrderByHid", hid);
 		return holist;
 	}
 
@@ -69,11 +69,11 @@ public class IHotelOrderDaoImpl extends SqlSessionDaoSupport implements IHotelOr
 	 * <p>Description: </p>
 	 * @param hid
 	 * @return 
-	 * @see com.DEC.dao.IHotelOrderDao#findHotelOrderByHid(int)
+	 * @see com.DEC.dao.IHotelOrderDao#findHotelOrderByHoid(int)
 	 */
-	public HotelOrder findHotelOrderByHid(int hid) {
+	public HotelOrder findHotelOrderByHoid(int hoid) {
 		sqlSession = this.getSqlSession();
-		HotelOrder hotelOrder = sqlSession.selectOne("findHotelOrderByHid", hid);
+		HotelOrder hotelOrder = sqlSession.selectOne("findHotelOrderByHoid", hoid);
 		return hotelOrder;
 	}
 

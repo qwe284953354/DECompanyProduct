@@ -14,8 +14,8 @@ public interface IHotelOrderService {
 	
 	public List<HotelOrder> findAllHotelOrder();
 	public List<HotelOrder> findHotelOrderByUid(int uid);
-	public List<HotelOrder> findHotelOrderByHoid(int hoid);
-	public HotelOrder findHotelOrderByHid(int hid);
+	public List<HotelOrder> findHotelOrderByHid(int hid);
+	public HotelOrder findHotelOrderByHoid(int hoid);
 	public boolean addHotelOrder(HotelOrder hotelOrder);
 	public boolean editHotelOrder(HotelOrder hotelOrder);
 	public boolean delHotelOrder(int hoid);

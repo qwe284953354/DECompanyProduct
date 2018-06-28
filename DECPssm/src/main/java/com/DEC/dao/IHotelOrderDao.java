@@ -5,19 +5,19 @@ import java.util.List;
 import com.DEC.entity.HotelOrder;
 
 /**
- * <p>Description: </p>
+ * <p>Description: 酒店订单接口类</p>
  * @author UY
  * @date   2018年6月21日 
  *
  */
 public interface IHotelOrderDao {
 	
-	public List<HotelOrder> findAllHotelOrder();
-	public List<HotelOrder> findHotelOrderByUid(int uid);
-	public List<HotelOrder> findHotelOrderByHoid(int hoid);
-	public HotelOrder findHotelOrderByHid(int hid);
-	public int addHotelOrder(HotelOrder hotelOrder);
-	public int editHotelOrder(HotelOrder hotelOrder);
-	public int delHotelOrder(int hoid);
+	public List<HotelOrder> findAllHotelOrder();				//查找所有酒店订单
+	public List<HotelOrder> findHotelOrderByUid(int uid);		//通过用户编号查找酒店订单
+	public List<HotelOrder> findHotelOrderByHid(int hid);		//通过酒店编号查找酒店订单
+	public HotelOrder findHotelOrderByHoid(int hoid);			//通过编号查找订单
+	public int addHotelOrder(HotelOrder hotelOrder);			//添加		
+	public int editHotelOrder(HotelOrder hotelOrder);			//修改
+	public int delHotelOrder(int hoid);							//删除
 	
 }

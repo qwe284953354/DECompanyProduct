@@ -195,7 +195,7 @@
 			</div>
 		</div>
 		<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
-		<script src="lib/echarts/echarts.js"></script>
+		<script src="lib/echarts/echarts.js" type="text/javascript"></script>
 		<script type="text/javascript"></script>
 	</body>
 </html>

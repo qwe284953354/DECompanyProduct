@@ -63,20 +63,12 @@
 						<td>${to.orderTravel.tname}</td>
 						<td>${to.toprice}</td>
 						<td>
-							<button type="button" class="btn-newbtn" id="del-torder" onclick="#">删除</button>
+							<a href="./Admin/Admintorder/del?toid=${to.toid}">
+								<button type="button" class="btn-newbtn" id="del-torder">删除</button>
+							</a>
 						</td>
 					</tr>
 				</c:forEach>
-				<!-- <tr>
-					<td>1</td>
-					<td>2018-06-22</td>
-					<td>test</td>
-					<td>testtravel</td>
-					<td>688</td>
-					<td>
-						<button type="button" class="btn-newbtn" id="del-torder" onclick="#">删除</button>
-					</td>	
-				</tr> -->
 			</tbody>
 		</table>		
 	</body>

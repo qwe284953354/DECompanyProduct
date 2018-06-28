@@ -67,12 +67,14 @@
 						<td>${ho.honame}</td>
 						<td>${ho.hodate}</td>
 						<td>${ho.hotel}</td>
-						<td>${ho.hname}</td>
-						<td>${ho.hprice}</td>
-						<td>${ho.uname}</td>
+						<td>${ho.orderHotel.hname}</td>
+						<td>${ho.hoprice}</td>
 						<td>${ho.hobooktime}</td>
+						<td>${ho.orderUser.uname}</td>
 						<td>
-							<button type="button" class="btn-newbtn" id="del-horder" onclick="#">删除</button>
+							<a href="./Admin/Adminhorder/del?hoid=${ho.hoid}">
+								<button type="button" class="btn-newbtn" id="del-horder" >删除</button>
+							</a>
 						</td>
 					</tr>
 				</c:forEach>

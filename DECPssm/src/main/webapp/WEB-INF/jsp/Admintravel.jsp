@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %> 
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -66,7 +67,9 @@
 						<td>${t.tprice}</td>
 						<td>
 							<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-travel">修改</button>
-							<button type="button" class="btn-newbtn" id="del-travel" onclick="#">删除</button>
+							<a href="./Admin/Admintravel/del?tid=${t.tid}">
+								<button type="button" class="btn-newbtn" id="del-travel">删除</button>
+							</a>
 						</td>
 					</tr>
 				</c:forEach>
@@ -81,39 +84,48 @@
      		 		<div class="modal-header">
      		 			<h4 class="modal-title" id="myModalLabel">旅行项目添加</h4>
      		 		</div>
+     		 		<form:form modelAttribute="travel" method="post" action="./Admin/Admintravel/add">
      		 		<div class="modal-body">
               			<div class="input-group">
-              				<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-th-list"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Travel" aria-describedby="basic-addon1" id="tname">
+ 							<input type="text" class="form-control" placeholder="Travel" aria-describedby="basic-addon1" id="tname" name="tname">
 						</div>
 						<br />
 						<div class="input-group">
-							<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-calendar"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Traveldate" aria-describedby="basic-addon1" id="tdate">	
+ 							<input type="text" class="form-control" placeholder="Traveldate" aria-describedby="basic-addon1" id="tdate" name="tdate">	
 						</div>
 						<br />
 						<div class="input-group">
-							<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-file"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Traveldetail" aria-describedby="basic-addon1" id="tdetail">	
+ 							<input type="text" class="form-control" placeholder="Traveldetail" aria-describedby="basic-addon1" id="tdetail" name="tdetail">	
 						</div>
 						<br />
 						<div class="input-group">
-							<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-yen"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Travelprice" aria-describedby="basic-addon1" id="tprice">	
-						</div>				
+ 							<input type="text" class="form-control" placeholder="Travelprice" aria-describedby="basic-addon1" id="tprice" name="tprice">	
+						</div>	
+						<br />
+						<div class="input-group">
+  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-yen"></span></span>
+ 							<input type="text" class="form-control" placeholder="Cid" aria-describedby="basic-addon1" id="cid" name="cid">	
+						</div>
+						<br />
+						<div class="input-group">
+  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-yen"></span></span>
+ 							<input type="text" class="form-control" placeholder="Ttid" aria-describedby="basic-addon1" id="ttid" name="ttid">	
+						</div>
+						<br />
+						<div class="input-group">
+  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-yen"></span></span>
+ 							<input type="text" class="form-control" placeholder="Tsid" aria-describedby="basic-addon1" id="tsid" name="tsid">	
+						</div>			
       				</div>
      		 		<div class="modal-footer">
        					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        				<button type="button" class="btn btn-primary" onclick="#">Save</button>
+        				<input type="submit" class="btn btn-primary" value="Save">
       				</div>
+      				</form:form>
    				</div>
   			</div>
 		</div>

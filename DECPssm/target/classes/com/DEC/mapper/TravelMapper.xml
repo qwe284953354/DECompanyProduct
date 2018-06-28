@@ -23,7 +23,7 @@
 	</insert>
 	<update id="editTravel" parameterType="com.DEC.entity.Travel">
 		update travel set
-		cid=#{cid},tprice=#{tprice},ttid=#{ttid},tsid=#{tsid},tname=#{tname},tdate=#{tdate},tdetail=#{tdetail} where tid=#{tid}
+		tprice=#{tprice},tname=#{tname},tdate=#{tdate},tdetail=#{tdetail} where tid=#{tid}
 	</update>
 	<update id="delTravel" parameterType="int">
 		delete from travel where tid=#{tid}

@@ -113,6 +113,32 @@ public class AdminController {
 		}
 	}
 
+	@RequestMapping(value = "/Adminscenic/edit")
+	public String toEditScenic(@ModelAttribute("scenic") TravelScenic ts) {
+		if(travelScenicService.editTravelScenic(ts)) {
+			return "redirect:/Admin/Adminscenic";
+		}else {
+			return "";
+		}
+	}
+	
+	@RequestMapping(value = "/Admintravel/edit")
+	public String toEditTravel(@ModelAttribute("travel") Travel t) {
+		if(travelService.editTravel(t)) {
+			return "redirect:/Admin/Admintravel";
+		}else {
+			return "";
+		}
+	}
+	
+	@RequestMapping(value = "/Adminuser/edit")
+	public String toEditUser(@ModelAttribute("user") User user) {
+		if(userService.editUser(user)) {
+			return "redirect:/Admin/Adminuser";
+		}else {
+			return "";
+		}
+	}
 	
 	@RequestMapping(value = "/Adminhorder/del")
 	public String toDelHotelOrder(@RequestParam("hoid") int hoid) {
@@ -189,5 +215,21 @@ public class AdminController {
 		return hotelService.findHotelByHid(hid);
 	}
 	
+	@RequestMapping(value="/Adminscenic/find")
+	@ResponseBody
+	public Object getScenicByid(@RequestParam int id) {
+		return travelScenicService.findScenicByTsid(id);
+	}
 	
+	@RequestMapping(value="/Adminuser/find")
+	@ResponseBody
+	public Object getUserByid(@RequestParam int id) {
+		return userService.findUserByUid(id);
+	}
+	
+	@RequestMapping(value="/Admintravel/find")
+	@ResponseBody
+	public Object getTravelByid(@RequestParam int id) {
+		return travelService.findTravelByTid(id);
+	}
 }

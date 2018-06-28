@@ -13,6 +13,7 @@
 <base href="<%=basepath%>">
 <meta charset="UTF-8">
 <title>狗眼旅行</title>
+<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/login.css" />
 <link rel="icon" href="img/favicon.ico" />
 <link rel="stylesheet" href="css/bootstrap.css" />
@@ -33,16 +34,16 @@
 				<div>用户登陆</div>
 				<br />
 				<div class="input-group input-group-lg">
-					<span class="input-group-addon" id="sizing-addon3"><spanclass="glyphicon glyphicon-user"></span></span> 
+					<span class="input-group-addon" id="sizing-addon3"><span class="glyphicon glyphicon-user"></span></span> 
 					<input type="text" class="form-control" id="username" name="username" placeholder="用户名..." aria-describedby="sizing-addon3">
 				</div>
 				<br />
 				<div class="input-group input-group-lg">
 					<span class="input-group-addon" id="sizing-addon3"><span class="glyphicon glyphicon-lock"></span></span> 
-					<input type="text" class="form-control" id="userpwd" name="userpwd" placeholder="密码..." aria-describedby="sizing-addon3">
+					<input type="password" class="form-control" id="userpwd" name="userpwd" placeholder="密码..." aria-describedby="sizing-addon3">
 				</div>
 				<a href="#" class="forget">忘记密码？</a> 
-				<input type="button" value="登陆" class="login-btn" /> <br /> 
+				<input type="submit" value="登陆" class="login-btn" /> <br /> 
 				<span class="registered">还没有账号嘛？<a href="registered.html">免费注册</a></span>
 			</div>
 		</form>

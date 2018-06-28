@@ -30,7 +30,7 @@
 	<div class="login-form-loc">
 		${msg }
 		
-		<a href="login.jsp">返回</a>
+		<a href="tologin">返回</a>
 
 	</div>
 	<div class="footer">

@@ -30,11 +30,23 @@
 					<img src="img/logo-1.png" />
 				</div>
 				<div class="form-loc">
+				<c:if test="${uname == null }">
 					<div class="login">
+						<img src="img/none-login.png"> <span
+							class="glyphicon glyphicon-triangle-bottom"></span> <a
+							href="login.jsp" class="loginbtn">登陆</a>
+					</div>
+				</c:if>
+				<c:if test="${uname != null }">
+					<div class="logined">
+						<span>您好：&nbsp;${uname}</span> <br /> <a href="userinfo.jsp">个人空间</a>
+					</div>
+				</c:if>
+					<!-- <div class="login">
 						<img src="img/none-login.png">
 						<span class="glyphicon glyphicon-chevron-down"></span>
 						<a href="login.jsp" class="loginbtn">登陆</a>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

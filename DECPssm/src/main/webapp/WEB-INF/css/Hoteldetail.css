@@ -19,7 +19,12 @@ ul{list-style-type: none;}
 					border-bottom: none;border-top-left-radius: 10px;border-top-right-radius: 10px;}
         .loginbtn:hover{background-color: black; border-top: none; border-left: none; border-right: none ; color: white;
 								transition: all 0.5s;text-decoration: none; border-bottom: solid red 4px;}
-	
+		.logined{float: left; height: 80px; width: 150px; margin-left: 160px;  position: relative;
+				 }
+		.logined span{margin-top: 10px;margin-left: 20px; display: block;}
+		.logined a{ display:block;margin-left: 35px; font-weight: 800; width: 80px; height: 30px; 
+							background-color:  rgba(0,0,255,0.1); border-radius: 10px;text-align: center; line-height: 30px;}
+		.logined a:hover{ text-decoration: none; color: black;}
 	.picture{width: 100%; height: 600px; border: solid 1px; position: absolute; top: 85px;}
 		.picture img{width: 100%; height: 100%;}
 	

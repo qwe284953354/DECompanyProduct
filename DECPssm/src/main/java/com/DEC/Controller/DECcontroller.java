@@ -3,6 +3,7 @@ package com.DEC.Controller;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,8 +25,9 @@ public class DECcontroller {
 	@Resource
 	private ITravelService travelService;
 	@RequestMapping(value = "/showAllTravel")
-	public String ShowAllTravel(Model model) {
+	public String ShowAllTravel(Model model,HttpSession session) {
 		List<Travel> tlist = travelService.findAllTravel();
+		session.setAttribute("uname", null);
 		model.addAttribute("tlist", tlist);
 		return "Travelmain";
 	}

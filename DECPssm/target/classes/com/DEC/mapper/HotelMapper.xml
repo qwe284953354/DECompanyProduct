@@ -19,14 +19,13 @@
 	<select id="findHotelByHid" parameterType="int" resultType="Hotel">
 		select * from hotel where hid=#{id}
 	</select>
-	<insert id="addHotel" useGeneratedKeys="true" keyProperty="hid"
-		parameterType="com.DEC.entity.Hotel">
+	<insert id="addHotel" useGeneratedKeys="true" keyProperty="hid" parameterType="com.DEC.entity.Hotel">
 		insert into hotel (hid,hname,hstar,htype,himg,haddress,hmark,cid)
 		values(hid,#{hname},#{hstar},#{htype},#{himg},#{haddress},#{hmark},#{cid})
 	</insert>
 	<update id="editHotel" parameterType="com.DEC.entity.Hotel">
 		update hotel set
-		hname=#{hname},hstar=#{hstar},htype=#{htype},himg=#{himg},haddress=#{haddress},hmark=#{hmark},cid=#{cid} where hid=#{hid}
+		hname=#{hname},hstar=#{hstar},htype=#{htype},himg=#{himg},haddress=#{haddress},hmark=#{hmark} where hid=#{hid}
 	</update>
 	<update id="delHotel" parameterType="int">
 		delete from hotel where hid=#{hid}

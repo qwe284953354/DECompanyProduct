@@ -103,6 +103,15 @@ public class AdminController {
 			return "";
 		}
 	}
+	@RequestMapping(value = "/Adminhotel/edit")
+	public String toEditHotel(@ModelAttribute("hotel") Hotel hotel) {
+		if(hotelService.editHotel(hotel)) {
+			return "redirect:/Admin/Adminhotel";
+		}else {
+			return "";
+		}
+	}
+
 	
 	@RequestMapping(value = "/Adminhorder/del")
 	public String toDelHotelOrder(@RequestParam("hoid") int hoid) {

@@ -12,7 +12,7 @@ import com.DEC.dao.ITravelTypeDao;
 import com.DEC.entity.TravelType;
 
 /**
- * <p>Description: </p>
+ * <p>Description: TravelTypeDao</p>
  * @author UY
  * @date   2018年6月22日 
  *
@@ -27,9 +27,9 @@ public class ITravelTypeDaoImpl extends SqlSessionDaoSupport implements ITravelT
 	private SqlSession sqlSession = null;
 	/** 
 	 * <p>Title: findTravelTypeByTtid</p>  
-	 * <p>Description: </p>
-	 * @param ttid
-	 * @return 
+	 * <p>Description: 通过编号查找</p>
+	 * @param ttid 类型编号
+	 * @return TravelType
 	 * @see com.DEC.dao.ITravelTypeDao#findTravelTypeByTtid(int)
 	 */
 	public TravelType findTravelTypeByTtid(int ttid) {

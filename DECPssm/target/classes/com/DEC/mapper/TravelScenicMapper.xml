@@ -18,9 +18,9 @@
 		insert into tscenic (tsid,cid,tsname,tsaddress,tsimg,tsdetail)
 		values(tsid,#{cid},#{tsname},#{tsaddress},#{tsimg},#{tsdetail})
 	</insert>
-	<update id="editTravelScenic" parameterType="com.DEC.entity.TravelScenic">
+	<update id="editTravelScenic" parameterType="TravelScenic">
 		update tscenic set
-		cid=#{cid},tsname=#{tsname},tsaddress=#{tsaddress},tsimg=#{tsimg},tsdetail=#{tsdetail} where tsid=#{tsid}
+		tsname=#{tsname},tsaddress=#{tsaddress},tsimg=#{tsimg},tsdetail=#{tsdetail} where tsid=#{tsid}
 	</update>
 	<update id="delTravelScenic" parameterType="int">
 		delete from tscenic where tsid=#{tsid}

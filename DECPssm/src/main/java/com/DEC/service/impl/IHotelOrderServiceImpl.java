@@ -46,10 +46,10 @@ public class IHotelOrderServiceImpl implements IHotelOrderService {
 	 * <p>Description: </p>
 	 * @param hoid
 	 * @return 
-	 * @see com.DEC.service.IHotelOrderService#findHotelOrderByHoid(int)
+	 * @see com.DEC.service.IHotelOrderService#findHotelOrderByHid(int)
 	 */
-	public List<HotelOrder> findHotelOrderByHoid(int hoid) {
-		return hotelOrderDao.findHotelOrderByHoid(hoid);
+	public List<HotelOrder> findHotelOrderByHid(int hid) {
+		return hotelOrderDao.findHotelOrderByHid(hid);
 	}
 
 	/** 
@@ -57,10 +57,10 @@ public class IHotelOrderServiceImpl implements IHotelOrderService {
 	 * <p>Description: </p>
 	 * @param hid
 	 * @return 
-	 * @see com.DEC.service.IHotelOrderService#findHotelOrderByHid(int)
+	 * @see com.DEC.service.IHotelOrderService#findHotelOrderByHoid(int)
 	 */
-	public HotelOrder findHotelOrderByHid(int hid) {
-		return hotelOrderDao.findHotelOrderByHid(hid);
+	public HotelOrder findHotelOrderByHoid(int hoid) {
+		return hotelOrderDao.findHotelOrderByHoid(hoid);
 	}
 
 	/** 

@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.DEC.entity.Hotel;
 import com.DEC.entity.HotelOrder;
@@ -103,6 +104,41 @@ public class AdminController {
 			return "";
 		}
 	}
+	@RequestMapping(value = "/Adminhotel/edit")
+	public String toEditHotel(@ModelAttribute("hotel") Hotel hotel) {
+		if(hotelService.editHotel(hotel)) {
+			return "redirect:/Admin/Adminhotel";
+		}else {
+			return "";
+		}
+	}
+
+	@RequestMapping(value = "/Adminscenic/edit")
+	public String toEditScenic(@ModelAttribute("scenic") TravelScenic ts) {
+		if(travelScenicService.editTravelScenic(ts)) {
+			return "redirect:/Admin/Adminscenic";
+		}else {
+			return "";
+		}
+	}
+	
+	@RequestMapping(value = "/Admintravel/edit")
+	public String toEditTravel(@ModelAttribute("travel") Travel t) {
+		if(travelService.editTravel(t)) {
+			return "redirect:/Admin/Admintravel";
+		}else {
+			return "";
+		}
+	}
+	
+	@RequestMapping(value = "/Adminuser/edit")
+	public String toEditUser(@ModelAttribute("user") User user) {
+		if(userService.editUser(user)) {
+			return "redirect:/Admin/Adminuser";
+		}else {
+			return "";
+		}
+	}
 	
 	@RequestMapping(value = "/Adminhorder/del")
 	public String toDelHotelOrder(@RequestParam("hoid") int hoid) {
@@ -173,7 +209,27 @@ public class AdminController {
 		}
 	}
 	
+	@RequestMapping(value="/Adminhotel/find")
+	@ResponseBody
+	public Object getHotelByHid(@RequestParam int hid) {
+		return hotelService.findHotelByHid(hid);
+	}
 	
+	@RequestMapping(value="/Adminscenic/find")
+	@ResponseBody
+	public Object getScenicByid(@RequestParam int id) {
+		return travelScenicService.findScenicByTsid(id);
+	}
 	
+	@RequestMapping(value="/Adminuser/find")
+	@ResponseBody
+	public Object getUserByid(@RequestParam int id) {
+		return userService.findUserByUid(id);
+	}
 	
+	@RequestMapping(value="/Admintravel/find")
+	@ResponseBody
+	public Object getTravelByid(@RequestParam int id) {
+		return travelService.findTravelByTid(id);
+	}
 }

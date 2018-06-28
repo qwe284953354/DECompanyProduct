@@ -31,42 +31,7 @@
 			$('#example').DataTable();
 		} );
 	</script>
-	<script type="text/javascript" src="js/jquery-2.1.1.min.js">
-	$(function(){
-		$('#edit-hotel').on('show.bs.modal', function (event) {
-			var datas = $(event.relatedTarget);
-			var x=datas.data("hid");
-			console.log(x);
-			alert(123);
-		/*var hid = datas.data("hid"); 
-			var name="123";
-			console.log(name);
-			console.log(11);
-			alert(111);
-		 	/* $.ajax("${pageContext.request.contextPath}/Admin/AdminhorderP/find",// 发送请求的URL字符串。
-					{
-						dataType : "json", // 预期服务器返回的数据类型。
-						type : "post", //  请求方式 POST或GET
-						contentType : "application/json", //  发送信息至服务器时的内容编码类型
-						// 发送到服务器的数据。
-						data :{
-							hid : hid,
-						},
-						async : true, // 默认设置下，所有请求均为异步请求。如果设置为false，则发送同步请求
-						// 请求成功后的回调函数。
-						success : function(data) {
-							  console.log(data);
-						},
-						// 请求出错时调用的函数
-						error : function() {
-							alert("数据发送失败");
-						}
-					});  */
-
-		})
-	})
-		
-	</script>
+	
 	</head>
 	<body>
 		<!--添加按钮-->

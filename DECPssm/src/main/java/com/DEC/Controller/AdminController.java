@@ -55,8 +55,8 @@ public class AdminController {
 	private ITravelScenicService travelScenicService;
 	@RequestMapping(value = "/Adminscenic")
 	public String toScenic(Model model) {
-		List<TravelScenic> tclist = travelScenicService.findAllScenic();
-		model.addAttribute("tclist", tclist);
+		List<TravelScenic> tslist = travelScenicService.findAllScenic();
+		model.addAttribute("tslist", tslist);
 		return "Adminscenic";
 	}
 	

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.DEC.dao.IHotelOrderDao">
-	<resultMap type="TravelOrder" id="hotelOrderResultMap">
+	<resultMap type="HotelOrder" id="hotelOrderResultMap">
 		<id column="hoid" property="hoid" />
 		<result column="honame" property="honame" />
 		<result column="hodate" property="hodate" />

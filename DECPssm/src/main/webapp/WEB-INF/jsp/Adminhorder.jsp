@@ -72,7 +72,9 @@
 						<td>${ho.uname}</td>
 						<td>${ho.hobooktime}</td>
 						<td>
-							<button type="button" class="btn-newbtn" id="del-horder" onclick="#">删除</button>
+							<a href="./Admin/Adminhorder/del?hoid=${ho.hoid}">
+								<button type="button" class="btn-newbtn" id="del-horder" >删除</button>
+							</a>
 						</td>
 					</tr>
 				</c:forEach>

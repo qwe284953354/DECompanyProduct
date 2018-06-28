@@ -111,7 +111,9 @@
 						<td>${h.hmark}</td>
 						<td>
 							<button type="button" class="btn-newbtn" data-toggle="modal" data-hid="${h.hid}" data-target="#edit-hotel">修改</button>
-							<a href="./Admin/AdminhorderP/del?hid=${h.hid}"><button type="button" class="btn-newbtn" id="del-hotel">删除</button></a>
+							<a href="./Admin/Adminhotel/del?hid=${h.hid}">
+								<button type="button" class="btn-newbtn" id="del-hotel">删除</button>
+							</a>
 						</td>
 					</tr>
 				</c:forEach>
@@ -126,7 +128,7 @@
      		 		<div class="modal-header">
      		 			<h4 class="modal-title" id="myModalLabel">酒店添加</h4>
      		 		</div>
-     		 		<form:form modelAttribute="hotel" method="post" action="./Admin/AdminhorderP/add">
+     		 		<form:form modelAttribute="hotel" method="post" action="./Admin/Adminhotel/add">
      		 		<div class="modal-body">
               			<div class="input-group">
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-home"></span></span>
@@ -157,6 +159,7 @@
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-heart"></span></span>
  							<input type="text" class="form-control" placeholder="Mark" aria-describedby="basic-addon1" id="hmark" name="hmark">	
 						</div>
+						<br />
 						<div class="input-group">
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-heart"></span></span>
  							<input type="text" class="form-control" placeholder="Cid" aria-describedby="basic-addon1" id="cid" name="cid">	

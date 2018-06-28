@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %> 
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -72,7 +73,9 @@
 						<td>${u.ubirth}</td>
 						<td>
 							<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-user">修改</button>
-							<button type="button" class="btn-newbtn" id="del-user" onclick="#">删除</button>
+							<a href="./Admin/Adminuser/del?uid=${u.uid}">
+								<button type="button" class="btn-newbtn" id="del-user">删除</button>
+							</a>
 						</td>
 					</tr>
 				</c:forEach>
@@ -87,46 +90,38 @@
      		 		<div class="modal-header">
      		 			<h4 class="modal-title" id="myModalLabel">用戶添加</h4>
      		 		</div>
+     		 		<form:form modelAttribute="user" method="post" action="./Admin/Adminuser/add">
      		 		<div class="modal-body">
               			<div class="input-group">
-              				<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" id="name">
+ 							<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" id="name" name="uname">
 						</div>
 						<br />
 						<div class="input-group">
-							<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-lock"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" id="pwd">	
+ 							<input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" id="pwd" name="upwd">	
 						</div>
 						<br />
 						<div class="input-group">
-							<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-envelope"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="E-mail" aria-describedby="basic-addon1" id="umail">	
+ 							<input type="text" class="form-control" placeholder="E-mail" aria-describedby="basic-addon1" id="umail" name="umail">	
 						</div>
 						<br />
 						<div class="input-group">
-							<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-phone"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Tel" aria-describedby="basic-addon1" id="utel">	
+ 							<input type="text" class="form-control" placeholder="Tel" aria-describedby="basic-addon1" id="utel" name="utel">	
 						</div>
 						<br />
 						<div class="input-group">
-							<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-gift"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Birth" aria-describedby="basic-addon1" id="ubirth">	
+ 							<input type="text" class="form-control" placeholder="Birth" aria-describedby="basic-addon1" id="ubirth" name="ubirth">	
 						</div>				
       				</div>
      		 		<div class="modal-footer">
        					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        				<button type="button" class="btn btn-primary" onclick="#">Save</button>
+        				<input type="submit" class="btn btn-primary" value="Save">
       				</div>
+      				</form:form >
    				</div>
   			</div>
 		</div>

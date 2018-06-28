@@ -34,7 +34,7 @@
 				    <dl class="layui-nav-child">
 				      <dd><a href="javascript:;" data-url="Admin/Admintravel" data-id='2' data-text="旅行管理"><span class="l-line"></span>旅行管理</a></dd>
 				      <dd><a href="javascript:;" data-url="Admin/Adminscenic" data-id='3' data-text="景点管理"><span class="l-line"></span>景点管理</a></dd>
-				      <dd><a href="javascript:;" data-url="Admin/AdminhotelP" data-id='4' data-text="酒店管理"><span class="l-line"></span>酒店管理</a></dd>
+				      <dd><a href="javascript:;" data-url="Admin/Adminhotel" data-id='4' data-text="酒店管理"><span class="l-line"></span>酒店管理</a></dd>
 				    </dl>
 				  </li>
 				  <li class="layui-nav-item">

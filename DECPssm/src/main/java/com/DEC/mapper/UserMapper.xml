@@ -13,7 +13,7 @@
 	<insert id="addUser" useGeneratedKeys="true" keyProperty="uid"
 		parameterType="com.DEC.entity.User">
 		insert into user (uid,uname,upwd,umail,utel,ubirth,utype)
-		values(uid,#{uname},#{upwd},#{umail},#{utel},#{ubirth},#{utype})
+		values(uid,#{uname},#{upwd},#{umail},#{utel},#{ubirth},0)
 	</insert>
 	<update id="editUser" parameterType="com.DEC.entity.User">
 		update user set

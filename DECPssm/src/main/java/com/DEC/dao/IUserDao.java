@@ -19,6 +19,5 @@ public interface IUserDao {
 	public int addUser(User u);				//添加
 	public int editUser(User u);			//修改
 	public int delUser(int uid);			//删除
->>>>>>> 36683be9957bd500bc99514258261a50817372b5
 	
 }

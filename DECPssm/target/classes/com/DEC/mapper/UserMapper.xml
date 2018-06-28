@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.DEC.dao.IUserDao">
+	<resultMap type="User" id="userOrdersResultMap">
+		<id column="uid" property="uid" />
+		<result column="uname" property="uname" />
+		<result column="upwd" property="upwd" />
+		<result column="umail" property="umail" />
+		<result column="utel" property="utel" />
+		<result column="ubirth" property="ubirth" />
+		<result column="utype" property="utype" />
+			<collection property="travelOrderlist" ofType="com.DEC.entity.TravelOrder">
+				<id column="toid" property="toid" />
+				<result column="toprice" property="toprice" />
+				<association property="orderTravel" javaType="com.DEC.entity.Travel">
+					<id column="tid" property="tid" />
+					<result column="tname" property="tname" />
+					<result column="tdate" property="tdate" />
+				</association>
+			</collection>
+			<collection property="hotelOrderlist" ofType="com.DEC.entity.HotelOrder">
+				<id column="hoid" property="hoid" />
+				<result column="honame" property="honame"/>
+				<result column="hodate" property="hodate"/>
+				<result column="hoprice" property="hoprice"/>
+				<result column="hobooktime" property="hobooktime"/>
+				<association property="orderHotel" javaType="com.DEC.entity.Hotel">
+					<id column="hid" property="hid" />
+					<result column="hname" property="hname" />
+				</association>
+			</collection>
+	</resultMap>
 	<select id="findAllUser" resultType="User">
 		select * from user
 	</select>
@@ -10,9 +39,23 @@
 	<select id="findUserByUid" parameterType="int" resultType="User">
 		select * from user where uid=#{uid} 
 	</select>
-	<select id="findUserByUname" parameterType="String" resultType="User">
-		select * from user where uname=#{uname} 
+	<select id="findUserByUname" parameterType="String" resultMap="userOrdersResultMap">
+		select * from 
+		horder h ,
+		user u, 
+		torder t ,
+		hotel hl,
+		travel tl
+		where 
+		h.uid = (SELECT uid from user WHERE uname=#{uname}) 
+		AND 
+		t.uid = (SELECT uid from user WHERE uname=#{uname})
+		AND 
+		h.hid = hl.hid 
+		AND 
+		t.tid=tl.tid
 	</select>
+		
 	<insert id="addUser" useGeneratedKeys="true" keyProperty="uid"
 		parameterType="com.DEC.entity.User">
 		insert into user (uid,uname,upwd,umail,utel,ubirth,utype)
@@ -25,4 +68,5 @@
 	<update id="delUser" parameterType="int">
 		delete from user where uid=#{uid}
 	</update>
+	
 </mapper>

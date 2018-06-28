@@ -1,0 +1,186 @@
+.uio-background{
+	width: 100%;
+	height: 1200px;
+	position: absolute;
+	top: 110px;
+}
+.uinfo-uorder{
+	margin: 0 auto;
+	width:1102px;
+	height: 1000px;
+	border: 1px solid #e1e1e1;
+}
+.uinfo-left{
+	width: 200px;
+	height: 1000px;
+	position: relative;
+	float: left;
+	background-color:#f4f3f4 ;
+}
+.uleft-title{
+	width: 200px;
+	height: 100px;
+	text-align: center;
+	font-family: "微软雅黑";
+	color: black;
+}
+.uleft-title h1{
+	line-height: 80px;
+}
+.uleft-menu{
+	width: 200px;
+	height:900px;
+}
+.uleft-menu a:link{
+	text-decoration: none; 
+	display: block;
+	width:200px;
+	height: 40px;
+	font-family: "微软雅黑";
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	color: black;
+}
+
+.uleft-menu a:hover{
+	background-color: rgba(135,206,250,1);
+	color: white;
+}
+
+
+.uinfo-right{
+	width: 900px;
+	height: 1000px;
+	position: relative;
+	float: left;
+	border: 1px solid #e1e1e1;
+}
+.uright-title{
+	 width: 860px;
+	 height: 80px;
+	 position: absolute;
+	 left: 40px;
+	 border-bottom: 1px solid #e1e1e1;
+	 font-family: "微软雅黑";
+	 color: #ec443f;
+}
+.uright-title h4{
+	color: rgba(135,206,250,1);
+	line-height: 60px;
+}
+.uright-info{
+	width: 840px;
+	height: 900px;
+	position: absolute;
+	top: 120px;
+	left: 40px;
+	
+}
+/*基本信息表单*/
+.form-items{width: 260px; height: 50px; margin: 0 auto; margin-top: 30px; }
+		.form-name{display: block; float: left;  width: 34px; height: 34px;} 
+		.form-membertype{width: 200px; float: left; margin-left: 10px; }
+.btn-newsub{
+	font-size: 20px;
+	color: white;
+	padding: 5px 25px;
+	font-family: "微软雅黑";
+}
+
+/*订单表格*/
+/*.uright-info table{
+	font-family: "微软雅黑";
+}
+.table-cinema{
+	text-align: center;
+}
+.table-mname{
+	text-align: center;
+}
+.table-date{
+	text-align: center;
+}
+.table-hall{
+	text-align: center;
+}
+.table-price{
+	text-align: center;
+}
+.table-pred{
+	color: rgba(244,0,0,0.9);
+	font-weight: 700;
+	font-size: 16px;
+}
+.table-seatbtn{
+	text-align: center;
+}
+.red-btn{
+	background-color: rgba(244,0,0,0.7);
+}
+.table-seatbtn a{
+	text-decoration: none;
+	color: white;
+}*/
+
+.order-travel{
+	width: 850px;
+	height: 400px;
+	overflow-y:scroll; 
+	overflow-x:hidden;
+	position: absolute;
+	top: 0;
+}
+.order-hotel{
+	width: 850px;
+	height: 400px;
+	overflow-y:scroll; 
+	overflow-x:hidden;
+	position: absolute;
+	bottom: 60px;
+}
+
+
+
+.uio-footer{
+	color: white;
+	width:100%;
+	height:200px; 
+	text-align: center;
+	background-color:#262426;
+	margin:0 auto;
+	position: absolute;
+	bottom: -600px;
+}
+
+.btn-save{
+	font-size: 20px;
+	padding: 4px 30px;
+	border-radius: 15px;
+	background-color:lightblue;
+	border:hidden;
+	color: white;
+	font-family: "微软雅黑";
+}
+
+.btn-save:hover{
+	background-color:rgba(135,206,250,1);
+}
+
+
+.back-home{
+	position: absolute;
+	right: 100px;
+	top: 20px;
+}
+.back-home a:link{
+	text-decoration: none;
+	color:rgba(135,206,250,1);
+}
+.back-home a:visited{
+	color:rgba(135,206,250,1);
+}
+.back-home a:hover{
+	color: gold;
+}
+

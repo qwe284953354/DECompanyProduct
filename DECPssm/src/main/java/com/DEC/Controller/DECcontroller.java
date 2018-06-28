@@ -24,16 +24,32 @@ import com.DEC.service.IUserService;
 @Controller
 public class DECcontroller {
 	
+	
+	/*
+	 *  Travel的controller
+	 */
+	
+	//开始
+	//登录前显示所有项目
 	@Resource
 	private ITravelService travelService;
-	@RequestMapping(value = "/showAllTravel")
-	public String ShowAllTravel(Model model,HttpSession session) {
+	@RequestMapping(value = "/showTravel")
+	public String ShowTravel(Model model,HttpSession session) {
 		List<Travel> tlist = travelService.findAllTravel();
 		session.setAttribute("uname", null);
 		model.addAttribute("tlist", tlist);
 		return "Travelmain";
 	}
 	
+	//登陆后显示所有项目
+	@RequestMapping(value = "/showAllTravel")
+	public String ShowAllTravel(Model model,HttpSession session) {
+		List<Travel> tlist = travelService.findAllTravel();
+		model.addAttribute("tlist", tlist);
+		return "Travelmain";
+	}
+	
+	//跳转登录页面
 	@RequestMapping(value = "/tologin")
 	public String tologin() {
 		return "login";
@@ -41,7 +57,7 @@ public class DECcontroller {
 	
 	
 
-	
+	//登录操作
 	@Resource
 	private IUserService userService;
 	@RequestMapping(value = "/dologin")
@@ -49,11 +65,29 @@ public class DECcontroller {
 		User user = userService.findUserByUname(username);
 		if(user.getUpwd().equals(userpwd)) {
 			session.setAttribute("uname", username);
-			return "Redirect:Travelmain";
+			return "redirect:/showAllTravel";
 		}else {
 			model.addAttribute("msg", "登陆失败");
 			return "loginfail";
 		}
-		
 	}
+	
+	//返回user信息
+	@RequestMapping(value = "/userinfo")
+	public String userinfo(Model model,@RequestParam("username") String username) {
+		User user = userService.findUserByUname(username);
+		model.addAttribute("user", user);
+		return "userinfo";
+	}
+	
+	//返回user包含 该user的所有order
+	@RequestMapping(value = "/userorder")
+	public String userorder(Model model,@RequestParam("username") String username) {
+		User user = userService.findUserByUname(username);
+		model.addAttribute("user", user);
+		return "userorder";
+	}
+	
+	
+	
 }

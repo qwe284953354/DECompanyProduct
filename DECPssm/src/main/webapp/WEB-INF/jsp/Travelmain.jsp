@@ -39,7 +39,7 @@
 				</c:if>
 				<c:if test="${uname != null }">
 					<div class="logined">
-						<span>您好：&nbsp;${uname}</span> <br /> <a href="userinfo.jsp">个人空间</a>
+						<span>您好：&nbsp;${uname}</span> <br /> <a href="userinfo?username=${uname }">个人空间</a>
 					</div>
 				</c:if>
 					<!-- <div class="login">
@@ -87,13 +87,13 @@
 							${t.tname }
 						</div>
 						<div class="detailbox type">
-							类型：${t.ttid }
+							类型：${t.travelType.ttname }
 						</div>
 						<div class="detailbox scenic">
-							包含景点：${t.tsid }
+							包含景点：${t.travelScenic.tsdetail }
 						</div>
 						<div class="detailbox city">
-							所在城市：${t.cid }
+							所在城市：${t.city.cname }
 						</div>
 						<div class="detailbox dates">
 							出发日期：${t.tdate }

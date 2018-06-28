@@ -15,6 +15,10 @@ public class Travel {
 	private String tdate;		//旅游项目日期
 	private String tdetail;		//旅游项目简介
 	
+	private City city;
+	private TravelScenic travelScenic;
+	private TravelType travelType;
+	
 	public Travel() {
 		super();
 	}
@@ -88,4 +92,23 @@ public class Travel {
 	public void setTdetail(String tdetail) {
 		this.tdetail = tdetail;
 	}
+	public City getCity() {
+		return city;
+	}
+	public void setCity(City city) {
+		this.city = city;
+	}
+	public TravelScenic getTravelScenic() {
+		return travelScenic;
+	}
+	public void setTravelScenic(TravelScenic travelScenic) {
+		this.travelScenic = travelScenic;
+	}
+	public TravelType getTravelType() {
+		return travelType;
+	}
+	public void setTravelType(TravelType travelType) {
+		this.travelType = travelType;
+	}
+	
 }

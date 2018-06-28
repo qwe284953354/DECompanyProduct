@@ -14,6 +14,7 @@ public class HotelOrder {
 	private String hodate;		//入住日期
 	private String hotel;		//电话
 	private String hobooktime;	//预定到店时间
+	
 	private User orderUser;
 	private Hotel orderHotel;
 	

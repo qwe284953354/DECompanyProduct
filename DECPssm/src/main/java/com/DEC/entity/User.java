@@ -1,4 +1,7 @@
 package com.DEC.entity;
+
+import java.util.List;
+
 /**
  * <p>Description: 用户实体类</p>
  * @author UY
@@ -13,6 +16,9 @@ public class User {
 	private String utel;		//电话
 	private String ubirth;		//生日
 	private int utype;			//用户类型(0管理员/1普通用户)
+	
+	private List<TravelOrder> travelOrderlist;  //使用resultMap获取  用户订单
+	private List<HotelOrder> hotelOrderlist;
 	
 	public User() {
 		super();
@@ -77,4 +83,18 @@ public class User {
 	public void setUtype(int utype) {
 		this.utype = utype;
 	}
+	public List<TravelOrder> getTravelOrderlist() {
+		return travelOrderlist;
+	}
+	public void setTravelOrderlist(List<TravelOrder> travelOrderlist) {
+		this.travelOrderlist = travelOrderlist;
+	}
+	public List<HotelOrder> getHotelOrderlist() {
+		return hotelOrderlist;
+	}
+	public void setHotelOrderlist(List<HotelOrder> hotelOrderlist) {
+		this.hotelOrderlist = hotelOrderlist;
+	}
+	
+	
 }

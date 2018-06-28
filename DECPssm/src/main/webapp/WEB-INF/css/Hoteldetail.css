@@ -49,8 +49,9 @@ ul{list-style-type: none;}
 				.hoteldetail tr{height: 50px; }
 				.hoteldetail th{text-align: right;width:100px;}
 				.hoteldetail td{width:260px}
-			.hotelroom{width: 640px; height: 700px;position: absolute;left:420px;top:60px;font-family: "微软雅黑";font-size: 14px;}
-				.room{width:640px;height: 140px; border: solid; float: left;position: relative;}
+			.hotelroom{width: 640px; height: 700px;position: absolute;left:420px;top:60px;font-family: "微软雅黑";font-size: 14px;
+						overflow-y:scroll;overflow-x:hidden;}
+				.room{width:630px;height: 140px; border: solid; float: left;position: relative;}
 					.room img{width: 128px; height: 80px;position: absolute;left: 10px; top: 30px;}
 					.rname{width:400px; height: 30px; font-size:18px;font-weight:700;position: absolute;left: 145px; top: 30px;}
 					.rdetail{width:400px; height: 30px;position: absolute;left: 145px; top: 80px;}

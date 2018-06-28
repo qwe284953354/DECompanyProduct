@@ -37,7 +37,7 @@
 		$('#edit-hotel').on('show.bs.modal', function (event) {
 			var datas = $(event.relatedTarget);
 			var hid=datas.data("hid");
-		 	 $.ajax("Admin/Adminhorder/find",// 发送请求的URL字符串。
+		 	 $.ajax("Admin/Adminhotel/find",// 发送请求的URL字符串。
 					{
 						dataType : "json", // 预期服务器返回的数据类型。
 						type : "post", //  请求方式 POST或GET

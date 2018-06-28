@@ -5,7 +5,7 @@ import java.util.List;
 import com.DEC.entity.Province;
 
 /**
- * <p>Description: 省接口类</p>
+ * <p>Description: ProvinceDao接口类</p>
  * @author UY
  * @date   2018年6月21日 
  *

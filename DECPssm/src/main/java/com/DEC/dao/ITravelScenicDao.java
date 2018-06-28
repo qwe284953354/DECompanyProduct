@@ -5,7 +5,7 @@ import java.util.List;
 import com.DEC.entity.TravelScenic;
 
 /**
- * <p>Description: 旅游景点接口类</p>
+ * <p>Description: TravelScenicDao接口类</p>
  * @author UY
  * @date   2018年6月22日 
  *

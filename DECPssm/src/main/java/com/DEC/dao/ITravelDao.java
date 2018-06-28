@@ -5,7 +5,7 @@ import java.util.List;
 import com.DEC.entity.Travel;
 
 /**
- * <p>Description: 旅游项目接口类</p>
+ * <p>Description: TravelDao接口类</p>
  * @author UY
  * @date   2018年6月22日 
  *

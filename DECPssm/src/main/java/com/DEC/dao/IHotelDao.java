@@ -5,7 +5,7 @@ import java.util.List;
 import com.DEC.entity.Hotel;
 
 /**
- * <p>Description: 酒店接口类</p>
+ * <p>Description: HotelDao接口类</p>
  * @author UY
  * @date   2018年6月20日 
  *

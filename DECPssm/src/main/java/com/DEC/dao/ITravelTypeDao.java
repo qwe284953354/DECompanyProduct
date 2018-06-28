@@ -3,7 +3,7 @@ package com.DEC.dao;
 import com.DEC.entity.TravelType;
 
 /**
- * <p>Description: 旅游项目类型接口类</p>
+ * <p>Description: TravelTypeDao接口类</p>
  * @author UY
  * @date   2018年6月22日 
  *

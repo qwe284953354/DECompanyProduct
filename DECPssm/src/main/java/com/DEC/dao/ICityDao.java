@@ -5,7 +5,7 @@ import java.util.List;
 import com.DEC.entity.City;
 
 /**
- * <p>Description: 城市接口类</p>
+ * <p>Description: CityDao接口类</p>
  * @author UY
  * @date   2018年6月21日 
  *

@@ -5,7 +5,7 @@ import java.util.List;
 import com.DEC.entity.User;
 
 /**
- * <p>Description: 用户接口类</p>
+ * <p>Description: UserDao接口类</p>
  * @author UY
  * @date   2018年6月21日 
  *

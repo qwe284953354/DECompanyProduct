@@ -107,7 +107,7 @@ public class IHotelDaoImpl extends SqlSessionDaoSupport implements IHotelDao {
 	 * <p>Title: addHotel</p>  
 	 * <p>Description: </p>
 	 * @param h Hotel对象
-	 * @return row 受到添加操作的行数
+	 * @return row 受到添加操作影响的行数
 	 * @see com.DEC.dao.IHotelDao#addHotel(com.DEC.entity.Hotel)
 	 */
 	public int addHotel(Hotel h) {
@@ -120,7 +120,7 @@ public class IHotelDaoImpl extends SqlSessionDaoSupport implements IHotelDao {
 	 * <p>Title: editHotel</p>  
 	 * <p>Description: </p>
 	 * @param h Hotel对象
-	 * @return row 受到修改操作的行数
+	 * @return row 受到修改操作影响的行数
 	 * @see com.DEC.dao.IHotelDao#editHotel(com.DEC.entity.Hotel)
 	 */
 	public int editHotel(Hotel h) {
@@ -133,7 +133,7 @@ public class IHotelDaoImpl extends SqlSessionDaoSupport implements IHotelDao {
 	 * <p>Title: delHotel</p>  
 	 * <p>Description: </p>
 	 * @param hid 酒店编号
-	 * @return row 受到删除操作的行数
+	 * @return row 受到删除操作影响的行数
 	 * @see com.DEC.dao.IHotelDao#delHotel(int)
 	 */
 	public int delHotel(int hid) {

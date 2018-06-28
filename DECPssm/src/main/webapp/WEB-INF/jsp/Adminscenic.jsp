@@ -17,14 +17,11 @@
 	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap.css">
 	<style type="text/css" class="init">
-	
 	</style>
 	<link rel="stylesheet" type="text/css" href="css/admin-a.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
-	<script type="text/javascript" language="javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
 	<script type="text/javascript" language="javascript" src="js/dataTables.bootstrap.js"></script>
 	<script type="text/javascript" language="javascript" class="init">
@@ -32,6 +29,38 @@
 		$(document).ready(function() {
 			$('#example').DataTable();
 		} );
+	</script>
+	<script type="text/javascript">
+	$(function(){
+		$('#edit-scenic').on('show.bs.modal', function (event) {
+			var datas = $(event.relatedTarget);
+			var id=datas.data("id");
+		 	 $.ajax("Admin/Adminscenic/find",// 发送请求的URL字符串。
+					{
+						dataType : "json", // 预期服务器返回的数据类型。
+						type : "post", //  请求方式 POST或GET
+						//contentType : "application/json", //  发送信息至服务器时的内容编码类型
+						// 发送到服务器的数据。
+						data :{
+							id : id,
+						},
+						async : true, // 默认设置下，所有请求均为异步请求。如果设置为false，则发送同步请求
+						// 请求成功后的回调函数。
+						success : function(data) {
+							  $("#tsname").val(data.tsname);
+							  $("#tsimg").val(data.tsimg);	
+							  $("#tsaddress").val(data.tsaddress);	
+							  $("#tsdetail").val(data.tsdetail);
+							  $("#tsid").val(data.tsid);
+						},
+						// 请求出错时调用的函数
+						error : function() {
+							alert("数据发送失败");
+						}
+					}); 
+		})
+	})
+		
 	</script>
 	</head>
 	<body>
@@ -70,7 +99,7 @@
 						</td>
 						<td>${ts.tsdetail}</td>
 						<td>
-							<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-scenic">修改</button>
+							<button type="button" class="btn-newbtn" data-toggle="modal" data-target="#edit-scenic" data-id="${ts.tsid }">修改</button>
 							<a href="./Admin/Adminscenic/del?tsid=${ts.tsid}">
 								<button type="button" class="btn-newbtn" id="del-scenic">删除</button>
 							</a>
@@ -106,6 +135,58 @@
               				<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-tree-conifer"></span></span>
   					  	 	<!--输入框text-->
+ 							<input type="text" class="form-control" placeholder="Scenic" aria-describedby="basic-addon1" name="tsname">
+						</div>
+						<br />
+						<div class="input-group">
+							<!--标签样式-->
+  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-file"></span></span>
+  					  	 	<!--输入框text-->
+ 							<input type="text" class="form-control" placeholder="Scenicaddress" aria-describedby="basic-addon1" name="tsaddress">	
+						</div>
+						<br />
+						<div class="input-group">
+							<!--标签样式-->
+  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-picture"></span></span>
+  					  	 	<!--输入框text-->
+ 							<input type="text" class="form-control" placeholder="Scenicimg" aria-describedby="basic-addon1" name="tsimg">	
+						</div>
+						<br />
+						<div class="input-group">
+							<!--标签样式-->
+  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-th-list"></span></span>
+  					  	 	<!--输入框text-->
+ 							<input type="text" class="form-control" placeholder="Scenicdetail" aria-describedby="basic-addon1"  name="tsdetail">	
+						</div>		
+						<br />
+						<div class="input-group">
+							<!--标签样式-->
+  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-th-list"></span></span>
+  					  	 	<!--输入框text-->
+ 							<input type="text" class="form-control" placeholder="Cid" aria-describedby="basic-addon1" name="cid">	
+						</div>			
+      				</div>
+     		 		<div class="modal-footer">
+       					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        				<input type="submit" class="btn btn-primary" value="Save">
+      				</div>
+      				</form:form >
+   				</div>
+  			</div>
+		</div>
+		<!--edit-scenic-->
+		<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="edit-scenic">
+ 			<div class="modal-dialog modal-lg" role="document">
+   				<div class="modal-content">
+     		 		<div class="modal-header">
+     		 			<h4 class="modal-title" id="myModalLabel">景点修改</h4>
+     		 		</div>
+     		 		<form:form action="Admin/Adminscenic/edit" method="post" modelAttribute="scenic">
+     		 		<div class="modal-body">
+              			<div class="input-group">
+              				<!--标签样式-->
+  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-tree-conifer"></span></span>
+  					  	 	<!--输入框text-->
  							<input type="text" class="form-control" placeholder="Scenic" aria-describedby="basic-addon1" id="tsname" name="tsname">
 						</div>
 						<br />
@@ -128,63 +209,14 @@
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-th-list"></span></span>
   					  	 	<!--输入框text-->
  							<input type="text" class="form-control" placeholder="Scenicdetail" aria-describedby="basic-addon1" id="tsdetail" name="tsdetail">	
-						</div>		
-						<br />
-						<div class="input-group">
-							<!--标签样式-->
-  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-th-list"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Cid" aria-describedby="basic-addon1" id="cid" name="cid">	
-						</div>			
+						</div>				
       				</div>
+      				<input type="hidden" id="tsid" name="tsid">
      		 		<div class="modal-footer">
        					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         				<input type="submit" class="btn btn-primary" value="Save">
       				</div>
-      				</form:form >
-   				</div>
-  			</div>
-		</div>
-		<!--edit-scenic-->
-		<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" id="edit-scenic">
- 			<div class="modal-dialog modal-lg" role="document">
-   				<div class="modal-content">
-     		 		<div class="modal-header">
-     		 			<h4 class="modal-title" id="myModalLabel">景点修改</h4>
-     		 		</div>
-     		 		<div class="modal-body">
-              			<div class="input-group">
-              				<!--标签样式-->
-  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-tree-conifer"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Scenic" aria-describedby="basic-addon1" id="tsname">
-						</div>
-						<br />
-						<div class="input-group">
-							<!--标签样式-->
-  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-file"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Scenicaddress" aria-describedby="basic-addon1" id="tsaddress">	
-						</div>
-						<br />
-						<div class="input-group">
-							<!--标签样式-->
-  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-picture"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Scenicimg" aria-describedby="basic-addon1" id="tsimg">	
-						</div>
-						<br />
-						<div class="input-group">
-							<!--标签样式-->
-  					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-th-list"></span></span>
-  					  	 	<!--输入框text-->
- 							<input type="text" class="form-control" placeholder="Scenicdetail" aria-describedby="basic-addon1" id="tsdetail">	
-						</div>				
-      				</div>
-     		 		<div class="modal-footer">
-       					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        				<button type="button" class="btn btn-primary" onclick="#">Save</button>
-      				</div>
+      				</form:form>
    				</div>
   			</div>
 		</div>

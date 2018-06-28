@@ -10,6 +10,9 @@
 	<select id="findUserByUid" parameterType="int" resultType="User">
 		select * from user where uid=#{uid} 
 	</select>
+	<select id="findUserByUname" parameterType="String" resultType="User">
+		select * from user where uname=#{uname} 
+	</select>
 	<insert id="addUser" useGeneratedKeys="true" keyProperty="uid"
 		parameterType="com.DEC.entity.User">
 		insert into user (uid,uname,upwd,umail,utel,ubirth,utype)

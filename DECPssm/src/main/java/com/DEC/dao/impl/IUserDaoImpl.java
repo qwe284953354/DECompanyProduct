@@ -102,4 +102,10 @@ public class IUserDaoImpl extends SqlSessionDaoSupport implements IUserDao {
 		return row;
 	}
 
+	public User findUserByUname(String uname) {
+		SqlSession sqlSession = this.getSqlSession();
+		User user = sqlSession.selectOne("findUserByUname", uname);
+		return user;
+	}
+
 }

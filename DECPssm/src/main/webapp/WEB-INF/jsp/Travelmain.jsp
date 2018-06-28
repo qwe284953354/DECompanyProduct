@@ -34,7 +34,7 @@
 					<div class="login">
 						<img src="img/none-login.png"> <span
 							class="glyphicon glyphicon-triangle-bottom"></span> <a
-							href="login.jsp" class="loginbtn">登陆</a>
+							href="tologin" class="loginbtn">登陆</a>
 					</div>
 				</c:if>
 				<c:if test="${uname != null }">

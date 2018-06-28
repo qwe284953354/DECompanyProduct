@@ -15,6 +15,7 @@ public interface IUserService {
 	public List<User> findAllUser();
 	public List<User> findAllNormalUser();
 	public User findUserByUid(int uid);
+	public User findUserByUname(String uname);
 	public boolean addUser(User u);
 	public boolean editUser(User u);
 	public boolean delUser(int uid);

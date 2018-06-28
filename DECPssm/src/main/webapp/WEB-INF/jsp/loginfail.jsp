@@ -28,24 +28,9 @@
 	<hr
 		style="height: 2px; border: none; background-color: lightblue; width: 60%; margin: 0 auto;" />
 	<div class="login-form-loc">
-		<form method="post" action="dologin" class="form-type">
-			<div class="alert " role="alert">
-				<div>用户登陆</div>
-				<br />
-				<div class="input-group input-group-lg">
-					<span class="input-group-addon" id="sizing-addon3"><spanclass="glyphicon glyphicon-user"></span></span> 
-					<input type="text" class="form-control" id="username" name="username" placeholder="用户名..." aria-describedby="sizing-addon3">
-				</div>
-				<br />
-				<div class="input-group input-group-lg">
-					<span class="input-group-addon" id="sizing-addon3"><span class="glyphicon glyphicon-lock"></span></span> 
-					<input type="text" class="form-control" id="userpwd" name="userpwd" placeholder="密码..." aria-describedby="sizing-addon3">
-				</div>
-				<a href="#" class="forget">忘记密码？</a> 
-				<input type="button" value="登陆" class="login-btn" /> <br /> 
-				<span class="registered">还没有账号嘛？<a href="registered.html">免费注册</a></span>
-			</div>
-		</form>
+		${msg }
+		
+		<a href="login.jsp">返回</a>
 
 	</div>
 	<div class="footer">

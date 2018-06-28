@@ -84,4 +84,8 @@ public class IUserServiceImpl implements IUserService {
 		return (userDao.delUser(uid) > 0) ? true : false;
 	}
 
+	public User findUserByUname(String uname) {
+		return (userDao.findUserByUname(uname));
+	}
+
 }

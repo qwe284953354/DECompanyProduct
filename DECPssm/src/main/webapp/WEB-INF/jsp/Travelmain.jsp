@@ -13,6 +13,7 @@
 		<meta charset="UTF-8">
 		<title>狗眼旅行</title>
 		<link rel="icon" href="img/favicon.ico" />
+		<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/bootstrap.css" />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/bootstrap-theme.css" />
@@ -62,38 +63,85 @@
 		</div>
 
 		<div class="bgcolor">
+			<c:forEach items="${tlist }" var="t">
+				<!-- items循环体开始 -->
+			<div class="items">
+				<div class="borders">
+					<div class="photoes">
+						${t.tsid }
+					</div>
+					<div class="details-info">					
+						<div class="titlebox name">
+							${t.tname }
+						</div>
+						<div class="detailbox type">
+							类型：${t.ttid }
+						</div>
+						<div class="detailbox scenic">
+							包含景点：${t.tsid }
+						</div>
+						<div class="detailbox city">
+							所在城市：${t.cid }
+						</div>
+						<div class="detailbox dates">
+							出发日期：${t.tdate }
+						</div>
+						<div class="detailbox price">
+							¥${t.tprice }
+						</div>
+						<div class="introduce">
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							${t.tdetail }
+						</div>
+						<div class="buy">
+							<button class="buybtn">立刻预订</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br />
+			<hr style="border: dashed 1.5px; border-color: rgba(0,100,255,0.6); border-radius: 10px; height: 0.5px; width: 90%; margin-left: 5%;" />
+			<!-- items循环体结束 -->
+			</c:forEach>
 			<!-- items循环体开始 -->
 			<div class="items">
 				<div class="borders">
-					<div class="photoes"> 图片</div>
-					<div class="details-info">
-						<form method="post" action="">
-							<div class="detailbox name">
-								旅游项目名：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox type">
-								旅游类型：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox scenic">
-								旅游景点：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox city">
-								旅游城市：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox dates">
-								旅游日期：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox price">
-								价格：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="introduce">
-								介绍：<textarea rows="7" cols="40" readonly="readonly">啦啦啦啦啦啦啦啦啊啦啦啦啦啦啦</textarea>
-							</div>
-							<div class="buy">
-								<input type="submit" value="详情" class="buybtn" />
-							</div>
-						</form>
-
+					<div class="photoes">
+						<img src="img/西湖.jpg" />
+					</div>
+					<div class="details-info">					
+						<div class="titlebox name">
+							杭州京杭大运河+杭州宋城景区半自助一日游杭州京杭大运河+杭州宋城景区半自助一日游
+						</div>
+						<div class="detailbox type">
+							类型：一日游
+						</div>
+						<div class="detailbox scenic">
+							包含景点：京杭大运河,杭州宋城景区
+						</div>
+						<div class="detailbox city">
+							所在城市：杭州
+						</div>
+						<div class="detailbox dates">
+							出发日期：2018-10-01
+						</div>
+						<div class="detailbox price">
+							¥188
+						</div>
+						<div class="introduce">
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							杭州京杭大运河+杭州宋城景区半自助一日游【下午13：00集合，含宋城演出+运河游船+车费】集合：小河路336号中国刀剪剑博物馆西门口集合
+							具体时间地点以导游通知为准。（出发前一天21:30之前会电话短信通知，出发前一天21:30之后预定的游客，当天早上10:00通知）
+							桥西直街依着拱宸桥，这里有着近现代工业发展的痕迹，大量保留着肌理的街巷里弄、传统合院，还有住了一辈子的原住民。
+							最难得的是，作为近现代工业遗产的那些旧产房，因为工美博物馆群的进驻，让“遗产”散发着新的魅力。
+							1889年，拱宸桥西，建起了杭州最早的机械纺织企业——通益公纱厂，拉开了杭州近代工业的序幕，这就是杭一棉的前身。
+							很多住在桥西一带的居民，从十几岁就进到了厂里上班，一直干到退休。
+							杭州京杭大运河+杭州宋城景区半自助一日游【下午13：00集合，含宋城演出+运河游船+车费】集合：小河路336号中国刀剪剑博物馆西门口集合
+							具体时间地点以导游通知为准。（出发前一天21:30之前会电话短信通知，出发前一天21:30之后预定的游客，当天早上10:00通知）
+						</div>
+						<div class="buy">
+							<button class="buybtn">立刻预订</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -101,89 +149,14 @@
 			<hr style="border: dashed 1.5px; border-color: rgba(0,100,255,0.6); border-radius: 10px; height: 0.5px; width: 90%; margin-left: 5%;" />
 			<!-- items循环体结束 -->
 
-			<!-- items循环体开始 -->
-			<div class="items">
-				<div class="borders">
-					<div class="photoes"> 图片</div>
-					<div class="details-info">
-						<form method="post" action="">
-							<div class="detailbox name">
-								旅游项目名：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox type">
-								旅游类型：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox scenic">
-								旅游景点：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox city">
-								旅游城市：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox dates">
-								旅游日期：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox price">
-								价格：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="introduce">
-								介绍：<textarea rows="7" cols="40" readonly="readonly">啦啦啦啦啦啦啦啦啊啦啦啦啦啦啦</textarea>
-							</div>
-							<div class="buy">
-								<input type="submit" value="详情" class="buybtn" />
-							</div>
-						</form>
-
-					</div>
-				</div>
-			</div>
-			<br />
-			<hr style="border: dashed 1.5px; border-color: rgba(0,100,255,0.6); border-radius: 10px; height: 0.5px; width: 90%; margin-left: 5%;" />
-			<!-- items循环体结束 -->
-			<!-- items循环体开始 -->
-			<div class="items">
-				<div class="borders">
-					<div class="photoes"> 图片</div>
-					<div class="details-info">
-						<form method="post" action="">
-							<div class="detailbox name">
-								旅游项目名：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox type">
-								旅游类型：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox scenic">
-								旅游景点：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox city">
-								旅游城市：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox dates">
-								旅游日期：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="detailbox price">
-								价格：<input type="text" readonly="readonly" value="1111" />
-							</div>
-							<div class="introduce">
-								介绍：<textarea rows="7" cols="40" readonly="readonly">啦啦啦啦啦啦啦啦啊啦啦啦啦啦啦</textarea>
-							</div>
-							<div class="buy">
-								<input type="submit" value="详情" class="buybtn" />
-							</div>
-						</form>
-
-					</div>
-				</div>
-			</div>
-			<br />
-			<hr style="border: dashed 1.5px; border-color: rgba(0,100,255,0.6); border-radius: 10px; height: 0.5px; width: 90%; margin-left: 5%;" />
-			<!-- items循环体结束 -->
 			
-			<div class="footer">
-		<br/><br /><br />
-		<p>违法和不良信息举报电话:4006666666 举报邮箱:jubao.gouyan@gouyan.com </p>
-		<p>友情链接：<a>狗眼电影</a></p>
-		<p>©2016 狗眼电影 gouyan.com 京ICP证000000号 京ICP备00000000号-1 京公网安备 00000000000000号 网络文化经营许可证 电子公告服务规则</p>
-		<p>杭州狗眼文化传媒有限公司</p>
+			
+		<div class="footer">
+			<br/><br /><br />
+			<p>违法和不良信息举报电话:4006666666 举报邮箱:jubao.gouyan@gouyan.com </p>
+			<p>友情链接：<a>狗眼电影</a></p>
+			<p>©2016 狗眼电影 gouyan.com 京ICP证000000号 京ICP备00000000号-1 京公网安备 00000000000000号 网络文化经营许可证 电子公告服务规则</p>
+			<p>杭州狗眼文化传媒有限公司</p>
 		</div>
 		</div>
 

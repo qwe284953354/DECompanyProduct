@@ -1,8 +1,16 @@
 package com.DEC.Controller;
 
+import java.util.List;
+
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.DEC.entity.Travel;
+import com.DEC.entity.User;
+import com.DEC.service.ITravelService;
 
 /**
  * <p>Description: </p>
@@ -12,11 +20,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class DECcontroller {
-
-	@RequestMapping(value = "/Admin",method = RequestMethod.GET)
-	public String test() {
-		return "Admin";
-	}
 	
+	@Resource
+	private ITravelService travelService;
+	@RequestMapping(value = "/showAllTravel")
+	public String ShowAllTravel(Model model) {
+		List<Travel> tlist = travelService.findAllTravel();
+		model.addAttribute("tlist", tlist);
+		return "Travelmain";
+	}
 	
 }

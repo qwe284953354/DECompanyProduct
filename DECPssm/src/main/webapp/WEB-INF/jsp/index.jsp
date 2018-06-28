@@ -12,6 +12,7 @@
 		<base href="<%=basePath%>">
 		<meta charset="utf-8" />
 		<title>狗眼旅行</title>
+		<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="icon" href="img/favicon.ico" />
 		<link rel="stylesheet" href="css/bootstrap.css" />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -107,7 +108,7 @@
 			<div class="travel">
 				<div class="word to">选择旅游？</div>
 				<div class="button-loc">
-					<a href="#" class="lefta">Travel</a>
+					<a href="" class="lefta">Travel</a>
 					<!--描述：特效-->
 				</div>
 			</div>

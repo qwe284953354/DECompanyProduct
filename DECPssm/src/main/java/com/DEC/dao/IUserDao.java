@@ -12,12 +12,12 @@ import com.DEC.entity.User;
  */
 public interface IUserDao {
 	
-	public List<User> findAllUser();		//查找所有
-	public List<User> findAllNormalUser();	//查找所有普通用户
-	public User findUserByUname(String uname);
-	public User findUserByUid(int uid);		//通过用户编号查找
-	public int addUser(User u);				//添加
-	public int editUser(User u);			//修改
-	public int delUser(int uid);			//删除
+	public List<User> findAllUser();			//查找所有
+	public List<User> findAllNormalUser();		//查找所有普通用户
+	public User findUserByUname(String uname);	//通过用户名称查找
+	public User findUserByUid(int uid);			//通过用户编号查找
+	public int addUser(User u);					//添加
+	public int editUser(User u);				//修改
+	public int delUser(int uid);				//删除
 	
 }

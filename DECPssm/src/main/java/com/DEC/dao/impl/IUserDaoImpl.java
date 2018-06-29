@@ -62,6 +62,19 @@ public class IUserDaoImpl extends SqlSessionDaoSupport implements IUserDao {
 		User user = sqlSession.selectOne("findUserByUid", uid);
 		return user;
 	}
+	
+	/** 
+	 * <p>Title: findUserByUname</p>  
+	 * <p>Description: 通过名称查找</p>
+	 * @param uname 用户名称
+	 * @return User
+	 * @see com.DEC.dao.IUserDao#findUserByUname(String)
+	 */
+	public User findUserByUname(String uname) {
+		SqlSession sqlSession = this.getSqlSession();
+		User user = sqlSession.selectOne("findUserByUname", uname);
+		return user;
+	}
 
 	/** 
 	 * <p>Title: addUser</p>  
@@ -100,12 +113,6 @@ public class IUserDaoImpl extends SqlSessionDaoSupport implements IUserDao {
 		SqlSession sqlSession = this.getSqlSession();
 		int row = sqlSession.delete("delUser", uid);
 		return row;
-	}
-
-	public User findUserByUname(String uname) {
-		SqlSession sqlSession = this.getSqlSession();
-		User user = sqlSession.selectOne("findUserByUname", uname);
-		return user;
 	}
 
 }

@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.DEC.dao.IHotelDao">
-	<select id="findAllHotel" resultType="Hotel">
-		select * from hotel
+	<resultMap type="Hotel" id="hotelResultMap">
+		<id column="hid" property="hid" />
+		<result column="hname" property="hname" />
+		<result column="hstar" property="hstar" />
+		<result column="himg" property="himg" />
+		<result column="haddress" property="haddress" />
+		<result column="hmark" property="hmark" />
+		<association property="hotelRoom" javaType="com.DEC.entity.HotelRoom">
+			<id column="hrid" property="hrid" />
+			<result column="hprice" property="hprice" />
+		</association>
+	</resultMap>
+	<select id="findAllHotel" resultMap="hotelResultMap">
+		select hotel.*, MIN(hroom.hprice) hprice from hotel,hroom
+		where hotel.hid=hroom.hid
 	</select>
 	<select id="findHotelByName" parameterType="String" resultType="Hotel">
 		select * from hotel where hname like %#{name}%

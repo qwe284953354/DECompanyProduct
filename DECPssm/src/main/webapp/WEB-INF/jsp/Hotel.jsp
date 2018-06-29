@@ -72,8 +72,37 @@
 	</div>
 
 	<div class="bgcolor">
+	<c:forEach items="${hlist }" var="h">
 		<!-- items循环体开始 -->
 		<div class="items">
+			<div class="borders">
+				<div class="photoes">
+					<img src="${h.himg} }" />
+				</div>
+				<div class="details-info">
+					<div class="titlebox name">${h.hname}</div>
+					<div class="detailbox type">${h.htype}</div>
+					<div class="detailbox haddress">${h.haddress}</div>
+					<div class="detailbox hstar">${h.hstar}</div>
+					<div class="detailbox price">
+						￥${h.hotelRoom.hprice} <i class="smallnumber">起</i>
+					</div>
+					<div class="detailbox hmark">
+						${h.hmark} <i class="smallnumber">分</i>
+					</div>
+					<div class="buy">
+						<button class="buybtn">详情</button>
+					</div>
+					<div class="listbox">
+						<img src="img/listbox-01.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<hr
+			style="border: dashed 1.5px; border-color: rgba(0, 100, 255, 0.6); border-radius: 10px; height: 0.5px; width: 90%; margin-left: 5%;" />
+		<!-- <div class="items">
 			<div class="borders">
 				<div class="photoes">
 					<img src="img/酒店.jpg" />
@@ -101,9 +130,9 @@
 		</div>
 		<br />
 		<hr
-			style="border: dashed 1.5px; border-color: rgba(0, 100, 255, 0.6); border-radius: 10px; height: 0.5px; width: 90%; margin-left: 5%;" />
+			style="border: dashed 1.5px; border-color: rgba(0, 100, 255, 0.6); border-radius: 10px; height: 0.5px; width: 90%; margin-left: 5%;" /> -->
 		<!-- items循环体结束 -->
-
+	</c:forEach>
 
 		<div class="footer">
 			<br /> <br /> <br />

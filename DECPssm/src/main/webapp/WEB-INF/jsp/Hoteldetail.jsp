@@ -49,24 +49,6 @@
 			<img src="img/toppic01.jpg" />
 		</div>
 		<div class="navegation">
-			<!-- <div class="btn-loc">
-				<div class="typebtn tt1">
-					<a id="t1" href="#">经济型</a>
-					<div class="def-box" id="d1"></div>
-				</div>
-				<div class="typebtn">
-					<a id="t2" href="#">舒适三星</a>
-					<div class="def-box" id="d2"></div>
-				</div>
-				<div class="typebtn">
-					<a id="t3" href="#">高档四星</a>
-					<div class="def-box" id="d3"></div>
-				</div>
-				<div class="typebtn">
-					<a id="t4" href="#">豪华五星</a>
-					<div class="def-box" id="d4"></div>
-				</div>
-			</div> -->
 		</div>
 		<div class="bgcolor">
 			<div class="detailmain">

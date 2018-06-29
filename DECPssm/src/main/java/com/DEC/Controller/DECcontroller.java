@@ -10,8 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.DEC.dao.ICityDao;
 import com.DEC.entity.Travel;
 import com.DEC.entity.User;
+import com.DEC.service.ICityService;
 import com.DEC.service.ITravelService;
 import com.DEC.service.IUserService;
 
@@ -37,6 +39,8 @@ public class DECcontroller {
 	public String ShowTravel(Model model,HttpSession session) {
 		List<Travel> tlist = travelService.findAllTravel();
 		session.setAttribute("uname", null);
+		session.setAttribute("type", null);
+		session.setAttribute("city", null);
 		model.addAttribute("tlist", tlist);
 		return "Travelmain";
 	}
@@ -49,14 +53,56 @@ public class DECcontroller {
 		return "Travelmain";
 	}
 	
+	@RequestMapping(value = "/oneDay")
+	public String oneDayTravel(Model model,HttpSession session) {
+		List<Travel> tlist = travelService.findTravelByType(1);
+		session.setAttribute("type", "one");
+		model.addAttribute("tlist", tlist);
+		return "Travelmain";
+	}
+	
+	@RequestMapping(value = "/twoDay")
+	public String twoDayTravel(Model model,HttpSession session) {
+		List<Travel> tlist = travelService.findTravelByType(2);
+		session.setAttribute("type", "two");
+		model.addAttribute("tlist", tlist);
+		return "Travelmain";
+	}
+	
+	@RequestMapping(value = "/threeDay")
+	public String threeDayTravel(Model model,HttpSession session) {
+		List<Travel> tlist = travelService.findTravelByType(3);
+		session.setAttribute("type", "three");
+		model.addAttribute("tlist", tlist);
+		return "Travelmain";
+	}
+	
+	@RequestMapping(value = "/diyOrder")
+	public String todiyOrder() {
+		return "DiyOrder";
+	}
+	
+	@Resource
+	private ICityService cityService;
+	@RequestMapping(value = "/selectCity")
+	public String chooseCity(Model model,HttpSession session,@RequestParam("city") String city) {
+		
+		return "index";
+	}
+
+	
 	//跳转登录页面
 	@RequestMapping(value = "/tologin")
 	public String tologin() {
 		return "login";
 	}
 	
+	/*@RequestMapping(value="/{formName}")
+	 public String loginForm(@PathVariable String formName){
+		// 动态跳转页面
+		return formName;
+	}*/
 	
-
 	//登录操作
 	@Resource
 	private IUserService userService;
@@ -87,6 +133,7 @@ public class DECcontroller {
 		model.addAttribute("user", user);
 		return "userorder";
 	}
+	
 	
 	
 	

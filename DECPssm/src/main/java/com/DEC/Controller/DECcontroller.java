@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.DEC.dao.ICityDao;
+import com.DEC.entity.City;
 import com.DEC.entity.Travel;
 import com.DEC.entity.User;
 import com.DEC.service.ICityService;
@@ -85,9 +86,19 @@ public class DECcontroller {
 	@Resource
 	private ICityService cityService;
 	@RequestMapping(value = "/selectCity")
-	public String chooseCity(Model model,HttpSession session,@RequestParam("city") String city) {
+	public String chooseCity(Model model,HttpSession session,@RequestParam("city") String cityname) {
 		
-		return "index";
+		City city = cityService.findCityByCname(cityname);
+		if(city==null) {
+			model.addAttribute("msg1", "暂无此城市信息");
+			return "redirect:/showAllTravel";
+		}else {
+			List<Travel> tlist = travelService.findTravelByCid(city.getCid());
+			session.setAttribute("city", city.getCid());
+			model.addAttribute("tlist", tlist);
+			return "Travelmain";
+		}
+		
 	}
 
 	
@@ -134,7 +145,10 @@ public class DECcontroller {
 		return "userorder";
 	}
 	
-	
+	@RequestMapping(value = "/registered")
+	public String toregistered() {
+		return "registered";
+	}
 	
 	
 }

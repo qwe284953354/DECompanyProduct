@@ -53,21 +53,21 @@
 	<div class="navegation">
 		<div class="btn-loc">
 			<div class="typebtn tt1">
-				<a id="t1" href="#">一日游</a>
-				<div class="def-box" id="d1"></div>
-			</div>
-			<div class="typebtn">
-				<a id="t2" href="#">二日游</a>
-				<div class="def-box" id="d2"></div>
-			</div>
-			<div class="typebtn">
-				<a id="t3" href="#">假日游</a>
-				<div class="def-box" id="d3"></div>
-			</div>
-			<div class="typebtn">
-				<a id="t4" href="#">定制游</a>
-				<div class="def-box" id="d4"></div>
-			</div>
+					<a id="t1" href="oneDay">一日游</a>
+					<div class="def-box" id="d1"></div>
+				</div>
+				<div class="typebtn">
+					<a id="t2" href="twoDay">二日游</a>
+					<div class="def-box" id="d2"></div>
+				</div>
+				<div class="typebtn">
+					<a id="t3" href="threeDay">假日游</a>
+					<div class="def-box" id="d3"></div>
+				</div>
+				<div class="typebtn">
+					<a id="t4" href="diyOrder">定制游</a>
+					<div class="def-box" id="d4"></div>
+				</div>
 		</div>
 	</div>
 

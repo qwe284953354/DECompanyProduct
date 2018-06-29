@@ -30,7 +30,7 @@
 		<br />
 		<hr style="height:2px;border:none;background-color: lightblue; width: 60%; margin: 0 auto;" />
 		<div class="login-form-loc">
-			<form:form modelAttribute="user" method="post" class="form-type" action="./Registered/login">
+			<form:form modelAttribute="user" method="post" class="form-type" action="./Registered/doRegistered">
 				<div class="title">
 					<span>用户注册</span>
 				</div>

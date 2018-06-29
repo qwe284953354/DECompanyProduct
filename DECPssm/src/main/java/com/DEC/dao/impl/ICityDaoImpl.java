@@ -38,5 +38,10 @@ public class ICityDaoImpl extends SqlSessionDaoSupport implements ICityDao {
 		List<City> clist = sqlSession.selectList("findCityByPid", pid);
 		return clist;
 	}
+	public City findCityByCname(String cname) {
+		sqlSession = this.getSqlSession();
+		City city = sqlSession.selectOne("findCityByCname", cname);
+		return city;
+	}
 
 }

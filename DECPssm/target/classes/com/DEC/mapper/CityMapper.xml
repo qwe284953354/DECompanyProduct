@@ -4,4 +4,7 @@
 	<select id="findCityByPid" parameterType="int" resultType="City">
 		select * from city where pid = #{pid}
 	</select>
+	<select id="findCityByCname" parameterType="String" resultType="City">
+		select * from city where cname = #{cname}
+	</select>
 </mapper>

@@ -24,6 +24,11 @@
 	</head>
 
 	<body>
+		<c:if test="${msg1!=null }">
+			<script type="text/javascript">
+				alert("暂无此城市信息");
+			</script>
+		</c:if>
 		<div class="top">
 			<div class="inner-top">
 				<div class="logo">

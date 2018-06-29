@@ -13,4 +13,5 @@ import com.DEC.entity.City;
 public interface ICityDao {
 	
 	public List<City> findCityByPid(int pid);	//通过省市编号查找城市
+	public City findCityByCname(String cname); //通过城市名查找城市
 }

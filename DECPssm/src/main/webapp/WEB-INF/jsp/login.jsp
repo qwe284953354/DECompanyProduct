@@ -44,7 +44,7 @@
 				</div>
 				<a href="#" class="forget">忘记密码？</a> 
 				<input type="submit" value="登陆" class="login-btn" /> <br /> 
-				<span class="registered">还没有账号嘛？<a href="registered.html">免费注册</a></span>
+				<span class="registered">还没有账号嘛？<a href="registered">免费注册</a></span>
 			</div>
 		</form>
 

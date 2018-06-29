@@ -23,7 +23,7 @@ public class RegisteredController {
 	
 	@Resource
 	private IUserService userService;
-	@RequestMapping(value = "/login")
+	@RequestMapping(value = "/doRegistered")
 	public String toLogin(@ModelAttribute("user") User user) {
 		if(userService.addUser(user)) {
 			return "index";
@@ -31,4 +31,5 @@ public class RegisteredController {
 			return "";
 		}
 	}
+	
 }

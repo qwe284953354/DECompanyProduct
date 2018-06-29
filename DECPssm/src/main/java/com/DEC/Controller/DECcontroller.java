@@ -136,16 +136,18 @@ public class DECcontroller {
 	
 	//返回user信息
 	@RequestMapping(value = "/userinfo")
-	public String userinfo(Model model,@RequestParam("username") String username) {
-		User user = userService.findUserByUname(username);
+	public String userinfo(Model model,HttpSession session) {
+		String uname = (String)session.getAttribute("uname");
+		User user = userService.findUserByUname(uname);
 		model.addAttribute("user", user);
 		return "userinfo";
 	}
 	
 	//返回user包含 该user的所有order
 	@RequestMapping(value = "/userorder")
-	public String userorder(Model model,@RequestParam("username") String username) {
-		User user = userService.findUserByUname(username);
+	public String userorder(Model model,HttpSession session) {
+		String uname = (String)session.getAttribute("uname");
+		User user = userService.findUserByUname(uname);
 		model.addAttribute("user", user);
 		return "userorder";
 	}
@@ -158,6 +160,7 @@ public class DECcontroller {
 	
 	@Resource
 	private ITravelOrderService travelOrderService;
+	@RequestMapping(value = "/buy")
 	public String buy(Model model,@RequestParam("tid") int tid,HttpSession session) {
 		Travel travel = travelService.findTravelByTid(tid);
 		String uname = (String)session.getAttribute("uname");
@@ -173,6 +176,11 @@ public class DECcontroller {
 			model.addAttribute("msg", "下单成功");
 			return "info";
 		}
+	}
+	@RequestMapping(value = "/celTravelOrder")
+	public String celTorder(@RequestParam("toid") int toid) {
+		travelOrderService.delTravelOrder(toid);
+		return "redirect:/userorder";
 	}
 	
 	

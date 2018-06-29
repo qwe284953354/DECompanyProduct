@@ -30,7 +30,7 @@
 					<img src="img/logo-1.png" />
 				</div>
 				<div class="back-home">
-					<h4><a href="index.html">回到主页</a></h4>
+					<h4><a href="showAllTravel">回到主页</a></h4>
 				</div>
 			</div>
 		</div>

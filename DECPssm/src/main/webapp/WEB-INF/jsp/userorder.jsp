@@ -42,7 +42,7 @@
 					<img src="img/logo-1.png" />
 				</div>
 				<div class="back-home">
-					<h4><a href="index.html">回到主页</a></h4>
+					<h4><a href="showAllTravel">回到主页</a></h4>
 				</div>
 			</div>
 		</div>
@@ -54,8 +54,8 @@
 						<h1>个人中心</h1>
 					</div>
 					<div class="uleft-menu">
-						<a href="userinfo?username=${uname }" class="uleft-laber">基本信息</a>
-						<a href="userorder?username=${uname }" class="uleft-laber" style="background-color: rgba(135,206,250,1);color: white;">我的订单</a>
+						<a href="userinfo" class="uleft-laber">基本信息</a>
+						<a href="userorder" class="uleft-laber" style="background-color: rgba(135,206,250,1);color: white;">我的订单</a>
 					</div>
 				</div>
 				<div class="uinfo-right">
@@ -92,7 +92,7 @@
 											<td>${ut.orderTravel.tname }</td>
 											<td>${ut.toprice }</td>
 											<td>
-												<button type="button" class="btn-newbtn" id="del-torder" onclick="">取消</button>
+												<a href="celTravelOrder?toid=${ut.toid }"><button type="button" class="btn-newbtn" id="del-torder" onclick="">取消</button></a>
 											</td>
 										</tr>
 									</c:forEach>
@@ -136,7 +136,7 @@
 											<td>${uh.hobooktime }</td>
 											<td>${uname }</td>
 											<td>
-												<button type="button" class="btn-newbtn" id="del-horder" onclick="#">删除</button>
+												<a href="celHotelOrder"><button type="button" class="btn-newbtn" id="del-horder" onclick="#">取消</button></a>
 											</td>
 										</tr>
 									</c:forEach>

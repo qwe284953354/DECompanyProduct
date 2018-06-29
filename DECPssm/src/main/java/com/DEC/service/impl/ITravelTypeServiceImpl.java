@@ -9,7 +9,7 @@ import com.DEC.entity.TravelType;
 import com.DEC.service.ITravelTypeService;
 
 /**
- * <p>Description: </p>
+ * <p>Description: TravelTypeService实现类</p>
  * @author UY
  * @date   2018年6月22日 
  *
@@ -18,11 +18,12 @@ import com.DEC.service.ITravelTypeService;
 public class ITravelTypeServiceImpl implements ITravelTypeService {
 	@Resource
 	private ITravelTypeDao travelTypeDao;
+	
 	/** 
 	 * <p>Title: findTravelTypeByTtid</p>  
-	 * <p>Description: </p>
-	 * @param ttid
-	 * @return 
+	 * <p>Description: 通过编号查找</p>
+	 * @param ttid 类型编号
+	 * @return TravelType
 	 * @see com.DEC.service.ITravelTypeService#findTravelTypeByTtid(int)
 	 */
 	public TravelType findTravelTypeByTtid(int ttid) {

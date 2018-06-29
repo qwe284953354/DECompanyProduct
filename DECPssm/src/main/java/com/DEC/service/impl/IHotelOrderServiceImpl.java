@@ -11,7 +11,7 @@ import com.DEC.entity.HotelOrder;
 import com.DEC.service.IHotelOrderService;
 
 /**
- * <p>Description: </p>
+ * <p>Description: HotelOrderService实现类</p>
  * @author UY
  * @date   2018年6月22日 
  *
@@ -20,10 +20,11 @@ import com.DEC.service.IHotelOrderService;
 public class IHotelOrderServiceImpl implements IHotelOrderService {
 	@Resource
 	private IHotelOrderDao hotelOrderDao;
+	
 	/** 
 	 * <p>Title: findAllHotelOrder</p>  
-	 * <p>Description: </p>
-	 * @return 
+	 * <p>Description: 查找所有</p>
+	 * @return List<HotelOrder>
 	 * @see com.DEC.service.IHotelOrderService#findAllHotelOrder()
 	 */
 	public List<HotelOrder> findAllHotelOrder() {
@@ -32,9 +33,9 @@ public class IHotelOrderServiceImpl implements IHotelOrderService {
 
 	/** 
 	 * <p>Title: findHotelOrderByUid</p>  
-	 * <p>Description: </p>
-	 * @param uid
-	 * @return 
+	 * <p>Description: 通过用户编号查找</p>
+	 * @param uid 用户编号
+	 * @return List<HotelOrder>
 	 * @see com.DEC.service.IHotelOrderService#findHotelOrderByUid(int)
 	 */
 	public List<HotelOrder> findHotelOrderByUid(int uid) {
@@ -42,10 +43,10 @@ public class IHotelOrderServiceImpl implements IHotelOrderService {
 	}
 
 	/** 
-	 * <p>Title: findHotelOrderByHoid</p>  
-	 * <p>Description: </p>
-	 * @param hoid
-	 * @return 
+	 * <p>Title: findHotelOrderByHid</p>  
+	 * <p>Description: 通过酒店编号查找</p>
+	 * @param hid 酒店编号
+	 * @return List<HotelOrder>
 	 * @see com.DEC.service.IHotelOrderService#findHotelOrderByHid(int)
 	 */
 	public List<HotelOrder> findHotelOrderByHid(int hid) {
@@ -53,10 +54,10 @@ public class IHotelOrderServiceImpl implements IHotelOrderService {
 	}
 
 	/** 
-	 * <p>Title: findHotelOrderByHid</p>  
-	 * <p>Description: </p>
-	 * @param hid
-	 * @return 
+	 * <p>Title: findHotelOrderByHoid</p>  
+	 * <p>Description: 通过编号查找</p>
+	 * @param hoid 酒店订单编号
+	 * @return HotelOrder
 	 * @see com.DEC.service.IHotelOrderService#findHotelOrderByHoid(int)
 	 */
 	public HotelOrder findHotelOrderByHoid(int hoid) {
@@ -65,9 +66,9 @@ public class IHotelOrderServiceImpl implements IHotelOrderService {
 
 	/** 
 	 * <p>Title: addHotelOrder</p>  
-	 * <p>Description: </p>
-	 * @param hotelOrder
-	 * @return 
+	 * <p>Description: 添加</p>
+	 * @param hotelOrder HotelOrder对象
+	 * @return true成功/false失败
 	 * @see com.DEC.service.IHotelOrderService#addHotelOrder(com.DEC.entity.HotelOrder)
 	 */
 	public boolean addHotelOrder(HotelOrder hotelOrder) {
@@ -76,9 +77,9 @@ public class IHotelOrderServiceImpl implements IHotelOrderService {
 
 	/** 
 	 * <p>Title: editHotelOrder</p>  
-	 * <p>Description: </p>
-	 * @param hotelOrder
-	 * @return 
+	 * <p>Description: 修改</p>
+	 * @param hotelOrder HotelOrder对象
+	 * @return true成功/false失败
 	 * @see com.DEC.service.IHotelOrderService#editHotelOrder(com.DEC.entity.HotelOrder)
 	 */
 	public boolean editHotelOrder(HotelOrder hotelOrder) {
@@ -87,9 +88,9 @@ public class IHotelOrderServiceImpl implements IHotelOrderService {
 
 	/** 
 	 * <p>Title: delHotelOrder</p>  
-	 * <p>Description: </p>
-	 * @param hoid
-	 * @return 
+	 * <p>Description: 删除</p>
+	 * @param hoid 酒店订单编号
+	 * @return true成功/false失败
 	 * @see com.DEC.service.IHotelOrderService#delHotelOrder(int)
 	 */
 	public boolean delHotelOrder(int hoid) {

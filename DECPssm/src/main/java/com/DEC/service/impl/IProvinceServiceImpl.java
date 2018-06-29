@@ -11,7 +11,7 @@ import com.DEC.entity.Province;
 import com.DEC.service.IProvinceService;
 
 /**
- * <p>Description: </p>
+ * <p>Description: ProvinceService实现类</p>
  * @author UY
  * @date   2018年6月21日 
  *
@@ -20,10 +20,11 @@ import com.DEC.service.IProvinceService;
 public class IProvinceServiceImpl implements IProvinceService {
 	@Resource
 	private IProvinceDao provinceDao;
+	
 	/** 
 	 * <p>Title: findAllProvince</p>  
-	 * <p>Description: </p>
-	 * @return 
+	 * <p>Description: 查找所有</p>
+	 * @return List<Province>
 	 * @see com.DEC.service.IProvinceService#findAllProvince()
 	 */
 	public List<Province> findAllProvince() {

@@ -13,7 +13,7 @@ import com.DEC.dao.IUserDao;
 import com.DEC.entity.User;
 
 /**
- * <p>Description: UserDao</p>
+ * <p>Description: UserDao实现类</p>
  * @author UY
  * @date   2018年6月22日 
  *

@@ -11,7 +11,7 @@ import com.DEC.entity.TravelScenic;
 import com.DEC.service.ITravelScenicService;
 
 /**
- * <p>Description: </p>
+ * <p>Description: TravelScenicService实现类</p>
  * @author UY
  * @date   2018年6月22日 
  *
@@ -20,10 +20,11 @@ import com.DEC.service.ITravelScenicService;
 public class ITravelScenicServiceImpl implements ITravelScenicService {
 	@Resource
 	private ITravelScenicDao travelScenicDao;
+	
 	/** 
 	 * <p>Title: findAllScenic</p>  
-	 * <p>Description: </p>
-	 * @return 
+	 * <p>Description: 查找所有</p>
+	 * @return List<TravelScenic>
 	 * @see com.DEC.service.ITravelScenicService#findAllScenic()
 	 */
 	public List<TravelScenic> findAllScenic() {
@@ -32,9 +33,9 @@ public class ITravelScenicServiceImpl implements ITravelScenicService {
 
 	/** 
 	 * <p>Title: findScenicByTsid</p>  
-	 * <p>Description: </p>
-	 * @param tsid
-	 * @return 
+	 * <p>Description: 通过编号查找</p>
+	 * @param tsid 旅游景点编号
+	 * @return TravelScenic
 	 * @see com.DEC.service.ITravelScenicService#findScenicByTsid(int)
 	 */
 	public TravelScenic findScenicByTsid(int tsid) {
@@ -43,9 +44,9 @@ public class ITravelScenicServiceImpl implements ITravelScenicService {
 
 	/** 
 	 * <p>Title: findScenicByCid</p>  
-	 * <p>Description: </p>
-	 * @param cid
-	 * @return 
+	 * <p>Description: 通过城市编号查找</p>
+	 * @param cid 城市编号
+	 * @return List<TravelScenic>
 	 * @see com.DEC.service.ITravelScenicService#findScenicByCid(int)
 	 */
 	public List<TravelScenic> findScenicByCid(int cid) {
@@ -54,9 +55,9 @@ public class ITravelScenicServiceImpl implements ITravelScenicService {
 
 	/** 
 	 * <p>Title: findScenicByName</p>  
-	 * <p>Description: </p>
-	 * @param tsname
-	 * @return 
+	 * <p>Description: 通过名称查找</p>
+	 * @param tsname 景点名称
+	 * @return List<TravelScenic>
 	 * @see com.DEC.service.ITravelScenicService#findScenicByName(java.lang.String)
 	 */
 	public List<TravelScenic> findScenicByName(String tsname) {
@@ -65,9 +66,9 @@ public class ITravelScenicServiceImpl implements ITravelScenicService {
 
 	/** 
 	 * <p>Title: addTravelScenic</p>  
-	 * <p>Description: </p>
-	 * @param travelScenic
-	 * @return 
+	 * <p>Description: 添加</p>
+	 * @param travelScenic TravelScenic对象
+	 * @return true成功/false失败
 	 * @see com.DEC.service.ITravelScenicService#addTravelScenic(com.DEC.entity.TravelScenic)
 	 */
 	public boolean addTravelScenic(TravelScenic travelScenic) {
@@ -76,9 +77,9 @@ public class ITravelScenicServiceImpl implements ITravelScenicService {
 
 	/** 
 	 * <p>Title: editTravelScenic</p>  
-	 * <p>Description: </p>
-	 * @param travelScenic
-	 * @return 
+	 * <p>Description: 修改</p>
+	 * @param travelScenic TravelScenic对象
+	 * @return true成功/false失败
 	 * @see com.DEC.service.ITravelScenicService#editTravelScenic(com.DEC.entity.TravelScenic)
 	 */
 	public boolean editTravelScenic(TravelScenic travelScenic) {
@@ -87,9 +88,9 @@ public class ITravelScenicServiceImpl implements ITravelScenicService {
 
 	/** 
 	 * <p>Title: delTravelScenic</p>  
-	 * <p>Description: </p>
-	 * @param tsid
-	 * @return 
+	 * <p>Description: 删除</p>
+	 * @param tsid 旅游景点编号
+	 * @return true成功/false失败
 	 * @see com.DEC.service.ITravelScenicService#delTravelScenic(int)
 	 */
 	public boolean delTravelScenic(int tsid) {

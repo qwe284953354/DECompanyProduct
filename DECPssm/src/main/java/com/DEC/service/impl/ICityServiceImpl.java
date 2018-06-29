@@ -31,4 +31,8 @@ public class ICityServiceImpl implements com.DEC.service.ICityService {
 		return cityDao.findCityByPid(pid);
 	}
 
+	public City findCityByCname(String cname) {
+		return cityDao.findCityByCname(cname);
+	}
+
 }

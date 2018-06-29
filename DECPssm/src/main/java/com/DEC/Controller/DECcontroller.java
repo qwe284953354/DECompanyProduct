@@ -1,5 +1,7 @@
 package com.DEC.Controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -11,9 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.DEC.dao.ICityDao;
+import com.DEC.entity.City;
 import com.DEC.entity.Travel;
+import com.DEC.entity.TravelOrder;
+import com.DEC.entity.TravelScenic;
 import com.DEC.entity.User;
 import com.DEC.service.ICityService;
+import com.DEC.service.ITravelOrderService;
 import com.DEC.service.ITravelService;
 import com.DEC.service.IUserService;
 
@@ -85,9 +91,19 @@ public class DECcontroller {
 	@Resource
 	private ICityService cityService;
 	@RequestMapping(value = "/selectCity")
-	public String chooseCity(Model model,HttpSession session,@RequestParam("city") String city) {
+	public String chooseCity(Model model,HttpSession session,@RequestParam("city") String cityname) {
 		
-		return "index";
+		City city = cityService.findCityByCname(cityname);
+		if(city==null) {
+			model.addAttribute("msg1", "暂无此城市信息");
+			return "redirect:/showAllTravel";
+		}else {
+			List<Travel> tlist = travelService.findTravelByCid(city.getCid());
+			session.setAttribute("city", city.getCid());
+			model.addAttribute("tlist", tlist);
+			return "Travelmain";
+		}
+		
 	}
 
 	
@@ -120,21 +136,52 @@ public class DECcontroller {
 	
 	//返回user信息
 	@RequestMapping(value = "/userinfo")
-	public String userinfo(Model model,@RequestParam("username") String username) {
-		User user = userService.findUserByUname(username);
+	public String userinfo(Model model,HttpSession session) {
+		String uname = (String)session.getAttribute("uname");
+		User user = userService.findUserByUname(uname);
 		model.addAttribute("user", user);
 		return "userinfo";
 	}
 	
 	//返回user包含 该user的所有order
 	@RequestMapping(value = "/userorder")
-	public String userorder(Model model,@RequestParam("username") String username) {
-		User user = userService.findUserByUname(username);
+	public String userorder(Model model,HttpSession session) {
+		String uname = (String)session.getAttribute("uname");
+		User user = userService.findUserByUname(uname);
 		model.addAttribute("user", user);
 		return "userorder";
 	}
 	
+	@RequestMapping(value = "/registered")
+	public String toregistered() {
+		return "registered";
+	}
 	
+	
+	@Resource
+	private ITravelOrderService travelOrderService;
+	@RequestMapping(value = "/buy")
+	public String buy(Model model,@RequestParam("tid") int tid,HttpSession session) {
+		Travel travel = travelService.findTravelByTid(tid);
+		String uname = (String)session.getAttribute("uname");
+		if(uname==null) {
+			model.addAttribute("msg", "请先登录");
+			return "info";
+		}else {
+			User user = userService.findUserByUname(uname);
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			String currentTime = sdf.format(new Date());
+			TravelOrder travelOrder = new TravelOrder(tid,user.getUid(),currentTime,travel.getTprice());
+			travelOrderService.addTravelOrder(travelOrder);
+			model.addAttribute("msg", "下单成功");
+			return "info";
+		}
+	}
+	@RequestMapping(value = "/celTravelOrder")
+	public String celTorder(@RequestParam("toid") int toid) {
+		travelOrderService.delTravelOrder(toid);
+		return "redirect:/userorder";
+	}
 	
 	
 }

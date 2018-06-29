@@ -21,9 +21,16 @@
 		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/Travelmain.js" ></script>
+		<script type="text/javascript">
+		</script>
 	</head>
 
 	<body>
+		<c:if test="${msg1!=null }">
+			<script type="text/javascript">
+				alert("暂无此城市信息");
+			</script>
+		</c:if>
 		<div class="top">
 			<div class="inner-top">
 				<div class="logo">
@@ -106,7 +113,7 @@
 							${t.tdetail }
 						</div>
 						<div class="buy">
-							<button class="buybtn">立刻预订</button>
+							<a id="dobuy" href="buy?tid=${t.tid}"><button class="buybtn">立刻预订</button></a>
 						</div>
 					</div>
 				</div>

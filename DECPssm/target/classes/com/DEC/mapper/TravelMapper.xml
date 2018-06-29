@@ -24,11 +24,13 @@
 		select * from travel tr,City ci,tscenic ts,ttype tt
 			where tr.cid =  ci.cid and tr.tsid=ts.tsid and tr.ttid = tt.ttid
 	</select>
-	<select id="findTravelByCid" parameterType="int" resultType="Travel">
-		select * from travel where cid=#{cid}
+	<select id="findTravelByCid" parameterType="int" resultMap="travelResultMap">
+		select * from travel tr,City ci,tscenic ts,ttype tt 
+				where tr.cid=#{cid} and tr.cid =  ci.cid and tr.tsid=ts.tsid and tr.ttid = tt.ttid
 	</select>
-	<select id="findTravelByType" parameterType="int" resultType="Travel">
-		select * from travel where ttid=#{ttid}
+	<select id="findTravelByType" parameterType="int" resultMap="travelResultMap">
+		select * from travel tr,City ci,tscenic ts,ttype tt  
+				where tr.ttid=#{ttid} and tr.cid =  ci.cid and tr.tsid=ts.tsid and tr.ttid = tt.ttid
 	</select>
 	<select id="findTravelByScenic" parameterType="int" resultType="Travel">
 		select * from travel where tsid=#{tsid}

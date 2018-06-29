@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.DEC.dao.ITravelDao">
-	<select id="findAllTravel" resultType="Travel">
-		select * from travel
+	<resultMap type="Travel" id="travelResultMap">
+		<id column="tid" property="tid" />
+		<result column="tname" property="tname" />
+		<result column="tdate" property="tdate" />
+		<result column="tprice" property="tprice" />
+		<result column="tdetail" property="tdetail" />
+		<association property="city" javaType="com.DEC.entity.City">
+			<id column="cid" property="cid" />
+			<result column="cname" property="cname" />
+		</association>
+		<association property="travelScenic" javaType="com.DEC.entity.TravelScenic">
+			<id column="tsid" property="tsid" />
+			<result column="tsdetail" property="tsdetail" />
+		</association>
+		<association property="travelType" javaType="com.DEC.entity.TravelType">
+			<id column="ttid" property="ttid" />
+			<result column="ttname" property="ttname" />
+		</association>
+	</resultMap>
+	<select id="findAllTravel" resultMap="travelResultMap">
+		select * from travel tr,City ci,tscenic ts,ttype tt
+			where tr.cid =  ci.cid and tr.tsid=ts.tsid and tr.ttid = tt.ttid
 	</select>
 	<select id="findTravelByCid" parameterType="int" resultType="Travel">
 		select * from travel where cid=#{cid}

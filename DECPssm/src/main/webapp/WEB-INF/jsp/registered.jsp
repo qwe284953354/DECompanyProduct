@@ -13,6 +13,7 @@
 <base href="<%=basepath%>">
 <meta charset="UTF-8">
 		<title>狗眼旅行</title>
+		<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/registered.css" />
 		<link rel="icon" href="img/favicon.ico" />

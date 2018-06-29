@@ -5,18 +5,19 @@ import java.util.List;
 import com.DEC.entity.User;
 
 /**
- * <p>Description: UserService接口类</p>
+ * <p>Description: </p>
  * @author UY
  * @date   2018年6月22日 
  *
  */
 public interface IUserService {
 	
-	public List<User> findAllUser();		//查找所有
-	public List<User> findAllNormalUser();	//查找所有普通用户
-	public User findUserByUid(int uid);		//通过用户编号查找
-	public boolean addUser(User u);			//添加
-	public boolean editUser(User u);		//修改
-	public boolean delUser(int uid);		//删除
+	public List<User> findAllUser();
+	public List<User> findAllNormalUser();
+	public User findUserByUid(int uid);
+	public User findUserByUname(String uname);
+	public boolean addUser(User u);
+	public boolean editUser(User u);
+	public boolean delUser(int uid);
 	
 }

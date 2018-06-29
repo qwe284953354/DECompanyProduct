@@ -14,6 +14,7 @@ public interface IUserDao {
 	
 	public List<User> findAllUser();		//查找所有
 	public List<User> findAllNormalUser();	//查找所有普通用户
+	public User findUserByUname(String uname);
 	public User findUserByUid(int uid);		//通过用户编号查找
 	public int addUser(User u);				//添加
 	public int editUser(User u);			//修改

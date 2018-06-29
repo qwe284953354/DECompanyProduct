@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %> 
 <%
 	String path = request.getContextPath();
 	String basepath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -29,7 +30,7 @@
 		<br />
 		<hr style="height:2px;border:none;background-color: lightblue; width: 60%; margin: 0 auto;" />
 		<div class="login-form-loc">
-			<form method="post" class="form-type">
+			<form:form modelAttribute="user" method="post" class="form-type" action="./Registered/login">
 				<div class="title">
 					<span>用户注册</span>
 				</div>
@@ -37,31 +38,31 @@
 					<div class="form-items">
 						<span class="form-name"><img src="img/用.png"></span>
 						<div class="form-membertype">
-							<input type="text" class="form-control" placeholder="请输入用户名..." style=" border-radius: 30px;">
+							<input type="text" class="form-control" placeholder="请输入用户名..." style=" border-radius: 30px;" name="uname">
 						</div>
 					</div>
 					<div class="form-items">
 						<span class="form-name"><img src="img/密.png"></span>
 						<div class="form-membertype">
-							<input type="password" class="form-control" placeholder="请输入密码..." style=" border-radius: 30px;">
+							<input type="password" class="form-control" placeholder="请输入密码..." style=" border-radius: 30px;" name="upwd">
 						</div>
 					</div>
 					<div class="form-items">
 						<span class="form-name"><img src="img/邮.png"></span>
 						<div class="form-membertype">
-							<input type="email" class="form-control" id="inputEmail" placeholder="请输入您的邮箱..." style=" border-radius: 30px;">
+							<input type="email" class="form-control" id="inputEmail" placeholder="请输入您的邮箱..." style=" border-radius: 30px;" name="umail">
 						</div>
 					</div>
 					<div class="form-items">
 						<span class="form-name"><img src="img/生.png"></span>
 						<div class="form-membertype">
-							<input type="text" class="form-control" placeholder="请输入您的生日..." style=" border-radius: 30px;">
+							<input type="text" class="form-control" placeholder="请输入您的生日..." style=" border-radius: 30px;" name="ubirth">
 						</div>
 					</div>
 					<div class="form-items">
 						<span class="form-name"><img src="img/电.png"></span>
 						<div class="form-membertype">
-							<input type="text" class="form-control" placeholder="请输入您的电话号码..." style=" border-radius: 30px;">
+							<input type="text" class="form-control" placeholder="请输入您的电话号码..." style=" border-radius: 30px;" name="utel">
 						</div>
 					</div>
 					
@@ -71,7 +72,8 @@
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<input type="reset"  class="btn-registered"/>
 					</div>
-			</form>
+				</div>
+			</form:form>
 			</div>
 			<div class="footer">
 				<br/><br /><br />

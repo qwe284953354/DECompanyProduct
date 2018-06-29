@@ -42,8 +42,8 @@
 								<h1>个人中心</h1>
 							</div>
 							<div class="uleft-menu">
-								<a href="userinfo?username=${uname }" class="uleft-laber" style="background-color: rgba(135,206,250,1);color: white;">基本信息</a>
-								<a href="userorder?username=${uname }" class="uleft-laber">我的订单</a>
+								<a href="userinfo" class="uleft-laber" style="background-color: rgba(135,206,250,1);color: white;">基本信息</a>
+								<a href="userorder" class="uleft-laber">我的订单</a>
 							</div>
 						</div>
 						<div class="uinfo-right">

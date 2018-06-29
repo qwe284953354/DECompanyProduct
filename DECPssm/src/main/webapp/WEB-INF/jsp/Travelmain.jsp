@@ -21,6 +21,8 @@
 		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/Travelmain.js" ></script>
+		<script type="text/javascript">
+		</script>
 	</head>
 
 	<body>
@@ -111,7 +113,7 @@
 							${t.tdetail }
 						</div>
 						<div class="buy">
-							<button class="buybtn">立刻预订</button>
+							<a id="dobuy" href="buy?tid=${t.tid}"><button class="buybtn">立刻预订</button></a>
 						</div>
 					</div>
 				</div>

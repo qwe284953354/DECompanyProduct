@@ -1,5 +1,7 @@
 package com.DEC.Controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -13,8 +15,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.DEC.dao.ICityDao;
 import com.DEC.entity.City;
 import com.DEC.entity.Travel;
+import com.DEC.entity.TravelOrder;
+import com.DEC.entity.TravelScenic;
 import com.DEC.entity.User;
 import com.DEC.service.ICityService;
+import com.DEC.service.ITravelOrderService;
 import com.DEC.service.ITravelService;
 import com.DEC.service.IUserService;
 
@@ -148,6 +153,26 @@ public class DECcontroller {
 	@RequestMapping(value = "/registered")
 	public String toregistered() {
 		return "registered";
+	}
+	
+	
+	@Resource
+	private ITravelOrderService travelOrderService;
+	public String buy(Model model,@RequestParam("tid") int tid,HttpSession session) {
+		Travel travel = travelService.findTravelByTid(tid);
+		String uname = (String)session.getAttribute("uname");
+		if(uname==null) {
+			model.addAttribute("msg", "请先登录");
+			return "info";
+		}else {
+			User user = userService.findUserByUname(uname);
+			SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			String currentTime = sdf.format(new Date());
+			TravelOrder travelOrder = new TravelOrder(tid,user.getUid(),currentTime,travel.getTprice());
+			travelOrderService.addTravelOrder(travelOrder);
+			model.addAttribute("msg", "下单成功");
+			return "info";
+		}
 	}
 	
 	

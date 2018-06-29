@@ -9,6 +9,7 @@ public class City {
 	private int cid;		//城市编号
 	private int pid;		//省编号
 	private String cname;	//城市名称
+	
 	public City() {
 		super();
 	}

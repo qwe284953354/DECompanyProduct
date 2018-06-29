@@ -11,7 +11,7 @@ import com.DEC.entity.HotelInfo;
 import com.DEC.service.IHotelInfoService;
 
 /**
- * <p>Description: </p>
+ * <p>Description: HotelInfoService实现类</p>
  * @author UY
  * @date   2018年6月22日 
  *
@@ -20,10 +20,11 @@ import com.DEC.service.IHotelInfoService;
 public class IHotelInfoServiceImpl implements IHotelInfoService {
 	@Resource
 	private IHotelInfoDao hotelInfoDao;
+	
 	/** 
 	 * <p>Title: findAllHotelInfo</p>  
-	 * <p>Description: </p>
-	 * @return 
+	 * <p>Description: 查找所有酒店信息</p>
+	 * @return List<HotelInfo>
 	 * @see com.DEC.service.IHotelInfoService#findAllHotelInfo()
 	 */
 	public List<HotelInfo> findAllHotelInfo() {
@@ -32,9 +33,9 @@ public class IHotelInfoServiceImpl implements IHotelInfoService {
 
 	/** 
 	 * <p>Title: findHotelInfoByHid</p>  
-	 * <p>Description: </p>
-	 * @param hid
-	 * @return 
+	 * <p>Description: 通过酒店编号查找</p>
+	 * @param hid 酒店编号
+	 * @return HotelInfo
 	 * @see com.DEC.service.IHotelInfoService#findHotelInfoByHid(int)
 	 */
 	public HotelInfo findHotelInfoByHid(int hid) {
@@ -43,9 +44,9 @@ public class IHotelInfoServiceImpl implements IHotelInfoService {
 
 	/** 
 	 * <p>Title: addHotelInfo</p>  
-	 * <p>Description: </p>
-	 * @param hotelInfo
-	 * @return 
+	 * <p>Description: 添加</p>
+	 * @param hotelInfo HotelInfo对象
+	 * @return true成功/false失败
 	 * @see com.DEC.service.IHotelInfoService#addHotelInfo(com.DEC.entity.HotelInfo)
 	 */
 	public boolean addHotelInfo(HotelInfo hotelInfo) {
@@ -54,9 +55,9 @@ public class IHotelInfoServiceImpl implements IHotelInfoService {
 
 	/** 
 	 * <p>Title: editHotelInfo</p>  
-	 * <p>Description: </p>
-	 * @param hotelInfo
-	 * @return 
+	 * <p>Description: 修改</p>
+	 * @param hotelInfo HotelInfo对象
+	 * @return true成功/false失败
 	 * @see com.DEC.service.IHotelInfoService#editHotelInfo(com.DEC.entity.HotelInfo)
 	 */
 	public boolean editHotelInfo(HotelInfo hotelInfo) {
@@ -65,9 +66,9 @@ public class IHotelInfoServiceImpl implements IHotelInfoService {
 
 	/** 
 	 * <p>Title: delHotelInfo</p>  
-	 * <p>Description: </p>
-	 * @param hiid
-	 * @return 
+	 * <p>Description: 删除</p>
+	 * @param hiid 酒店信息编号
+	 * @return true成功/false失败
 	 * @see com.DEC.service.IHotelInfoService#delHotelInfo(int)
 	 */
 	public boolean delHotelInfo(int hiid) {

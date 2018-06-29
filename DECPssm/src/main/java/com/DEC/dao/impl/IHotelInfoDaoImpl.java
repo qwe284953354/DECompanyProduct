@@ -13,7 +13,7 @@ import com.DEC.dao.IHotelInfoDao;
 import com.DEC.entity.HotelInfo;
 
 /**
- * <p>Description: </p>
+ * <p>Description: HotelInfoDao实现类</p>
  * @author UY
  * @date   2018年6月22日 
  *
@@ -28,8 +28,8 @@ public class IHotelInfoDaoImpl extends SqlSessionDaoSupport implements IHotelInf
 	private SqlSession sqlSession = null;
 	/** 
 	 * <p>Title: findAllHotelInfo</p>  
-	 * <p>Description: </p>
-	 * @return 
+	 * <p>Description: 查找所有酒店信息</p>
+	 * @return List<HotelInfo>
 	 * @see com.DEC.dao.IHotelInfoDao#findAllHotelInfo()
 	 */
 	public List<HotelInfo> findAllHotelInfo() {
@@ -40,9 +40,9 @@ public class IHotelInfoDaoImpl extends SqlSessionDaoSupport implements IHotelInf
 
 	/** 
 	 * <p>Title: findHotelInfoByHid</p>  
-	 * <p>Description: </p>
-	 * @param hid
-	 * @return 
+	 * <p>Description: 通过酒店编号查找</p>
+	 * @param hid 酒店编号
+	 * @return HotelInfo
 	 * @see com.DEC.dao.IHotelInfoDao#findHotelInfoByHid(int)
 	 */
 	public HotelInfo findHotelInfoByHid(int hid) {
@@ -53,9 +53,9 @@ public class IHotelInfoDaoImpl extends SqlSessionDaoSupport implements IHotelInf
 
 	/** 
 	 * <p>Title: addHotelInfo</p>  
-	 * <p>Description: </p>
-	 * @param hotelInfo
-	 * @return 
+	 * <p>Description: 添加</p>
+	 * @param hotelInfo HotelInfo对象
+	 * @return row 受到添加操作影响的行数
 	 * @see com.DEC.dao.IHotelInfoDao#addHotelInfo(com.DEC.entity.HotelInfo)
 	 */
 	public int addHotelInfo(HotelInfo hotelInfo) {
@@ -66,9 +66,9 @@ public class IHotelInfoDaoImpl extends SqlSessionDaoSupport implements IHotelInf
 
 	/** 
 	 * <p>Title: editHotelInfo</p>  
-	 * <p>Description: </p>
-	 * @param hotelInfo
-	 * @return 
+	 * <p>Description: 修改</p>
+	 * @param hotelInfo HotelInfo对象
+	 * @return row 受到修改操作影响的行数
 	 * @see com.DEC.dao.IHotelInfoDao#editHotelInfo(com.DEC.entity.HotelInfo)
 	 */
 	public int editHotelInfo(HotelInfo hotelInfo) {
@@ -79,9 +79,9 @@ public class IHotelInfoDaoImpl extends SqlSessionDaoSupport implements IHotelInf
 
 	/** 
 	 * <p>Title: delHotelInfo</p>  
-	 * <p>Description: </p>
-	 * @param hiid
-	 * @return 
+	 * <p>Description: 删除</p>
+	 * @param hiid 酒店信息编号
+	 * @return row 受到删除操作影响的行数
 	 * @see com.DEC.dao.IHotelInfoDao#delHotelInfo(int)
 	 */
 	public int delHotelInfo(int hiid) {

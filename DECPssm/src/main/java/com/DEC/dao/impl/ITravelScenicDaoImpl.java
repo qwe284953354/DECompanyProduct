@@ -13,7 +13,7 @@ import com.DEC.dao.ITravelScenicDao;
 import com.DEC.entity.TravelScenic;
 
 /**
- * <p>Description: </p>
+ * <p>Description: TravelScenicDao实现类</p>
  * @author UY
  * @date   2018年6月22日 
  *
@@ -28,8 +28,8 @@ public class ITravelScenicDaoImpl extends SqlSessionDaoSupport implements ITrave
 	private SqlSession sqlSession = null;
 	/** 
 	 * <p>Title: findAllScenic</p>  
-	 * <p>Description: </p>
-	 * @return 
+	 * <p>Description: 查找所有</p>
+	 * @return List<TravelScenic>
 	 * @see com.DEC.dao.ITravelScenicDao#findAllScenic()
 	 */
 	public List<TravelScenic> findAllScenic() {
@@ -40,9 +40,9 @@ public class ITravelScenicDaoImpl extends SqlSessionDaoSupport implements ITrave
 
 	/** 
 	 * <p>Title: findScenicByTsid</p>  
-	 * <p>Description: </p>
-	 * @param tsid
-	 * @return 
+	 * <p>Description: 通过编号查找</p>
+	 * @param tsid 旅游景点编号
+	 * @return TravelScenic
 	 * @see com.DEC.dao.ITravelScenicDao#findScenicByTsid(int)
 	 */
 	public TravelScenic findScenicByTsid(int tsid) {
@@ -53,9 +53,9 @@ public class ITravelScenicDaoImpl extends SqlSessionDaoSupport implements ITrave
 
 	/** 
 	 * <p>Title: findScenicByCid</p>  
-	 * <p>Description: </p>
-	 * @param cid
-	 * @return 
+	 * <p>Description: 通过城市编号查找</p>
+	 * @param cid 城市编号
+	 * @return List<TravelScenic>
 	 * @see com.DEC.dao.ITravelScenicDao#findScenicByCid(int)
 	 */
 	public List<TravelScenic> findScenicByCid(int cid) {
@@ -66,9 +66,9 @@ public class ITravelScenicDaoImpl extends SqlSessionDaoSupport implements ITrave
 
 	/** 
 	 * <p>Title: findScenicByName</p>  
-	 * <p>Description: </p>
-	 * @param tsname
-	 * @return 
+	 * <p>Description: 通过名称查找</p>
+	 * @param tsname 景点名称
+	 * @return List<TravelScenic>
 	 * @see com.DEC.dao.ITravelScenicDao#findScenicByName(java.lang.String)
 	 */
 	public List<TravelScenic> findScenicByName(String tsname) {
@@ -79,9 +79,9 @@ public class ITravelScenicDaoImpl extends SqlSessionDaoSupport implements ITrave
 
 	/** 
 	 * <p>Title: addTravelScenic</p>  
-	 * <p>Description: </p>
-	 * @param travelScenic
-	 * @return 
+	 * <p>Description: 添加</p>
+	 * @param travelScenic TravelScenic对象
+	 * @return row 受到添加操作影响的行数
 	 * @see com.DEC.dao.ITravelScenicDao#addTravelScenic(com.DEC.entity.TravelScenic)
 	 */
 	public int addTravelScenic(TravelScenic travelScenic) {
@@ -92,9 +92,9 @@ public class ITravelScenicDaoImpl extends SqlSessionDaoSupport implements ITrave
 
 	/** 
 	 * <p>Title: editTravelScenic</p>  
-	 * <p>Description: </p>
-	 * @param travelScenic
-	 * @return 
+	 * <p>Description: 修改</p>
+	 * @param travelScenic TravelScenic对象
+	 * @return row 受到修改操作影响的行数
 	 * @see com.DEC.dao.ITravelScenicDao#editTravelScenic(com.DEC.entity.TravelScenic)
 	 */
 	public int editTravelScenic(TravelScenic travelScenic) {
@@ -105,9 +105,9 @@ public class ITravelScenicDaoImpl extends SqlSessionDaoSupport implements ITrave
 
 	/** 
 	 * <p>Title: delTravelScenic</p>  
-	 * <p>Description: </p>
-	 * @param tsid
-	 * @return 
+	 * <p>Description: 删除</p>
+	 * @param tsid 旅游景点编号
+	 * @return row 受到删除操作影响的行数
 	 * @see com.DEC.dao.ITravelScenicDao#delTravelScenic(int)
 	 */
 	public int delTravelScenic(int tsid) {

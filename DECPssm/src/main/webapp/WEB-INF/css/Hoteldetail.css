@@ -19,7 +19,12 @@ ul{list-style-type: none;}
 					border-bottom: none;border-top-left-radius: 10px;border-top-right-radius: 10px;}
         .loginbtn:hover{background-color: black; border-top: none; border-left: none; border-right: none ; color: white;
 								transition: all 0.5s;text-decoration: none; border-bottom: solid red 4px;}
-	
+		.logined{float: left; height: 80px; width: 150px; margin-left: 160px;  position: relative;
+				 }
+		.logined span{margin-top: 10px;margin-left: 20px; display: block;}
+		.logined a{ display:block;margin-left: 35px; font-weight: 800; width: 80px; height: 30px; 
+							background-color:  rgba(0,0,255,0.1); border-radius: 10px;text-align: center; line-height: 30px;}
+		.logined a:hover{ text-decoration: none; color: black;}
 	.picture{width: 100%; height: 600px; border: solid 1px; position: absolute; top: 85px;}
 		.picture img{width: 100%; height: 100%;}
 	
@@ -44,8 +49,9 @@ ul{list-style-type: none;}
 				.hoteldetail tr{height: 50px; }
 				.hoteldetail th{text-align: right;width:100px;}
 				.hoteldetail td{width:260px}
-			.hotelroom{width: 640px; height: 700px;position: absolute;left:420px;top:60px;font-family: "微软雅黑";font-size: 14px;}
-				.room{width:640px;height: 140px; border: solid; float: left;position: relative;}
+			.hotelroom{width: 640px; height: 700px;position: absolute;left:420px;top:60px;font-family: "微软雅黑";font-size: 14px;
+						overflow-y:scroll;overflow-x:hidden;}
+				.room{width:630px;height: 140px; border: solid; float: left;position: relative;}
 					.room img{width: 128px; height: 80px;position: absolute;left: 10px; top: 30px;}
 					.rname{width:400px; height: 30px; font-size:18px;font-weight:700;position: absolute;left: 145px; top: 30px;}
 					.rdetail{width:400px; height: 30px;position: absolute;left: 145px; top: 80px;}

@@ -13,7 +13,7 @@ import com.DEC.dao.ICityDao;
 import com.DEC.entity.City;
 
 /**
- * <p>Description: </p>
+ * <p>Description: CityDao实现类</p>
  * @author UY
  * @date   2018年6月21日 
  *
@@ -28,9 +28,9 @@ public class ICityDaoImpl extends SqlSessionDaoSupport implements ICityDao {
 	private SqlSession sqlSession = null;
 	/** 
 	 * <p>Title: findCityByPid</p>  
-	 * <p>Description: </p>
-	 * @param pid
-	 * @return 
+	 * <p>Description: 通过省市编号查询</p>
+	 * @param pid 省市编号
+	 * @return List<City>
 	 * @see com.DEC.dao.ICityDao#findCityByPid(int)
 	 */
 	public List<City> findCityByPid(int pid) {

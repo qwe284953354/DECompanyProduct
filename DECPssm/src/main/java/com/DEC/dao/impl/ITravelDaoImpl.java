@@ -13,7 +13,7 @@ import com.DEC.dao.ITravelDao;
 import com.DEC.entity.Travel;
 
 /**
- * <p>Description: </p>
+ * <p>Description: TravelDao实现类</p>
  * @author UY
  * @date   2018年6月22日 
  *
@@ -28,8 +28,8 @@ public class ITravelDaoImpl extends SqlSessionDaoSupport implements ITravelDao {
 	private SqlSession sqlSession = null;
 	/** 
 	 * <p>Title: findAllTravel</p>  
-	 * <p>Description: </p>
-	 * @return 
+	 * <p>Description: 查找所有</p>
+	 * @return List<Travel>
 	 * @see com.DEC.dao.ITravelDao#findAllTravel()
 	 */
 	public List<Travel> findAllTravel() {
@@ -40,9 +40,9 @@ public class ITravelDaoImpl extends SqlSessionDaoSupport implements ITravelDao {
 
 	/** 
 	 * <p>Title: findTravelByCid</p>  
-	 * <p>Description: </p>
-	 * @param cid
-	 * @return 
+	 * <p>Description: 通过城市编号查找</p>
+	 * @param cid 城市编号
+	 * @return List<Travel>
 	 * @see com.DEC.dao.ITravelDao#findTravelByCid(int)
 	 */
 	public List<Travel> findTravelByCid(int cid) {
@@ -53,9 +53,9 @@ public class ITravelDaoImpl extends SqlSessionDaoSupport implements ITravelDao {
 
 	/** 
 	 * <p>Title: findTravelByType</p>  
-	 * <p>Description: </p>
-	 * @param ttid
-	 * @return 
+	 * <p>Description: 通过类型查找</p>
+	 * @param ttid 类型编号
+	 * @return List<Travel>
 	 * @see com.DEC.dao.ITravelDao#findTravelByType(int)
 	 */
 	public List<Travel> findTravelByType(int ttid) {
@@ -66,9 +66,9 @@ public class ITravelDaoImpl extends SqlSessionDaoSupport implements ITravelDao {
 
 	/** 
 	 * <p>Title: findTravelByScenic</p>  
-	 * <p>Description: </p>
-	 * @param tsid
-	 * @return 
+	 * <p>Description: 通过景点查找</p>
+	 * @param tsid 景点编号
+	 * @return List<Travel>
 	 * @see com.DEC.dao.ITravelDao#findTravelByScenic(int)
 	 */
 	public List<Travel> findTravelByScenic(int tsid) {
@@ -79,9 +79,9 @@ public class ITravelDaoImpl extends SqlSessionDaoSupport implements ITravelDao {
 
 	/** 
 	 * <p>Title: findTravelByTid</p>  
-	 * <p>Description: </p>
-	 * @param tid
-	 * @return 
+	 * <p>Description: 通过编号查找</p>
+	 * @param tid 旅游项目编号
+	 * @return Travel
 	 * @see com.DEC.dao.ITravelDao#findTravelByTid(int)
 	 */
 	public Travel findTravelByTid(int tid) {
@@ -92,9 +92,9 @@ public class ITravelDaoImpl extends SqlSessionDaoSupport implements ITravelDao {
 
 	/** 
 	 * <p>Title: addTravel</p>  
-	 * <p>Description: </p>
-	 * @param t
-	 * @return 
+	 * <p>Description: 添加</p>
+	 * @param t Travel对象
+	 * @return row 受到添加操作影响的行数
 	 * @see com.DEC.dao.ITravelDao#addTravel(com.DEC.entity.Travel)
 	 */
 	public int addTravel(Travel t) {
@@ -105,9 +105,9 @@ public class ITravelDaoImpl extends SqlSessionDaoSupport implements ITravelDao {
 
 	/** 
 	 * <p>Title: editTravel</p>  
-	 * <p>Description: </p>
-	 * @param t
-	 * @return 
+	 * <p>Description: 修改</p>
+	 * @param t Travel对象
+	 * @return row 受到修改操作影响的行数
 	 * @see com.DEC.dao.ITravelDao#editTravel(com.DEC.entity.Travel)
 	 */
 	public int editTravel(Travel t) {
@@ -118,9 +118,9 @@ public class ITravelDaoImpl extends SqlSessionDaoSupport implements ITravelDao {
 
 	/** 
 	 * <p>Title: delTravel</p>  
-	 * <p>Description: </p>
-	 * @param tid
-	 * @return 
+	 * <p>Description: 删除</p>
+	 * @param tid 旅游项目编号
+	 * @return row 受到删除操作影响的行数
 	 * @see com.DEC.dao.ITravelDao#delTravel(int)
 	 */
 	public int delTravel(int tid) {

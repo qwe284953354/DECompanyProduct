@@ -108,7 +108,7 @@
 			<div class="travel">
 				<div class="word to">选择旅游？</div>
 				<div class="button-loc">
-					<a href="showAllTravel" class="lefta">Travel</a>
+					<a href="showTravel" class="lefta">Travel</a>
 					<!--描述：特效-->
 				</div>
 			</div>

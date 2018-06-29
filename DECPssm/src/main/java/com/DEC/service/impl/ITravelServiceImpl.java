@@ -11,7 +11,7 @@ import com.DEC.entity.Travel;
 import com.DEC.service.ITravelService;
 
 /**
- * <p>Description: </p>
+ * <p>Description: TravelService实现类</p>
  * @author UY
  * @date   2018年6月22日 
  *
@@ -20,10 +20,11 @@ import com.DEC.service.ITravelService;
 public class ITravelServiceImpl implements ITravelService {
 	@Resource
 	private ITravelDao travelDao;
+	
 	/** 
 	 * <p>Title: findAllTravel</p>  
-	 * <p>Description: </p>
-	 * @return 
+	 * <p>Description: 查找所有</p>
+	 * @return List<Travel>
 	 * @see com.DEC.service.ITravelService#findAllTravel()
 	 */
 	public List<Travel> findAllTravel() {
@@ -32,9 +33,9 @@ public class ITravelServiceImpl implements ITravelService {
 
 	/** 
 	 * <p>Title: findTravelByCid</p>  
-	 * <p>Description: </p>
-	 * @param cid
-	 * @return 
+	 * <p>Description: 通过城市编号查找</p>
+	 * @param cid 城市编号
+	 * @return List<Travel>
 	 * @see com.DEC.service.ITravelService#findTravelByCid(int)
 	 */
 	public List<Travel> findTravelByCid(int cid) {
@@ -43,9 +44,9 @@ public class ITravelServiceImpl implements ITravelService {
 
 	/** 
 	 * <p>Title: findTravelByType</p>  
-	 * <p>Description: </p>
-	 * @param ttid
-	 * @return 
+	 * <p>Description: 通过类型查找</p>
+	 * @param ttid 类型编号
+	 * @return List<Travel>
 	 * @see com.DEC.service.ITravelService#findTravelByType(int)
 	 */
 	public List<Travel> findTravelByType(int ttid) {
@@ -54,9 +55,9 @@ public class ITravelServiceImpl implements ITravelService {
 
 	/** 
 	 * <p>Title: findTravelByScenic</p>  
-	 * <p>Description: </p>
-	 * @param tsid
-	 * @return 
+	 * <p>Description: 通过景点查找</p>
+	 * @param tsid 景点编号
+	 * @return List<Travel>
 	 * @see com.DEC.service.ITravelService#findTravelByScenic(int)
 	 */
 	public List<Travel> findTravelByScenic(int tsid) {
@@ -65,9 +66,9 @@ public class ITravelServiceImpl implements ITravelService {
 
 	/** 
 	 * <p>Title: findTravelByTid</p>  
-	 * <p>Description: </p>
-	 * @param tid
-	 * @return 
+	 * <p>Description: 通过编号查找</p>
+	 * @param tid 旅游项目编号
+	 * @return Travel
 	 * @see com.DEC.service.ITravelService#findTravelByTid(int)
 	 */
 	public Travel findTravelByTid(int tid) {
@@ -76,9 +77,9 @@ public class ITravelServiceImpl implements ITravelService {
 
 	/** 
 	 * <p>Title: addTravel</p>  
-	 * <p>Description: </p>
-	 * @param t
-	 * @return 
+	 * <p>Description: 添加</p>
+	 * @param t Travel对象
+	 * @return true成功/false失败
 	 * @see com.DEC.service.ITravelService#addTravel(com.DEC.entity.Travel)
 	 */
 	public boolean addTravel(Travel t) {
@@ -87,9 +88,9 @@ public class ITravelServiceImpl implements ITravelService {
 
 	/** 
 	 * <p>Title: editTravel</p>  
-	 * <p>Description: </p>
-	 * @param t
-	 * @return 
+	 * <p>Description: 修改</p>
+	 * @param t Travel对象
+	 * @return true成功/false失败
 	 * @see com.DEC.service.ITravelService#editTravel(com.DEC.entity.Travel)
 	 */
 	public boolean editTravel(Travel t) {
@@ -98,9 +99,9 @@ public class ITravelServiceImpl implements ITravelService {
 
 	/** 
 	 * <p>Title: delTravel</p>  
-	 * <p>Description: </p>
-	 * @param tid
-	 * @return 
+	 * <p>Description: 删除</p>
+	 * @param tid 旅游项目编号
+	 * @return true成功/false失败
 	 * @see com.DEC.service.ITravelService#delTravel(int)
 	 */
 	public boolean delTravel(int tid) {

@@ -14,8 +14,9 @@
 		</association>
 	</resultMap>
 	<select id="findAllHotel" resultMap="hotelResultMap">
-		select hotel.*, MIN(hroom.hprice) hprice from hotel,hroom
-		where hotel.hid=hroom.hid
+		select hotel.*,hprice from hotel,hroom 
+		where hotel.hid=hroom.hid 
+		group by hotel.hid
 	</select>
 	<select id="findHotelByName" parameterType="String" resultType="Hotel">
 		select * from hotel where hname like %#{name}%
@@ -26,8 +27,10 @@
 	<select id="findHotelByStar" parameterType="String" resultType="Hotel">
 		select * from hotel where hstar=#{star}
 	</select>
-	<select id="findHotelByType" parameterType="String" resultType="Hotel">
-		select * from hotel where htype=#{type}
+	<select id="findHotelByType" parameterType="String" resultMap="hotelResultMap">
+		select hotel.*,hprice from hotel,hroom
+		where htype=#{type} and hotel.hid=hroom.hid
+		group by hotel.hid
 	</select>
 	<select id="findHotelByHid" parameterType="int" resultType="Hotel">
 		select * from hotel where hid=#{id}

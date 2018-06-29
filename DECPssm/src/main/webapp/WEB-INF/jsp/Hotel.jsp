@@ -36,7 +36,7 @@
 					<div class="login">
 						<img src="img/none-login.png"> <span
 							class="glyphicon glyphicon-triangle-bottom"></span> <a
-							href="login.jsp" class="loginbtn">登陆</a>
+							href="Hotel/login" class="loginbtn">登陆</a>
 					</div>
 				</c:if>
 				<c:if test="${uname != null }">
@@ -53,19 +53,19 @@
 	<div class="navegation">
 		<div class="btn-loc">
 			<div class="typebtn tt1">
-				<a id="t1" href="#">经济型</a>
+				<a id="t1" href="Hotel/showHotel/经济型">经济型</a>
 				<div class="def-box" id="d1"></div>
 			</div>
 			<div class="typebtn">
-				<a id="t2" href="#">舒适三星</a>
+				<a id="t2" href="Hotel/showHotel/舒适三星">舒适三星</a>
 				<div class="def-box" id="d2"></div>
 			</div>
 			<div class="typebtn">
-				<a id="t3" href="#">高档四星</a>
+				<a id="t3" href="Hotel/showHotel/高档四星">高档四星</a>
 				<div class="def-box" id="d3"></div>
 			</div>
 			<div class="typebtn">
-				<a id="t4" href="#">豪华五星</a>
+				<a id="t4" href="Hotel/showHotel/豪华五星">豪华五星</a>
 				<div class="def-box" id="d4"></div>
 			</div>
 		</div>
@@ -91,7 +91,9 @@
 						${h.hmark} <i class="smallnumber">分</i>
 					</div>
 					<div class="buy">
-						<button class="buybtn">详情</button>
+						<a href="./Hotel/detail?hid=${h.hid}">
+							<button class="buybtn">详情</button>
+						</a>
 					</div>
 					<div class="listbox">
 						<img src="img/listbox-01.png" />
@@ -102,36 +104,6 @@
 		<br />
 		<hr
 			style="border: dashed 1.5px; border-color: rgba(0, 100, 255, 0.6); border-radius: 10px; height: 0.5px; width: 90%; margin-left: 5%;" />
-		<!-- <div class="items">
-			<div class="borders">
-				<div class="photoes">
-					<img src="img/酒店.jpg" />
-				</div>
-				<div class="details-info">
-					<div class="titlebox name">布丁酒店(杭州西湖南宋御街店)</div>
-					<div class="detailbox type">类型：舒适</div>
-					<div class="detailbox haddress">地址：[清河坊/南宋御街] 上城区中山中路106号</div>
-					<div class="detailbox city">所在城市：杭州</div>
-					<div class="detailbox hstar">星级：三星</div>
-					<div class="detailbox price">
-						¥188 <i class="smallnumber">起</i>
-					</div>
-					<div class="detailbox hmark">
-						9.1 <i class="smallnumber">分</i>
-					</div>
-					<div class="buy">
-						<button class="buybtn">详情</button>
-					</div>
-					<div class="listbox">
-						<img src="img/listbox-01.png" />
-					</div>
-				</div>
-			</div>
-		</div>
-		<br />
-		<hr
-			style="border: dashed 1.5px; border-color: rgba(0, 100, 255, 0.6); border-radius: 10px; height: 0.5px; width: 90%; margin-left: 5%;" /> -->
-		<!-- items循环体结束 -->
 	</c:forEach>
 
 		<div class="footer">

@@ -115,7 +115,7 @@
 			<div class="OR">OR?</div>
 			<div class="hotel">
 				<div class="button-loc">
-					<a href="#" class="righta">Hotel</a>
+					<a href="Hotel/showHotel" class="righta">Hotel</a>
 					<!--描述：特效-->
 				</div>
 				<div class="word bo">选择住宿？</div>

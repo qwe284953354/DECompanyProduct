@@ -15,6 +15,8 @@ public class Hotel {
 	private String hmark;		//评分
 	private int cid;			//城市编号
 	
+	private HotelRoom hotelRoom;
+	
 	public Hotel() {
 		super();
 	}
@@ -88,6 +90,12 @@ public class Hotel {
 	}
 	public void setCid(int cid) {
 		this.cid = cid;
+	}
+	public HotelRoom getHotelRoom() {
+		return hotelRoom;
+	}
+	public void setHotelRoom(HotelRoom hotelRoom) {
+		this.hotelRoom = hotelRoom;
 	}
 	
 }

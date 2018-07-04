@@ -87,7 +87,7 @@
 			<div class="items">
 				<div class="borders">
 					<div class="photoes">
-						${t.tsid }
+						<img alt="景点图片" src="${t.travelScenic.tsimg }">
 					</div>
 					<div class="details-info">					
 						<div class="titlebox name">

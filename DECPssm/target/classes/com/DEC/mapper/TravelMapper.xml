@@ -13,6 +13,7 @@
 		</association>
 		<association property="travelScenic" javaType="com.DEC.entity.TravelScenic">
 			<id column="tsid" property="tsid" />
+			<result column="tsimg" property="tsimg" />
 			<result column="tsdetail" property="tsdetail" />
 		</association>
 		<association property="travelType" javaType="com.DEC.entity.TravelType">

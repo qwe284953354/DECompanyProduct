@@ -96,7 +96,7 @@
 								窗户&nbsp;有
 							</div>
 							<div class="rprice">
-								${hr.hprice }
+								￥${hr.hprice }
 							</div>
 							<div class="btn-room">
 								<button class="buybtn">立即预订</button>

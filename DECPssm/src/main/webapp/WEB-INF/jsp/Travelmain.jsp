@@ -136,6 +136,10 @@
 
 		<a style="display:none" href="javascript:;" id="btn" title="回到顶部"></a>
 
+		<div class="GoAnother">
+			<a href="#"><span>去住宿</span></a>
+		</div>
+
 		<div class="location">
 			<span>选择城市</span>
 			<div class="address">
@@ -157,7 +161,9 @@
 			</form>
 			</div>
 		</div>
-		
+		<div class="back">
+			收回
+		</div>
 	</body>
 	<script src="js/distpicker.data.js"></script>
 	<script src="js/distpicker.js"></script>

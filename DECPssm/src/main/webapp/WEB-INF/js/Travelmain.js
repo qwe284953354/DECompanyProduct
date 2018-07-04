@@ -95,22 +95,35 @@ window.onload = function() {
 					})
 				}
 				
-				$(".location").mouseover(function(){
+				$(".location").click(function(){
 					$(".location").stop().animate({
-						width:"400px",
+						width:"460px",
 					});
 					$(".address").stop().animate({
 						opacity: '1',
 					});
-				}).mouseout(function(){
+					$("#allmap").stop().animate({
+						opacity: '1',
+					});
+					$(".back").stop().animate({
+						opacity: '1',
+					},900);
+				/*	console.log($('#city :selected').attr("value"));*/
+				})
+				
+				$(".back").click(function(){
 					$(".location").stop().animate({
+						height:"60px",
 						width:"80px",
+					});
+					$("#allmap").stop().animate({
+						opacity: '0',
 					});
 					$(".address").stop().animate({
 						opacity: '0',
 					});
-					//取ID
-						console.log($('#province :selected').attr("data-code"));
-						console.log($('#city :selected').attr("data-code"));
+					$(".back").stop().animate({
+						opacity: '0',
+					},50);
 				})
 			})

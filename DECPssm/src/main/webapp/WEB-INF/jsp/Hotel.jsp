@@ -77,7 +77,7 @@
 		<div class="items">
 			<div class="borders">
 				<div class="photoes">
-					<img src="${h.himg} }" />
+					<img src="${h.himg} " />
 				</div>
 				<div class="details-info">
 					<div class="titlebox name">${h.hname}</div>

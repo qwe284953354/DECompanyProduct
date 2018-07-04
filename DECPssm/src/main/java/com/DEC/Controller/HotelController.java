@@ -6,13 +6,16 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.DEC.entity.Hotel;
+import com.DEC.entity.HotelOrder;
 import com.DEC.entity.HotelRoom;
+import com.DEC.service.IHotelOrderService;
 import com.DEC.service.IHotelRoomService;
 import com.DEC.service.IHotelService;
 
@@ -57,5 +60,16 @@ public class HotelController {
 		List<HotelRoom> hrlist = hotelRoomService.findHotelRoomByhid(hid);
 		model.addAttribute("hrlist", hrlist);
 		return "Hoteldetail";
+	}
+	
+	@Resource
+	private IHotelOrderService hotelOrderService;
+	@RequestMapping(value = "/detail/addOrder")
+	public String toAddOrder(@ModelAttribute("hotelOrder") HotelOrder hotelOrder) {
+		if(hotelOrderService.addHotelOrder(hotelOrder)) {
+			return "redirect:/Hotel/showHotel";
+		}else {
+			return "";
+		}
 	}
 }

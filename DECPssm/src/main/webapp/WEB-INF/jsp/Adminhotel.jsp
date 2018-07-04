@@ -183,44 +183,32 @@
      		 		<form:form modelAttribute="hotel" method="post" action="Admin/Adminhotel/edit">
      		 		<div class="modal-body">
               			<div class="input-group">
-              				<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-home"></span></span>
-  					  	 	<!--输入框text-->
  							<input type="text" class="form-control"  aria-describedby="basic-addon1" id="hname" value="" name="hname">
 						</div>
 						<br />
 						<div class="input-group">
-							<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-star"></span></span>
-  					  	 	<!--输入框text-->
  							<input type="text" class="form-control" placeholder="Hotelstar " aria-describedby="basic-addon1" id="hstar" value="" name="hstar">	
 						</div>
 						<br />
 						<div class="input-group">
-							<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-tag"></span></span>
-  					  	 	<!--输入框text-->
  							<input type="text" class="form-control" placeholder="Hoteltype" aria-describedby="basic-addon1" id="htype" value="" name="htype">	
 						</div>
 						<br />
 						<div class="input-group">
-							<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-picture"></span></span>
-  					  	 	<!--输入框text-->
  							<input type="text" class="form-control" placeholder="Hotelimage" aria-describedby="basic-addon1" id="himg" value="" name="himg">	
 						</div>
 						<br />
 						<div class="input-group">
-							<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-file"></span></span>
-  					  	 	<!--输入框text-->
  							<input type="text" class="form-control" placeholder="Hoteladdress" aria-describedby="basic-addon1" id="haddress" value="" name="haddress">	
 						</div>	
 						<br />
 						<div class="input-group">
-							<!--标签样式-->
   					  	 	<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-heart"></span></span>
-  					  	 	<!--输入框text-->
  							<input type="text" class="form-control" placeholder="Mark" aria-describedby="basic-addon1" id="hmark" value="" name="hmark">	
 						</div>	
 						<input type="hidden" name="hid" id="hid">

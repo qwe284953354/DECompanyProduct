@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %> 
 <%
 	String path = request.getContextPath();
 	String basepath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -99,7 +100,18 @@
 								${hr.hprice }
 							</div>
 							<div class="btn-room">
-								<button class="buybtn">立即预订</button>
+								<form:form modelAttribute="hotelOrder" method="post" action="./Hotel/detail/addOrder">
+									<div class="uy">
+										<input name="hid" value="${hotel.hid}">
+										<input name="hoprice" value="${hr.hprice}">
+										<input name="uid" value="1">
+										<input name="honame" value="张三">
+										<input name="hodate" value="2018-07-04">
+										<input name="hotel" value="13369869544">
+										<input name="hobooktime" value="18:00">
+									</div>	
+									<input type="submit" class="buybtn" value="立即预订">
+								</form:form>	
 							</div>
 						</div>
 						</c:forEach>

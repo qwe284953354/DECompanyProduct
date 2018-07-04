@@ -67,3 +67,4 @@ ul{list-style-type: none;}
 			.address a{display:block;width:40px ; height: 20px; border: solid 1px;}
 			
 	.footer{width:100%;height:200px; text-align: center;background-color:#262426;margin:0 auto;position: absolute;bottom: -200px; color: white;}
+	.uy{display:none;}

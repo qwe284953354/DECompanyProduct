@@ -237,4 +237,5 @@ public class AdminController {
 	public Object getTravelByid(@RequestParam int id) {
 		return travelService.findTravelByTid(id);
 	}
+
 }

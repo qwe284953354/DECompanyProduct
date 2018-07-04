@@ -34,6 +34,11 @@ import com.DEC.service.IUserService;
 @RequestMapping("/Admin")
 public class AdminController {
 	
+	@RequestMapping("/toAdmin")
+	public String toAdmin() {
+		return "Admin";
+	}
+	
 	@Resource
 	private IUserService userService;
 	@RequestMapping(value = "/Adminuser")

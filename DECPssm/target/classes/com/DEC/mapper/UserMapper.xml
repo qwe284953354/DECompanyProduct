@@ -47,6 +47,8 @@
 		hotel hl,
 		travel tl
 		where 
+		u.uid = (SELECT uid from user WHERE uname=#{uname}) 
+		AND
 		h.uid = (SELECT uid from user WHERE uname=#{uname}) 
 		AND 
 		t.uid = (SELECT uid from user WHERE uname=#{uname})

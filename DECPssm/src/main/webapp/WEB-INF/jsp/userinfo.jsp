@@ -42,8 +42,8 @@
 								<h1>个人中心</h1>
 							</div>
 							<div class="uleft-menu">
-								<a href="userinfo?username=${uname }" class="uleft-laber" style="background-color: rgba(135,206,250,1);color: white;">基本信息</a>
-								<a href="userorder?username=${uname }" class="uleft-laber">我的订单</a>
+								<a href="userinfo" class="uleft-laber" style="background-color: rgba(135,206,250,1);color: white;">基本信息</a>
+								<a href="userorder" class="uleft-laber">我的订单</a>
 							</div>
 						</div>
 						<div class="uinfo-right">
@@ -55,25 +55,25 @@
 									<div class="form-items">
 										<span class="form-name"><img src="img/用.png"></span>
 										<div class="form-membertype">
-											<input type="text" readonly="true" class="form-control" placeholder="${user.uname }" style=" border-radius: 30px;">
+											<input type="text" readonly="true" class="form-control" value="${user.uname }"  style=" border-radius: 30px;">
 										</div>
 									</div>
 									<div class="form-items">
 										<span class="form-name"><img src="img/邮.png"></span>
 										<div class="form-membertype">
-											<input type="email" class="form-control" id="inputEmail" placeholder="${user.umail }" style=" border-radius: 30px;">
+											<input type="email" class="form-control" id="inputEmail" value="${user.umail }" style=" border-radius: 30px;">
 										</div>
 									</div>
 									<div class="form-items">
 										<span class="form-name"><img src="img/生.png"></span>
 										<div class="form-membertype">
-											<input type="text" class="form-control" placeholder="${user.ubirth }" style=" border-radius: 30px;">
+											<input type="text" class="form-control" value="${user.ubirth }" style=" border-radius: 30px;">
 										</div>
 									</div>
 									<div class="form-items">
 										<span class="form-name"><img src="img/电.png"></span>
 										<div class="form-membertype">
-											<input type="text" class="form-control" placeholder="${user.utel }" style=" border-radius: 30px;">
+											<input type="text" class="form-control" value="${user.utel }" style=" border-radius: 30px;">
 										</div>
 									</div>
 									<div class="form-items">

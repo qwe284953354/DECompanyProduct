@@ -46,7 +46,7 @@
 				</c:if>
 				<c:if test="${uname != null }">
 					<div class="logined">
-						<span>您好：&nbsp;${uname}</span> <br /> <a href="userinfo?username=${uname }">个人空间</a>
+						<span>您好：&nbsp;${uname}</span> <br /> <a href="userinfo">个人空间</a>
 					</div>
 				</c:if>
 					<!-- <div class="login">
